@@ -122,7 +122,7 @@
       </div>
 
       <div class="screenshot">
-        {{ platform_img('img/firefox/firstrun/b/pinnedtabs.jpg', alt=_('Bookmarks')) }}
+        {{ platform_img('img/firefox/firstrun/b/pinnedtabs.jpg', {'alt': _('Bookmarks')}) }}
       </div>
     </aside>
     <aside class="column themes">
@@ -153,7 +153,7 @@
       </div>
 
       <div class="screenshot">
-        {{ platform_img('img/firefox/firstrun/b/themes.jpg', alt=('Themes')) }}
+        {{ platform_img('img/firefox/firstrun/b/themes.jpg', {'alt': ('Themes')}) }}
       </div>
     </aside>
   {% if version in '13' %}
@@ -172,7 +172,7 @@
       </div>
 
       <div class="screenshot">
-        {{ platform_img('img/firefox/firstrun/b/awesomebar.jpg', alt=('Awesome Bar')) }}
+        {{ platform_img('img/firefox/firstrun/b/awesomebar.jpg', {'alt': ('Awesome Bar')}) }}
       </div>  
     </aside>
   {% else %}
@@ -191,7 +191,7 @@
       </div>
 
       <div class="screenshot">
-        {{ platform_img('img/firefox/firstrun/b/bookmarks.jpg', alt=('Bookmarks')) }}
+        {{ platform_img('img/firefox/firstrun/b/bookmarks.jpg', {'alt': ('Bookmarks')}) }}
       </div>  
     </aside>
   {% endif %}
