@@ -4,10 +4,10 @@
 
 ;(function($, Modernizr, _gaq, site) {
     'use strict';
+    var $html = $(document.documentElement);
 
     if (isFirefox()) {
-        var $body = $('body');
-        var latestFirefoxVersion = $body.attr('data-latest-firefox');
+        var latestFirefoxVersion = $html.attr('data-latest-firefox');
         latestFirefoxVersion = parseInt(latestFirefoxVersion.split('.')[0], 10);
         latestFirefoxVersion--; // subtract one since a silent update may be
                                 // complete and the user hasn't restarted their
@@ -16,9 +16,9 @@
                                 // from the browser
 
         if (isFirefoxUpToDate(latestFirefoxVersion + '')) {
-            $('html').addClass('firefox-latest');
+            $html.addClass('firefox-latest');
         } else {
-            $('html').addClass('firefox-old');
+            $html.addClass('firefox-old');
         }
     }
 
@@ -117,4 +117,58 @@
             });
         }
     });
+
+    // Add GA custom tracking and external link tracking
+    var className = document.documentElement.className;
+    var state = 'Original State';
+    if (/\bandroid\b/.test(className)) {
+        if (/\bfirefox-latest\b/.test(className)) {
+            state = 'Android, up-to-date';
+        } else if (/\bfirefox-old\b/.test(className)) {
+            state = 'Android, not up-to-date';
+        } else {
+            state = 'Android, no Fx detected';
+        }
+    } else if (/\bios\b/.test(className)) {
+        state = 'iOS';
+    } else if (/\bfxos\b/.test(className)) {
+        state = 'FxOS';
+    } else {
+        if (/\bfirefox-latest\b/.test(className)) {
+            state = 'Desktop, up-to-date';
+        } else if (/\bfirefox-old\b/.test(className)) {
+            state = 'Desktop, not up-to-date';
+        }
+    }
+    window._gaq = _gaq || [];
+    window._gaq.push(['_setCustomVar', 4, '/new conditional message', state, 3]);
+
+    // Add external link tracking
+    $(document).click(function(e) {
+        if (e.target.nodeName === 'A' && /^\w+:\/\//.test(e.target.href)) {
+            var newTab = (e.target.target === '_blank' || e.metaKey || e.crtlKey);
+            var href = e.target.href;
+            var timer = null;
+            var callback = function() {
+                clearTimeout(timer);
+                window.location = href;
+            }
+
+            if (typeof(_gaq) === 'object') {
+                if (newTab) {
+                    window._gaq.push(['_trackEvent', '/new Interaction', 'click', href]);
+                } else {
+                    e.preventDefault();
+                    timer = setTimeout(callback, 500);
+                    window._gaq.push(
+                        ['_set', 'hitCallback', callback],
+                        ['_trackEvent', '/new Interaction', 'click', href]
+                    );
+
+                }
+            }
+        }
+    });
+
+
 })(window.jQuery, window.Modernizr, window._gaq, window.site);
