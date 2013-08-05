@@ -1,0 +1,38 @@
+{% extends 'newsletter/base.html' %}
+
+{% block body_id %}newsletter-recovery{% endblock body_id %}
+
+{% block page_title %}{{ _('Newsletter email recovery') }}{% endblock page_title %}
+
+{% block content %}
+  {% block main_feature %}
+    <div id="main-feature">
+      <h1>{{ _('Manage your <span>Newsletter Subscriptions</span>') }}</h1>
+    </div>
+  {% endblock %}
+
+  {% if form %}
+    <form method="post" action="{{ secure_url() }}" id="newsletter-recovery-form" class="container billboard">
+      <p>{{ _('Looking for your personal email preference center? Enter your email address
+below and we’ll send you a link to it.') }}</p>
+
+      {% if form.non_field_errors() %}
+        <div class="errorlist">
+          {{ form.non_field_errors() }}
+        </div>
+      {% endif %}
+
+      <div class="field email-field">
+        <label>{{ _('Your email address:') }}</label>
+        <div class="field-contents">
+          {{ form.email }}
+        </div>
+        {{ form.email.errors }}
+      </div>
+
+      <div class="field submit-field">
+        <input type="submit" value="Submit" class="button">
+      </div>
+    </form>
+  {% endif %}
+{% endblock %}
