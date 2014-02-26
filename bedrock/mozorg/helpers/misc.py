@@ -1,5 +1,9 @@
+import re
 import urlparse
 from os import path
+import StringIO
+import markdown as md
+from pyquery import PyQuery as pq
 
 from django.conf import settings
 
@@ -10,6 +14,7 @@ from funfactory.urlresolvers import reverse
 
 
 L10N_IMG_PATH = base_path('media', 'img', 'l10n')
+LEGAL_DOCS_PATH = base_path('vendor-local', 'src', 'legal-docs')
 
 
 def _l10n_media_exists(locale, url):
@@ -414,3 +419,40 @@ def product_url(product, page, channel=None):
         kwargs['product'] = product
 
     return reverse('%s.%s' % (app, page), kwargs=kwargs)
+
+
+@jingo.register.function
+@jinja2.contextfunction
+def load_legal_doc(ctx, name):
+    """
+    Load a static Markdown file and return the document as a PyQuery object for
+    easier manipulation.
+    """
+    locale = getattr(ctx['request'], 'locale', 'en-US')
+    source = path.join(LEGAL_DOCS_PATH, name, locale + '.md')
+    output = StringIO.StringIO()
+
+    if not path.exists(source):
+        source = path.join(LEGAL_DOCS_PATH, name, 'en-US.md')
+
+    # Parse the Markdown file
+    md.markdownFromFile(input=source, output=output,
+                        extensions=['attr_list', 'outline(wrapper_cls=)'])
+    content = output.getvalue().decode('utf8')
+    output.close()
+
+    # Convert the site's full URLs to absolute paths
+    content = re.sub(r'https?\:\/\/www\.mozilla\.org', '', content)
+
+    # Manipulate the markup
+    d = pq(content)
+    d('section').each(lambda e, this: (
+        pq(this).prepend(pq(this).children('h1, h1 ~ p').wrapAll('<header>')),
+        pq(this).children('h1, h1 ~ p').remove(),
+        pq(this).children('h2, h3, h4').wrap('<header>'),
+        pq(this).find('header').after(pq(this).children('p, ul, hr').wrapAll('<div>')),
+        pq(this).children('p, ul, hr').remove(),
+    ))
+
+    # Return the HTML flagment as a PyQuery object
+    return d('section').eq(0).children()

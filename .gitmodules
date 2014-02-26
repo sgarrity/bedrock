@@ -19,3 +19,6 @@
 [submodule "vendor-local/src/django-waffle"]
 	path = vendor-local/src/django-waffle
 	url = https://github.com/jsocol/django-waffle.git
+[submodule "vendor-local/src/legal-docs"]
+	path = vendor-local/src/legal-docs
+	url = https://github.com/mozilla/legal-docs.git

@@ -1,0 +1,30 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "privacy/base-resp.html" %}
+
+{% set doc = load_legal_doc('firefox_privacy_notice') %}
+{# Add WAI-ARIA roles #}
+{% do doc('section > section > header').attr(role='tab') %}
+{% do doc('section > section > div').attr(role='tabpanel') %}
+{# Fix the markup #}
+{% do doc('#sync').before(doc('hr, hr + p')) %}
+
+{% block page_title %}{{ doc('h1').text() }}{% endblock %}
+
+{% block body_id %}firefox-notice{% endblock %}
+
+{% block article %}
+  <article class="section-content" itemscope itemtype="http://schema.org/Article">
+    <header>
+      <img class="logo" src="/media/img/privacy/logo-firefox.png" alt="">
+      <h1 itemprop="name">{{ doc('h1').text() }}</h1>
+      <p class="meta"><time datetime="{{ doc('p[datetime]').attr('datetime') }}" itemprop="dateModified">{{ doc('p[datetime]').text() }}</time></p>
+      {{ doc('header').eq(0).children('p:not([datetime])') }}
+    </header>
+    <div itemprop="articleBody">
+      {{ doc('section').eq(0).addClass('highlight accordion') }}
+    </div>
+  </article>
+{% endblock %}
