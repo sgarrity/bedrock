@@ -55,6 +55,7 @@ SUPPORTED_NONLOCALES += [
     'webmaker',
     'gameon',
     'robots.txt',
+    'credits',
 ]
 
 ALLOWED_HOSTS = [
@@ -889,6 +890,10 @@ STUB_INSTALLER_LOCALES = {
 
 # Google Analytics
 GA_ACCOUNT_CODE = ''
+
+# Credits
+CREDITS_NAMES_URL = 'https://svn.mozilla.org/projects/mozilla.org/trunk/credits/names.csv'
+CREDITS_NAMES_FILE = path('bedrock', 'mozorg', 'names.csv')
 
 FACEBOOK_LOCALES = ['en-US', 'es-ES', 'pt-BR', 'id', 'de']
 FACEBOOK_PAGE_NAMESPACE = 'DUMMY_PAGE_NAMESPACE'

@@ -23,6 +23,7 @@ from lib.l10n_utils.dotlang import _, lang_file_is_active
 from bedrock.firefox import version_re
 from bedrock.firefox.utils import is_current_or_newer
 from bedrock.mozorg import email_contribute
+from bedrock.mozorg.credits import get_credits
 from bedrock.mozorg.forms import (ContributeForm,
                                   ContributeStudentAmbassadorForm,
                                   WebToLeadForm)
@@ -258,6 +259,16 @@ def holiday_calendars(request, template='mozorg/projects/holiday-calendars.html'
     }
 
     return l10n_utils.render(request, template, data)
+
+
+class CreditsView(TemplateView):
+    """Display the names of our contributors."""
+    template_name = 'mozorg/credits.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(CreditsView, self).get_context_data(**kwargs)
+        ctx['credits_names'] = get_credits()
+        return ctx
 
 
 class Robots(TemplateView):

@@ -1,14 +1,21 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+import codecs
+import logging
 
-import cronjobs
-import feedparser
 from django.conf import settings
 from django.core.cache import cache
 
+import cronjobs
+import feedparser
+import requests
+
 from bedrock.mozorg.models import TwitterCache
 from bedrock.mozorg.util import TwitterAPI
+
+
+log = logging.getLogger(__name__)
 
 
 @cronjobs.register
@@ -34,3 +41,42 @@ def update_tweets():
             if not created:
                 account_cache.tweets = tweets
                 account_cache.save()
+
+
+@cronjobs.register
+def update_credits(force=False):
+    log.info('Updating Credits.')
+    filename = settings.CREDITS_NAMES_FILE
+    last_updated_file = filename + '.updated.txt'
+    headers = {}
+    if not force:
+        try:
+            with open(last_updated_file) as lu_fh:
+                last_updated = lu_fh.read().strip()
+        except IOError:
+            last_updated = None
+
+        if last_updated:
+            headers['if-modified-since'] = last_updated
+
+    try:
+        resp = requests.get(settings.CREDITS_NAMES_URL, headers=headers, verify=True)
+    except requests.RequestException:
+        log.exception('Unknown error connecting to %s' % settings.CREDITS_NAMES_URL)
+        return
+
+    if resp.status_code == 304:
+        log.info('Credits already up-to-date.')
+
+    elif resp.status_code == 200:
+        with codecs.open(filename, 'wb', 'utf8') as credits_fh:
+            credits_fh.write(resp.text)
+
+        with open(last_updated_file, 'wb') as lu_fh:
+            lu_fh.write(resp.headers['last-modified'])
+
+        log.info('Successfully update Credits.')
+
+    else:
+        log.error('Unknown error occurred updating Credits (%s): %s' % (resp.status_code,
+                                                                        resp.text))

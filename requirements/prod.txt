@@ -33,3 +33,5 @@ django-statsd-mozilla==0.3.5
 
 # Publishing system
 git+git://github.com/mozilla/rna.git@39e9260428560a677f59db8d12dde8073f7fe7a9
+
+Unidecode==0.04.16
