@@ -15,6 +15,16 @@ _credits_names = None
 
 
 def get_credits():
+    """
+    Returns an OrderedDict of sorted lists of names by first letter of sortkey.
+
+    Gets data from the configured CSV file location in CREDITS_NAMES_FILE.
+
+    Example:
+
+    > get_credits()
+    > {'D':['El Dudarino', 'The Dude'], 'S':['Walter Sobchak']}
+    """
     global _credits_names
     if _credits_names is None:
         try:
@@ -27,6 +37,12 @@ def get_credits():
 
 
 def get_credits_list(credits_data):
+    """
+    Returns a list of lists sorted by the sortkey column.
+
+    :param credits_data: any iterable of CSV formatted strings.
+    :return: list of lists
+    """
     names = []
     for row in csv.reader(credits_data):
         if len(row) == 1:
@@ -43,6 +59,12 @@ def get_credits_list(credits_data):
 
 
 def get_credits_ordered(credits_data):
+    """
+    Returns an OrderedDict of sorted lists of names by first letter of sortkey.
+
+    :param credits_data: any iterable of CSV formatted strings.
+    :return: OrderedDict
+    """
     names = get_credits_list(credits_data)
     ordered_names = OrderedDict()
     for name, sortkey in names:
