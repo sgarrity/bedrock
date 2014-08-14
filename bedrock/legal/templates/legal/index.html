@@ -1,0 +1,42 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "legal/base-resp.html" %}
+
+{% block page_title_suffix %}{% endblock %}
+{% block page_title %}{{ _('Legal Notices') }}{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block body_id %}privacy-landing{% endblock %}
+
+{% block main_feature %}
+  <hgroup id="main-feature" class="center">
+    <h1 class="large">{{ _('Legal Notices') }}</h1>
+  </hgroup>
+{% endblock %}
+
+{% block article %}
+  <article class="section-content" itemscope itemtype="http://schema.org/Article">
+    <header>
+      <h1 itemprop="name">{{ _('Terms') }}</h1>
+    </header>
+    <section id="terms" class="section-terms">
+      <ul>
+        <li><a href="{{ url('legal.firefox') }}">{{ _('Firefox') }}</a></li>
+        <li><a href="{{ url('legal.terms.firefox-marketplace') }}">{{ _('Firefox Marketplace') }}</a></li>
+      </ul>
+    </section>
+  </article>
+{% endblock %}
+
+{% block side_nav %}{% endblock %}
+
+{% block side_extra %}
+  <section class="side-get-involved">
+    <h3>{{ _('Get Involved!') }}</h3>
+    <p>{{ _('Special thanks to all of you who help report abuses of Mozilla marks, participate in governance forums, give feedback on our localizations & legal terms, and contribute your skills to the success of the Mozilla project.') }}</p>
+    <a href="{{ url('mozorg.contribute')}}">{{ _('Get Involved!') }}</a>
+  </section>
+{% endblock %}
