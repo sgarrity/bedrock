@@ -8,6 +8,7 @@ from bedrock.mozorg.util import page
 from bedrock.legal import views
 
 urlpatterns = patterns('',
+    page('about/legal', 'legal/index.html'),
     page('eula', 'legal/eula.html'),
     page('eula/firefox-2', 'legal/eula/firefox-2-eula.html'),
     page('eula/firefox-3', 'legal/eula/firefox-3-eula.html'),

@@ -1,0 +1,75 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "legal/base-resp.html" %}
+
+{% block page_title %}{{ _('Legal Notices') }}{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block body_id %}legal-landing{% endblock %}
+
+{% block main_feature %}
+  <hgroup id="main-feature" class="center">
+    <h1 class="large">{{ self.page_title() }}</h1>
+  </hgroup>
+{% endblock %}
+
+{% block article %}
+  <section class="section-content">
+    <h2>{{ _('Terms') }}</h2>
+    <ul>
+      <li><a href="#TODO">{{ _('Firefox') }}</a></li>
+      <li><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
+      <li><a href="#TODO">{{ _('Firefox Services') }}</a></li>
+      <li><a href="https://affiliates.mozilla.org/terms/">{{ _('Firefox Affiliates') }}</a></li>
+      <li><a href="{{ url('legal.terms.mozilla') }}">{{ _('Mozilla Websites') }}</a></li>
+      <li><a href="http://beta.openbadges.org/tou.html">{{ _('Open Badges') }}</a></li>
+      <li><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
+      <li><a href="#TODO">{{ _('Thunderbird') }}</a></li>
+      <li><a href="#TODO">{{ _('Persona') }}</a></li>
+    </li>
+  </section>
+
+  <section class="section-content">
+    <h2>{{ _('Policies') }}</h2>
+    <ul>
+      <li><a href="https://addons.mozilla.org/developers/docs/policies">{{ _('Firefox Add‐On Developer Policies') }}</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/Marketplace/Publishing/Marketplace_review_criteria">{{ _('Firefox Marketplace Developer Policies') }}</a></li>
+      <li><a href="#TODO">{{ _('Acceptable Use Policy') }}</a></li>
+      <li><a href="{{ url('mozorg.about.governance.policies.participation') }}">{{ _('Community Participation Guidelines') }}</a></li>
+    </li>
+  </section>
+
+  <section class="section-content">
+    <h2>{{ _('Source Code & Trademark Policies') }}</h2>
+    <ul>
+      <li><a href="#TODO">{{ _('Mozilla Source Code & Software License Policy') }}</a></li>
+      <li><a href="#TODO">{{ _('Mozilla Trademark Policy & Style Guide') }}</a></li>
+      <li><a href="{{ url('styleguide.home') }}">{{ _('Mozilla Style Guide') }}</a></li>
+      <li><a href="#TODO">{{ _('Report abuse of Mozilla’s marks') }}</a></li>
+      <li><a href="#TODO">{{ _('Report abuse of your Copyrights or Trademarks') }}</a></li>
+    </li>
+  </section>
+
+  <section class="section-content">
+    <h2>{{ _('Corporate & Community Governance') }}</h2>
+    <ul>
+      <li><a href="{{ url('foundation.about') }}">{{ _('Mozilla Foundation') }}</a></li>
+      <li><a href="{{ url('foundation.moco') }}">{{ _('Mozilla Corporation') }}</a></li>
+      <li><a href="{{ url('mozorg.about.governance.governance') }}">{{ _('Community Governance') }}</a></li>
+    </li>
+  </section>
+
+{% endblock %}
+
+{% block side_nav %}{% endblock %}
+
+{% block side_extra %}
+  <section id="side-involved">
+    <h2>{{ _('Get involved') }}</h2>
+    <p>{{ _('Special thanks to all of you who help report abuses of Mozilla marks, participate in governance forums, give feedback on our localizations & legal terms, and contribute your skills to the success of the Mozilla project.') }}</p>
+    <a href="{{ url('mozorg.contribute') }}">{{ _('Get involved!') }}</a>
+  </section>
+{% endblock %}
