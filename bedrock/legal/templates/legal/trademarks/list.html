@@ -2,17 +2,18 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('List of Mozilla Trademarks') }}{% endblock %}
-
 {% block body_class %}trademarks sand{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('List of Mozilla Trademarks') }}</h1>
-{% endblock %}
 
 {% block article %}
+ <article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <table id="logos">
     <tr>
       <td><img width="100" height="100" alt="{{ _('Firefox logo') }}®" src="{{ media('/img/trademarks/firefox-logo-r.png?2013-06') }}" /></td>
@@ -144,4 +145,6 @@
 
   <p>{{ _('JavaScript is a trademark or registered trademark of Sun Microsystems, Inc. in the U.S. and other countries, used under license.') }}</p>
 
+</div>
+</article>
 {% endblock article %}

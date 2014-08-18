@@ -2,15 +2,16 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Mozilla.org Site Licensing Policies') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Mozilla.org Site Licensing Policies') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <p>{% trans %}
   Unless otherwise indicated, the text of documents in this collection is available under the Creative
   Commons Attribution Share-Alike 3.0 Unported license, or any later version.
@@ -43,11 +44,14 @@
   </ul>
 
   <p>
-    {% trans licensing=url('foundation.licensing') %}
+    {% trans licensing=url('legal.licensing') %}
       For more information about these and other licensing policies, please see our
       <a href="{{ licensing }}">Licensing
       Policies</a> page.
     {% endtrans %}
   </p>
+
+</div>
+</article>
 
 {% endblock article %}

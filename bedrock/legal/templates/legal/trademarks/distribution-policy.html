@@ -2,18 +2,19 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
-{% block page_title %}{{ _('Distribution Trademark Policy') }}{% endblock %}
-
-{% block article_title %}
-  <h1 class="page-title">{{ _('Mozilla Trademark Policy for Distribution Partners') }}</h1>
-{% endblock %}
+{% block page_title %}{{ _('Mozilla Trademark Policy for Distribution Partners') }}{% endblock %}
 
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <p><em>{{ _('Version 0.9 (DRAFT)') }}</em></p>
 
-  <p>{% trans faq=url('foundation.trademarks.faq') %}
+  <p>{% trans faq=url('legal.trademarks.faq') %}
     (Have you read the <a href="{{ faq }}">FAQ</a>?)
   {% endtrans %}</p>
 
@@ -30,7 +31,7 @@
   </p>
 
   <p>
-    {% trans policy=url('foundation.trademarks.policy') %}
+    {% trans policy=url('legal.trademarks.policy') %}
       This document is meant as a companion document to the
       <a href="{{ policy }}">Trademarks Policy</a>.
     {% endtrans %}
@@ -61,6 +62,9 @@
     to be considered "official" versions.  The aim is to provide consistency
     and quality of user experience.  For information about these partnership
     opportunities, please visit:
-    <a href="{{ partners }}">http://www.mozilla.org/about/partnerships.html</a>.
+    <a href="{{ partners }}">http://www.mozilla.org/about/partnerships/</a>.
   {% endtrans %}</p>
+
+</div>
+</article>
 {% endblock article %}

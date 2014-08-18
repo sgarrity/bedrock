@@ -51,26 +51,11 @@ urlpatterns = patterns('',
     page('feed-icon-guidelines', 'foundation/feed-icon-guidelines/index.html'),
     page('feed-icon-guidelines/faq', 'foundation/feed-icon-guidelines/faq.html'),
 
-    page('licensing', 'foundation/licensing.html'),
-    page('licensing/website-content', 'foundation/licensing/website-content.html'),
-    page('licensing/website-markup', 'foundation/licensing/website-markup.html'),
-    page('licensing/binary-components', 'foundation/licensing/binary-components/index.html'),
-    page('licensing/binary-components/rationale', 'foundation/licensing/binary-components/rationale.html'),
     page('moco', 'foundation/moco.html'),
     page('mocosc', 'foundation/mocosc.html'),
 
     page('openwebfund/more', 'foundation/openwebfund/more.html'),
     page('openwebfund/thanks', 'foundation/openwebfund/thanks.html'),
-
-    page('trademarks', 'foundation/trademarks/index.html'),
-    page('trademarks/policy', 'foundation/trademarks/policy.html'),
-    page('trademarks/list', 'foundation/trademarks/list.html'),
-    page('trademarks/faq', 'foundation/trademarks/faq.html'),
-    page('trademarks/l10n-website-policy', 'foundation/trademarks/l10n-website-policy.html'),
-    page('trademarks/distribution-policy', 'foundation/trademarks/distribution-policy.html'),
-    page('trademarks/community-edition-permitted-changes', 'foundation/trademarks/community-edition-permitted-changes.html'),
-    page('trademarks/community-edition-policy', 'foundation/trademarks/community-edition-policy.html'),
-    page('trademarks/poweredby/faq', 'foundation/trademarks/poweredby/faq.html'),
 
     # documents
     page('documents', 'foundation/documents/index.html'),

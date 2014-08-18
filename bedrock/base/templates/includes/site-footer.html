@@ -3,7 +3,7 @@
           <div class="col col-1">
             <h1 class="logo"><a href="{{ url('mozorg.home') }}">Mozilla</a></h1>
             <p class="license">
-              {%- trans url=url('foundation.licensing.website-content') -%}
+              {%- trans url=url('legal.licensing.website-content') -%}
               Portions of this content are ©1998–{{ current_year }} by individual
               mozilla.org contributors. Content available under
               a <a href="{{ url }}">Creative Commons license</a>.
@@ -20,7 +20,7 @@
             </ul>
             <ul class="links-legal">
               <li><a href="{{ url('privacy') }}">{{ _('Privacy Policy') }}</a></li>
-              <li class="wrap"><a href="{{ php_url('/about/legal.html') }}">{{ _('Legal Notices') }}</a></li>
+              <li class="wrap"><a href="{{ url('legal.index') }}">{{ _('Legal Notices') }}</a></li>
               <li class="clear"><a href="{{ url('legal.fraud-report') }}">{{ _('Report Trademark Abuse') }}</a></li>
             </ul>
           </div>

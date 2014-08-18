@@ -2,15 +2,16 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Website Markup Usage Policy') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Website Markup Usage Policy') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <p>{% trans %}
   You may use the HTML and CSS files on www.mozilla.org or other mozilla.org 
   websites for your web site - as long as you don't use the visual design or 
@@ -19,7 +20,7 @@
   and dropped in your logo.
   {% endtrans %}</p>
 
-  <p>{% trans trademarks=url('foundation.trademarks.index') %}
+  <p>{% trans trademarks=url('legal.trademarks') %}
       mozilla.org does not intend to exercise any copyright it may have in 
       any HTML/CSS underlying its pages to prevent you from copying or reusing 
       that HTML/CSS. However, this does not grant you any right to use the 
@@ -27,4 +28,7 @@
       Foundation. For information on our trademark policy, see the 
       <a href="{{ trademarks }}">Trademark and Logo Usage Policies</a>.
   {% endtrans %}</p>
+
+</div>
+</article>
 {% endblock article %}

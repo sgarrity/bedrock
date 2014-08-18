@@ -115,4 +115,28 @@ urlpatterns = patterns(
     redirect(r'^foundation/annualreport/$',
              'foundation.annualreport.2012.index',
              name='foundation.annualreport'),
+
+    # Bug 997577 - /legal/ -> /about/legal/
+    redirect(r'^legal/fraud-report/$', '/about/legal/fraud-report/'),
+    redirect(r'^legal/eula/$', '/about/legal/eula/'),
+    redirect(r'^legal/eula/firefox-2/$', '/about/legal/eula/firefox-2/'),
+    redirect(r'^legal/eula/firefox-3/$', '/about/legal/eula/firefox-3/'),
+    redirect(r'^persona/terms-of-service/$', '/about/legal/terms/persona/'),
+    redirect(r'^foundation/trademarks/$', '/about/legal/trademarks/'),
+    redirect(r'^foundation/trademarks/policy/$', '/about/legal/trademarks/policy/'),
+    redirect(r'^foundation/trademarks/list/$', '/about/legal/trademarks/list/'),
+    redirect(r'^foundation/trademarks/faq/$', '/about/legal/trademarks/faq/'),
+    redirect(r'^foundation/trademarks/l10n-website-policy/$', '/about/legal/trademarks/l10n-website-policy/'),
+    redirect(r'^foundation/trademarks/distribution-policy/$', '/about/legal/trademarks/distribution-policy/'),
+    redirect(r'^foundation/trademarks/community-edition-permitted-changes/$', '/about/legal/trademarks/community-edition-permitted-changes/'),
+    redirect(r'^foundation/trademarks/community-edition-policy/$', '/about/legal/trademarks/community-edition-policy/'),
+    redirect(r'^foundation/trademarks/poweredby/faq/$', '/about/legal/trademarks/poweredby/faq/'),
+
+    redirect(r'^foundation/licensing/$', '/about/legal/licensing/'),
+    redirect(r'^foundation/licensing/website-content/$', '/about/legal/licensing/website-content/'),
+    redirect(r'^foundation/licensing/website-markup/$', '/about/legal/licensing/website-markup/'),
+    redirect(r'^foundation/licensing/binary-components/$', '/about/legal/licensing/binary-components/'),
+    redirect(r'^foundation/licensing/binary-components/rationale/$', '/about/legal/licensing/binary-components/rationale/'),
+
+
 )
