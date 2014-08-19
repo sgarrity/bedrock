@@ -8,11 +8,11 @@ from bedrock.mozorg.util import page
 from bedrock.legal import views
 
 urlpatterns = patterns('',
-    page('about/legal', 'legal/index.html'),
+    page('', 'legal/index.html'),
     page('eula', 'legal/eula.html'),
     page('eula/firefox-2', 'legal/eula/firefox-2-eula.html'),
     page('eula/firefox-3', 'legal/eula/firefox-3-eula.html'),
     page('firefox', 'legal/firefox.html'),
-    page('about/legal/terms/mozilla', 'legal/terms/mozilla.html'),
+    page('terms/mozilla', 'legal/terms/mozilla.html'),
     url('^fraud-report/$', views.fraud_report, name='legal.fraud-report'),
 )

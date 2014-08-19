@@ -17,18 +17,18 @@
 {% endblock %}
 
 {% block article %}
-  <section class="section-content">
+  <section class="section-content section-terms">
     <h2>{{ _('Terms') }}</h2>
     <ul>
-      <li><a href="#TODO">{{ _('Firefox') }}</a></li>
-      <li><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
-      <li><a href="#TODO">{{ _('Firefox Services') }}</a></li>
-      <li><a href="https://affiliates.mozilla.org/terms/">{{ _('Firefox Affiliates') }}</a></li>
-      <li><a href="{{ url('legal.terms.mozilla') }}">{{ _('Mozilla Websites') }}</a></li>
-      <li><a href="http://beta.openbadges.org/tou.html">{{ _('Open Badges') }}</a></li>
-      <li><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
-      <li><a href="#TODO">{{ _('Thunderbird') }}</a></li>
-      <li><a href="#TODO">{{ _('Persona') }}</a></li>
+      <li class="terms-firefox"><a href="#TODO">{{ _('Firefox') }}</a></li>
+      <li class="terms-marketplace"><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
+      <li class="terms-firefox-services"><a href="#TODO">{{ _('Firefox Services') }}</a></li>
+      <li class="terms-affiliates"><a href="https://affiliates.mozilla.org/terms/">{{ _('Firefox Affiliates') }}</a></li>
+      <li class="terms-websites"><a href="{{ url('legal.terms.mozilla') }}">{{ _('Mozilla Websites') }}</a></li>
+      <li class="terms-openbadges"><a href="http://beta.openbadges.org/tou.html">{{ _('Open Badges') }}</a></li>
+      <li class="terms-webmaker"><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
+      <li class="terms-thunderbird"><a href="#TODO">{{ _('Thunderbird') }}</a></li>
+      <li class="terms-persona"><a href="#TODO">{{ _('Persona') }}</a></li>
     </li>
   </section>
 
@@ -43,7 +43,7 @@
   </section>
 
   <section class="section-content">
-    <h2>{{ _('Source Code & Trademark Policies') }}</h2>
+    <h2>{{ _('Source code & trademark policies') }}</h2>
     <ul>
       <li><a href="#TODO">{{ _('Mozilla Source Code & Software License Policy') }}</a></li>
       <li><a href="#TODO">{{ _('Mozilla Trademark Policy & Style Guide') }}</a></li>
@@ -54,7 +54,7 @@
   </section>
 
   <section class="section-content">
-    <h2>{{ _('Corporate & Community Governance') }}</h2>
+    <h2>{{ _('Corporate & community governance') }}</h2>
     <ul>
       <li><a href="{{ url('foundation.about') }}">{{ _('Mozilla Foundation') }}</a></li>
       <li><a href="{{ url('foundation.moco') }}">{{ _('Mozilla Corporation') }}</a></li>
