@@ -119,7 +119,8 @@ urlpatterns = patterns(
     # Bug 997577 - /legal/ -> /about/legal/
     redirect(r'^legal/fraud-report/$', '/about/legal/fraud-report/'),
     redirect(r'^legal/eula/$', '/about/legal/eula/'),
-    redirect(r'^legal/eula/firefox-2/$', '/about/legal/eula/firefox-2'),
-    redirect(r'^legal/eula/firefox-3/$', '/about/legal/eula/firefox-3'),
+    redirect(r'^legal/eula/firefox-2/$', '/about/legal/eula/firefox-2/'),
+    redirect(r'^legal/eula/firefox-3/$', '/about/legal/eula/firefox-3/'),
+    redirect(r'^persona/terms-of-service/$', '/about/legal/terms/persona/'),
 
 )

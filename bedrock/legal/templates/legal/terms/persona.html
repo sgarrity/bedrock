@@ -2,50 +2,18 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Mozilla Persona Terms of Service') }}{% endblock %}
-{% block page_image %}{{ media('img/mozorg/partnerships/icon-persona.png') }}{% endblock %}
+{% block body_id %}terms-persona{% endblock %}
 
-{% block twitter_id %}MozillaPersona{% endblock %}
+{% block article %}
 
-{% block body_id %}persona-tos{% endblock %}
-{% block body_class %}sand{% endblock %}
-
-{% block site_header_logo %}
-  <h2><a href="/persona/"><img src="{{ MEDIA_URL }}img/persona/title.png" height="66" width="180" alt="{{ _('Mozilla Persona') }}"></a></h2>
-{% endblock %}
-{% block site_header_nav %}
-  <nav id="nav-main" role="navigation">
-    <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
-    <ul id="nav-main-menu">
-        <li><a href="/persona/">{{ _('Home') }}</a></li>
-        <li><a href="/persona/about/">{{ _('About') }}</a></li>
-        <li><a href="https://developer.mozilla.org/persona">{{ _('Developer Docs') }}</a></li>
-    </ul>
-  </nav>
-{% endblock %}
-
-{% block extrahead %}
-  {{ css('persona') }}
-{% endblock %}
-
-{% block breadcrumbs %}
-  <nav class="breadcrumbs">
-    <a href="/">{{ _('Home') }}</a> >
-    <a href="/persona/">{{ _('Mozilla Persona') }}</a> >
-    <span>{{ _('Terms of Service') }}</span>
-  </nav>
-{% endblock %}
-
-
-{% block content %}
-
-<div id="main-content">
-<div class="row">
-
-<article class="main-column">
-
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <h2>{{ _('Terms of Service — Overview') }}</h2>
 
   <ul>
@@ -139,27 +107,7 @@
   <h4>{{ _('Miscellaneous') }}</h4>
   <p>{{ _('This TOS constitutes the entire agreement between you and Mozilla Corporation (“Mozilla” or we) concerning the Services. These terms are governed by the laws of the state of California, U.S.A., excluding its conflict of law provisions.  The United Nations Convention on Contracts for the International Sale of Goods is expressly disclaimed.  If any portion of these terms is held to be invalid or unenforceable, the remaining portions will remain in full force and effect. In the event of a conflict between a translated version of these terms and the English language version, the English language version shall control.') }}</p>
 
+</div>
 </article>
-
-<div class="sidebar">
-
-  <nav>
-    <ul>
-      <li><a href="/persona/">{{ _('Persona') }}</a></li>
-      <li><a href="/persona/about/">{{ _('About') }}</a></li>
-      <li><a href="https://developer.mozilla.org/persona">{{ _('Developer Docs') }}</a></li>
-      <li><a href="/persona/privacy-policy/">{{ _('Privacy') }}</a></li>
-      <li><b>{{ _('Terms of Service') }}</b></li>
-    </ul>
-  </nav>
-
-  {% include "/persona/sidebar-contents.html" %}
-
-</div>
-
-</div>
-</div>
-
-
 
 {% endblock %}
