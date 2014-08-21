@@ -51,11 +51,6 @@ urlpatterns = patterns('',
     page('feed-icon-guidelines', 'foundation/feed-icon-guidelines/index.html'),
     page('feed-icon-guidelines/faq', 'foundation/feed-icon-guidelines/faq.html'),
 
-    page('licensing', 'foundation/licensing.html'),
-    page('licensing/website-content', 'foundation/licensing/website-content.html'),
-    page('licensing/website-markup', 'foundation/licensing/website-markup.html'),
-    page('licensing/binary-components', 'foundation/licensing/binary-components/index.html'),
-    page('licensing/binary-components/rationale', 'foundation/licensing/binary-components/rationale.html'),
     page('moco', 'foundation/moco.html'),
     page('mocosc', 'foundation/mocosc.html'),
 
