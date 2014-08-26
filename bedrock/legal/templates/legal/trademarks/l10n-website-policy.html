@@ -2,15 +2,19 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Localization Team Web Sites') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Mozilla Trademark Policy for Web Sites Created by Localization Teams') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
+
+  <h2 class="page-title">{{ _('Mozilla Trademark Policy for Web Sites Created by Localization Teams') }}</h2>
+
   <p class="warning">{% trans %}This document is a working draft, and could still be changed at any time.{% endtrans %}</p>
 
   <p><em>{% trans %}Version 0.6 (draft){% endtrans %}</em></p>
@@ -18,7 +22,7 @@
   <p>{% trans licensing="mailto:licensing@mozilla.org" %}
       Localization team members, please direct questions about this policy to <a href="{{ licensing }}">licensing@mozilla.org</a>.{% endtrans %}</p>
 
-  <p>{% trans faq=url('foundation.trademarks.faq') %}
+  <p>{% trans faq=url('legal.trademarks.faq') %}
       (Have you read the <a href="{{ faq }}">FAQ</a>?)
   {% endtrans %}</p>
 
@@ -29,7 +33,7 @@
   to use our trademarks on their websites than we might give anyone else.
   {% endtrans %}</p>
 
-  <p>{% trans policy=url('foundation.trademarks.policy') %}
+  <p>{% trans policy=url('legal.trademarks.policy') %}
       This document is meant to be a companion document to the
   <a href="{{ policy }}">Mozilla Trademark Policy</a>.
   {% endtrans %}</p>
@@ -66,4 +70,6 @@
     <li>{% trans %}If the site includes links to Community Releases then they must include a more prominent link to an official localized release for that region, and the difference between these two products must be clearly explained. If a localization project does not create an official localization, but still wants to link to a Community Release download, then they may not create a site that uses our trademarks under this policy without our permission. This is to make sure that an unmodified product is always readily available to users who want one.
     {% endtrans %}</li>
   </ul>
+</div>
+</article>
 {% endblock article %}

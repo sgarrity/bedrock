@@ -2,16 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Permitted Changes to Legacy Community Edition Builds') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Permitted Changes to Legacy Community Edition Builds') }}</h1>
-{% endblock %}
-
 {% block article %}
-  <p>{% trans policy=url('foundation.trademarks.community-edition-policy') %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
+  <p>{% trans policy=url('legal.trademarks.community-edition-policy') %}
       The following are the changes that are permitted within the
       <a href="{{ policy }}">legacy Community Edition builds</a>
       created and distributed before April 7, 2009:{% endtrans %}</p>
@@ -31,4 +32,6 @@
     <li>{{ _('Custom builds created using options to configure') }}</li>
     <li>{{ _('We may require individuals or teams to stop distributing these builds in the future if they are redistributing software with low quality and efforts to remedy the situation have not succeeded.') }}</li>
   </ul>
+</div>
+</article>
 {% endblock article %}

@@ -2,15 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Powered by Mozilla FAQ') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Powered by Mozilla FAQ') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
+
   <p>{% trans %}This page contains frequently asked questions about the Powered by Mozilla program.{% endtrans %}</p>
 
   <dl class="faq">
@@ -155,7 +157,7 @@
 
     <dt id="firefox">{{ _('Can these guidelines be used for a "Powered by Firefox" program?') }}</dt>
     <dd>
-      <p>{% trans marks=url('foundation.trademarks.index') %}
+      <p>{% trans marks=url('legal.trademarks') %}
         The scope of this program is limited to Powered By Mozilla and is not
         intended to address issues related to the use of
         Firefox, Bugzilla or other <a href="{{ marks }}">Mozilla trademarks</a>.
@@ -198,4 +200,8 @@
     </dd>
 
   </dl>
+
+</div>
+</article>
+
 {% endblock article %}

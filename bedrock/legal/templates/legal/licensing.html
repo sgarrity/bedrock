@@ -2,17 +2,18 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Mozilla Licensing Policies') }}{% endblock %}
 
 {% set body_id = "licensing" %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Mozilla Licensing Policies') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <h2>{{ _('Source Code') }}</h2>
   <p>
     {% trans
@@ -41,7 +42,7 @@
   <h2>{{ _('Trademarks') }}</h2>
   <p>
     {% trans
-      trademarks=url('foundation.trademarks.policy')
+      trademarks=url('legal.trademarks.policy')
       %}
       Although our code is free, it is very important that we strictly
       enforce our trademark rights, in order to be able to protect our
@@ -62,7 +63,7 @@
 
   <p>
     {% trans
-      trademarks=url('foundation.trademarks.policy'),
+      trademarks=url('legal.trademarks.policy'),
       email="mailto:trademarks@mozilla.org"
     %}
       For more detail on our trademark licensing, see our
@@ -107,7 +108,7 @@
   <h2>{{ _('Executable Software') }}</h2>
   <p>
     {% trans
-      binary=url('foundation.licensing.binary-components.index')
+      binary=url('legal.licensing.binary-components')
     %}
       Executable software binaries released by the Mozilla Project, such
       as Firefox and Thunderbird, are made available under the terms of the
@@ -151,4 +152,7 @@
       <a href="{{ email }}">licensing@mozilla.org</a>.
     {% endtrans %}
   </p>
+
+</div>
+</article>
 {% endblock %}

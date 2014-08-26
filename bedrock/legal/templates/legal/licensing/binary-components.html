@@ -2,18 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Mozilla Licensing Policies - Binary Components') }}{% endblock %}
 
-{% block article_title %}
-  <header class="page-title">
-    <h1>{{ _('Mozilla Licensing Policies') }}</h1>
-    <h2>{{ _('Binary Components') }}</h2>
-  </header>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ _('Mozilla Licensing Policies') }}</h1>
+  </header>
+  <div>
+  <h2>{{ _('Binary Components') }}</h2>
   <p>{% trans %}Mozilla is and remains irrevocably committed to making
       free and open source software. We see this as the best way to advance
       our mission of preserving and promoting the open web. However, we also
@@ -69,7 +68,7 @@
 
   <p>
     {% trans
-       rationale=url('foundation.licensing.binary-components.rationale') %}
+       rationale=url('legal.licensing.binary-components-rationale') %}
       You can read the <a href="{{ rationale }}">rationale</a>
       for one such decision we have taken.
     {% endtrans %}
@@ -84,4 +83,6 @@
       free to contact <a href="{{ email }}">licensing@mozilla.org</a>.
     {% endtrans %}
   </p>
+</div>
+</article>
 {% endblock article %}
