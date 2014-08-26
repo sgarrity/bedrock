@@ -14,6 +14,56 @@
     z-index: 2;
 }
 
+#wrapper {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+#colophon {
+    margin-top: 0;
+}
+
+.secondary {
+    background: #fff;
+}
+
+.primary,
+.secondary {
+    .inner-wrapper {
+        padding-bottom: @baseLine * 2;
+        width: @widthDesktop;
+        margin: 0 auto;
+        position: relative;
+    }
+}
+
+.var-content {
+    display: none;
+}
+
+.var-fx-31-signed-in {
+    display: block;
+}
+
+// .state-* classes added to body to show alternate content
+.state-fx-31-signed-out .var-fx-31-signed-out,
+.state-fx-29-30         .var-fx-29-30,
+.state-fx-28-older      .var-fx-28-older,
+.state-fx-android       .var-fx-android,
+.state-not-fx           .var-not-fx {
+    display: block;
+}
+
+.state-fx-31-signed-out,
+.state-fx-29-30,
+.state-fx-28-older,
+.state-fx-android,
+.state-not-fx {
+    .var-fx-31-signed-in {
+        display: none;
+    }
+}
+
 .intro {
     width: @widthDesktop - (@gridGutterWidth * 4);
     margin: @baseLine auto;
@@ -39,6 +89,7 @@
 }
 
 .main-content {
+    display: none;
     clear: both;
     margin-top: @baseLine;
     h2 {

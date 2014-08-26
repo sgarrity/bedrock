@@ -21,6 +21,38 @@
   <p>{{ _('Instantly make Firefox your own wherever you use it. Seamlessly sync your bookmarks, history, passwords and more and access them from any device.') }}</p>
 </header>
 
+<section class="primary">
+  <div class="inner-wrapper">
+    <div class="container">
+      <div class="var-content var-fx-31-signed-in">
+        <p>Firefox 31 (signed-in)</p>
+     </div>
+      <div class="var-content var-fx-31-signed-out">
+        <p>Firefox 31 (signed-out)</p>
+     </div>
+      <div class="var-content var-fx-29-30">
+        <p>Firefox 29/30</p>
+     </div>
+      <div class="var-content var-fx-28-older">
+        <p>Firefox 28 or older</p>
+     </div>
+      <div class="var-content var-not-fx">
+        <p>Not Firefox (you should try it - it's pretty good)</p>
+     </div>
+      <div class="var-content var-fx-android">
+        <p>Firefox for Android</p>
+     </div>
+  </div>
+</section>
+
+<section class="secondary">
+  <div class="inner-wrapper">
+    <div class="container">
+      xyz
+    </div>
+  </div>
+</section>
+
 <div class="main-content billboard">
   <article class="primary">
     <header>
@@ -76,6 +108,8 @@
   </article>
 </div>
 {% endblock %}
+
+{% block email_form %}{% endblock %}
 
 {% block js %}
   {{ js('firefox_sync') }}

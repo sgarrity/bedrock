@@ -592,6 +592,7 @@ MINIFY_BUNDLES = {
         ),
         'firefox_sync': (
             'js/firefox/sync-animation.js',
+            'js/firefox/australis/australis-uitour.js',
             'js/firefox/sync.js',
         ),
         'firefox_tour': (
