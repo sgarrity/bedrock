@@ -25,5 +25,15 @@ urlpatterns = patterns('',
     page('licensing/binary-components', 'legal/licensing/binary-components.html'),
     page('licensing/binary-components/rationale', 'legal/licensing/binary-components-rationale.html'),
 
+    page('trademarks', 'legal/trademarks.html'),
+    page('trademarks/policy', 'legal/trademarks/policy.html'),
+    page('trademarks/list', 'legal/trademarks/list.html'),
+    page('trademarks/faq', 'legal/trademarks/faq.html'),
+    page('trademarks/l10n-website-policy', 'legal/trademarks/l10n-website-policy.html'),
+    page('trademarks/distribution-policy', 'legal/trademarks/distribution-policy.html'),
+    page('trademarks/community-edition-permitted-changes', 'legal/trademarks/community-edition-permitted-changes.html'),
+    page('trademarks/community-edition-policy', 'legal/trademarks/community-edition-policy.html'),
+    page('trademarks/poweredby/faq', 'legal/trademarks/poweredby/faq.html'),
+
     url('^fraud-report/$', views.fraud_report, name='legal.fraud-report'),
 )

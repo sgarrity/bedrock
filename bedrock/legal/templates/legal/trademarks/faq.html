@@ -2,18 +2,19 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Mozilla Trademark Policy FAQ') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Mozilla Trademark Policy FAQ') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <dl class="faq">
     <dt>{% trans %}What's the purpose of this document?{% endtrans %}</dt>
-    <dd>{% trans policy=url('foundation.trademarks.policy') %}
+    <dd>{% trans policy=url('legal.trademarks.policy') %}
       This document sets out to answer, beyond what's in the
       <a href="{{ policy }}">trademark policy</a>, common questions which
       arise about the use of the Mozilla Trademarks and Logos. Our code
@@ -26,7 +27,7 @@
 
     <dt>{% trans %}What are the Mozilla Trademarks and Logos?{% endtrans %}</dt>
     <dd>
-      <p>{% trans list=url('foundation.trademarks.list') %}
+      <p>{% trans list=url('legal.trademarks.list') %}
           We have <a href="{{ list }}">a list</a>.{% endtrans %}</p>
 
       <p>{% trans %}The default logos in CVS which are built into Firefox
@@ -71,7 +72,7 @@
 
     <dt>{% trans %}Can I download one copy and install it on lots of machines in my company/school/university/pizzeria?{% endtrans %}</dt>
     <dd>{% trans free="http://www.gnu.org/philosophy/free-sw.html",
-        policy=url('foundation.trademarks.distribution-policy') %}
+        policy=url('legal.trademarks.distribution-policy') %}
         Sure. Our products are
         <a href="{{ free }}">Free software</a>,
         both as in speech and as in beer, and there are no fees or notification
@@ -126,9 +127,11 @@
 
   </dl>
 
-  <p>{% trans trademarks=url('foundation.trademarks.index') %}
+  <p>{% trans trademarks=url('legal.trademarks') %}
       If your question isn't covered here, time to move on to
       <a href="{{ trademarks }}">one of the other Trademark Policy documents</a>.
   {% endtrans %}</p>
 
+</div>
+</article>
 {% endblock article %}

@@ -2,20 +2,21 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "foundation/base-resp.html" %}
+{% extends "legal/base-resp.html" %}
 
 {% block page_title %}{{ _('Mozilla Trademark Policy') }}{% endblock %}
 
-{% block article_title %}
-  <h1 class="page-title">{{ _('Mozilla Trademark Policy') }}</h1>
-{% endblock %}
-
 {% block article %}
+<article class="section-content" itemscope itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  </header>
+  <div>
   <p><em>{{ _('Updated: October 30, 2009') }}</em></p>
 
   <h2>{{ _('List of Mozilla Trademarks') }}</h2>
 
-  <p>{% trans list=url('foundation.trademarks.list') %}
+  <p>{% trans list=url('legal.trademarks.list') %}
       You can see a <a href="{{ list }}">complete list</a> of the Mozilla trademarks.  As other trademarks are created or registered, this list will be updated.  As used in this policy, "trademarks" means not just Mozilla's logos, but also the names of its various products and projects, as well as the names Mozilla and Mozilla.org, also called word marks, (collectively "Mozilla Marks").{% endtrans %}</p>
 
   <h2>{{ _('Introduction') }}</h2>
@@ -33,7 +34,7 @@
 
   <p>{% trans %}Our Trademark Policy begins by outlining some overall guidelines for the use of the Mozilla Marks in printed materials. It then addresses a series of more specific topics, including the use of Mozilla's trademarks on distributions of Mozilla's binaries, linking to Mozilla's website(s), and the use of Mozilla Marks in domain names. At various points, this policy links to other documents containing additional details about our policies.{% endtrans %}</p>
 
-  <p>{% trans faq=url('foundation.trademarks.faq') %}
+  <p>{% trans faq=url('legal.trademarks.faq') %}
       We also have a <a href="{{ faq }}">trademark policy FAQ</a> as a companion document to this policy.{% endtrans %}</p>
 
   <h2>{{ _('Overall Guidelines for Printed Materials and Web Sites') }}</h2>
@@ -46,7 +47,7 @@
 
     <li>{% trans %}Proper Form - Mozilla's trademarks should be used in their exact form -- neither abbreviated nor combined with any other word or words (e.g., "Thunderbird" rather than "T-Bird" or "Thunderbinary");{% endtrans %}</li>
 
-    <li>{% trans list=url('foundation.trademarks.list') %}
+    <li>{% trans list=url('legal.trademarks.list') %}
         Accompanying Symbol - The first or most prominent mention of a Mozilla trademark should be accompanied by a symbol indicating whether the mark is a registered trademark ("&reg;") or an unregistered trademark ("&trade;").  See our <a href="{{ list }}">Trademark List</a> for the correct symbol to use;{% endtrans %}</li>
 
     <li>{% trans %}Notice - The following notice should appear somewhere nearby (at least on the same page or on the credits page) the first use of a Mozilla trademark: "[TRADEMARK] is a ["registered", if applicable] trademark of the Mozilla Foundation";{% endtrans %}</li>
@@ -88,7 +89,7 @@
 
   <h3>{{ _('Modifications') }}</h3>
 
-  <p>{% trans poweredby=url('foundation.trademarks.poweredby.faq') %}
+  <p>{% trans poweredby=url('legal.trademarks.poweredby.faq') %}
       If you're taking full advantage of the open-source nature of Mozilla's products and making significant functional changes, you may not redistribute the fruits of your labor under any Mozilla trademark, without Mozilla's prior written consent.  For example, if the product you've modified is Firefox, you may not use Mozilla or Firefox, in whole or in part, in its name.  Also, it would be inappropriate for you to say "based on Mozilla Firefox". Instead, in the interest of complete accuracy, you could describe your executables as "based on Mozilla technology", or "incorporating Mozilla source code." In addition, you may want to read the discussion on the "<a href="{{ poweredby }}">Powered by Mozilla</a>" logo.{% endtrans %}</p>
 
   <p>{% trans %}In addition, if you compile a modified version, as discussed above, with branding enabled (the default in our source code is branding disabled), you will require Mozilla's prior written permission.  If it's not the unmodified installer package from www.mozilla.com, and you want to use our trademark(s), our review and approval of your modifications is required.  You also must change the name of the executable so as to reduce the chance that a user of the modified software will be misled into believing it to be a native Mozilla product.{% endtrans %}</p>
@@ -196,7 +197,9 @@
 
   <h2>{{ _('Questions') }}</h2>
 
-  <p>{% trans trademarks="mailto:trademarks@mozilla.com", faq=url('foundation.trademarks.faq') %}
+  <p>{% trans trademarks="mailto:trademarks@mozilla.com", faq=url('legal.trademarks.faq') %}
       We have tried to make our trademark policy as comprehensive as possible. If you're considering a use of a Mozilla trademark that's not covered by the policy, and you're unsure whether that use would run afoul of Mozilla's guidelines, feel free to contact us at <a href="{{ trademarks }}">trademarks@mozilla.com</a> and ask. Please keep in mind that Mozilla receives lots and lots of similar questions, so please review all available documentation, including the <a href="{{ faq }}">Frequently Asked Questions</a> (FAQ) before contacting us.{% endtrans %}</p>
 
+</div>
+</article>
 {% endblock article %}
