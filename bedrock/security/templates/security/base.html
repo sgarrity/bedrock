@@ -29,11 +29,11 @@
         {% block side_nav %}
           <nav>
             <ul>
-              <li><a href="{{ url('security.index') }}">Security Center</a></li>
-              <li><a href="{{ url('security.advisories') }}">Security Advisories</a></li>
-              <li><a href="{{ url('security.known-vulnerabilities') }}">Known Vulnerabilities</a></li>
-              <li><a href="{{ url('security.bug-bounty') }}">Bug Bounty</a></li>
-              <li><a href="http://blog.mozilla.com/security/">Security Blog</a></li>
+              <li><a href="{{ url('security.index') }}">{{ _('Mozilla Security') }}</a></li>
+              <li><a href="{{ url('security.advisories') }}">{{ _('Security Advisories') }}</a></li>
+              <li><a href="{{ url('security.known-vulnerabilities') }}">{{ _('Known Vulnerabilities') }}</a></li>
+              <li><a href="{{ url('security.bug-bounty') }}">{{ _('Bug Bounty') }}</a></li>
+              <li><a href="http://blog.mozilla.com/security/">{{ _('Security Blog') }}</a></li>
             </ul>
           </nav>
         {% endblock %}

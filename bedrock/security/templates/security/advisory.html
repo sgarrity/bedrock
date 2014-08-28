@@ -5,11 +5,13 @@
 {% block article %}
   <article class="section-content" itemscope itemtype="http://schema.org/Article">
     <header>
-      <h1 itemprop="name">{{ advisory.title|safe }}</h1>
+      <h1 itemprop="name" class="title-shadow-box">{{ _('Mozilla Foundation Security Advisory') }}</h1>
     </header>
     <div itemprop="articleBody">
 
-      <dl>
+      <h2>{{ advisory.title|safe }}</h2>
+
+      <dl class="summary">
         <dt>Fixed in</dt>
         <dd>
           <ul>
