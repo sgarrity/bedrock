@@ -25,7 +25,7 @@ class TestLoadLegalDoc(TestCase):
     def test_legal_doc_exists(self, md_mock, sio_mock):
         """Should return the content of the en-US file if it exists."""
         sio_mock.StringIO.return_value.getvalue.return_value = "You're not wrong Walter..."
-        doc = views.get_legal_doc_content('the_dude_exists', 'de')
+        doc = views.load_legal_doc('the_dude_exists', 'de')
         good_path = join(views.LEGAL_DOCS_PATH, 'the_dude_exists', 'en-US.md')
         md_mock.markdownFromFile.assert_called_with(
             input=good_path, output=ANY, extensions=ANY)
@@ -37,7 +37,7 @@ class TestLoadLegalDoc(TestCase):
     def test_localized_legal_doc_exists(self, md_mock, sio_mock, exists_mock):
         sio_mock.StringIO.return_value.getvalue.return_value = "You're not wrong Walter..."
         exists_mock.return_value = True
-        doc = views.get_legal_doc_content('the_dude_exists', 'de')
+        doc = views.load_legal_doc('the_dude_exists', 'de')
         good_path = join(views.LEGAL_DOCS_PATH, 'the_dude_exists', 'de.md')
         md_mock.markdownFromFile.assert_called_with(
             input=good_path, output=ANY, extensions=ANY)
