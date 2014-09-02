@@ -17,9 +17,69 @@
 {% block content %}
 {% include 'firefox/includes/sync-animation.html' %}
 <header role="banner" class="intro container">
-  <h1>{{ self.page_title() }}</h1>
-  <p>{{ _('Instantly make Firefox your own wherever you use it. Seamlessly sync your bookmarks, history, passwords and more and access them from any device.') }}</p>
+  <h1>{{ _('Ready, Set, Sync') }}</h1>
+  <p>{{ _('You’re signed up and ready to access <em>your</em> Firefox anywhere, anytime.') }}</p>
 </header>
+
+<section class="primary">
+  <div class="inner-wrapper">
+
+    <p class="warning">
+      {{ _('Have an Android smartphone or tablet? Connect them to your Firefox Account for the full Sync experience.') }}
+    </p>
+
+    <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="primary-sync-button">
+      {{ _('DOWNLOAD FIREFOX FOR ANDROID') }}
+    </a>
+
+  </div>
+</section>
+
+<section class="secondary">
+  <div class="inner-wrapper">
+    <div class="container">
+      <header>
+        <h1>{{ _('Sync a little. Sync a lot') }}</h1>
+        <p>
+          {{ _('You choose what parts of your Firefox you want to sync and where you want to sync them. Take your open tabs on your daily commute. Access your bookmarks at work. Whatever, whenever, everywhere.') }}
+        </p>
+      </header>
+      <div class="features">
+        <div class="feature-home">
+          <h2>{{ _('At home') }}</h2>
+          <p>
+            {{ _('Move from your desk to the couch without skipping a beat. Access your open tabs on your smartphone, or keeping browsing your bookmarks right on your tablet.') }}
+          </p>
+        </div>
+        <div class="feature-work">
+          <h2>{{ _('At work') }}</h2>
+          <p>
+            {{ _('Stay connected to all of your important information. Sync the passwords and bookmarks that you might need to access at any time. Just like Firefox, it’s safe as can be.') }}
+          </p>
+        </div>
+        <div class="feature-go">
+          <h2>{{ _('On the go') }}</h2>
+          <p>
+            {{ _('Keep up with your favorite sites, or finish that story you started at home — wherever you go. With Sync, it’s never been easier.') }}
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="android-promo">
+  <div class="inner-wrapper">
+    <div class="container">
+      <h1>{{ _('Have an <b>Android smartphone</b> or <b>tablet</b>?') }}</h1>
+      <p>
+        {{ _('To get the full Sync experience, take your Web with you everywhere you use Firefox. Connect your smartphone, tablet, computer and laptop.') }}
+      </p>
+      <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="android-button">
+        {{ _('DOWNLOAD FIREFOX FOR ANDROID') }}
+      </a>
+    </div>
+  </div>
+</section>
 
 <section class="primary">
   <div class="inner-wrapper">
@@ -42,14 +102,6 @@
       <div class="var-content var-fx-android">
         <p>Firefox for Android</p>
      </div>
-  </div>
-</section>
-
-<section class="secondary">
-  <div class="inner-wrapper">
-    <div class="container">
-      xyz
-    </div>
   </div>
 </section>
 

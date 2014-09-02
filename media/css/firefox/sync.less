@@ -4,6 +4,8 @@
 
 @import "../sandstone/lib.less";
 
+@syncBlue: #0092db;
+
 #wrapper:before {
     content: " ";
     position: absolute;
@@ -27,13 +29,113 @@
     background: #fff;
 }
 
-.primary,
-.secondary {
+.inner-wrapper {
+    padding: (@baseLine * 2) 0;
+    width: @widthDesktop;
+    margin: 0 auto;
+    position: relative;
+}
+
+.primary {
+    text-align: center;
     .inner-wrapper {
+        max-width: 480px;
         padding-bottom: @baseLine * 2;
-        width: @widthDesktop;
-        margin: 0 auto;
-        position: relative;
+    }
+    .warning {
+        font-style: italic;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+.secondary {
+    header {
+        max-width: 480px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: @baseLine * 2;
+    }
+}
+
+.android-promo {
+    background: @syncBlue;
+    color: #fff;
+    text-align: center;
+    .inner-wrapper {
+        padding: 20px 0;
+    }
+    .container {
+        background: url(/media/img/firefox/sync/droid-dude.png) no-repeat 0 0;
+        background-size: 170px 200px;
+        padding: 0 180px;
+    }
+    h1 {
+        color: #fff;
+        font-size: 34px;
+        letter-spacing: -0.02em;
+        b {
+            .open-sans();
+            font-weight: normal;
+        }
+    }
+    p {
+        .open-sans-light();
+        font-size: 18px;
+        margin: 0;
+    }
+    &,
+    h1 {
+        text-shadow: 0 1px rgba(0,0,0,0.1);
+    }
+}
+
+.sky {
+    .primary-sync-button,
+    .android-button {
+        display: block;
+        padding: 15px;
+        margin: 20px;
+        .border-radius(10px);
+        @sync-button-green: #14c329;
+        background: @sync-button-green;
+        color: #fff;
+        font-size: @largeFontSize;
+        &:focus,
+        &:active,
+        &:hover {
+            color: #fff;
+            background: darken(@sync-button-green, 5%);
+            text-decoration: none;
+        }
+    }
+    .android-button {
+        display: inline-block;
+        padding: 15px 60px;
+    }
+}
+
+.features {
+    > div {
+        .span(4);
+        text-align: center;
+        &:before {
+            display: inline-block;
+            content: " ";
+            height: 70px;
+            width: 70px;
+            margin: 0 auto 10px;
+            border: 2px solid @syncBlue;
+            .border-radius(50%);
+            background-image: url(/media/img/firefox/sync/feature-icons.png);
+            background-size: auto 70px;
+            background-position: 0 0;
+        }
+        &.feature-work:before { background-position: 70px 0; }
+        &.feature-go:before   { background-position: 140px 0; }
+    }
+    h2 {
+        font-size: 24px;
     }
 }
 
@@ -68,13 +170,14 @@
     width: @widthDesktop - (@gridGutterWidth * 4);
     margin: @baseLine auto;
     text-align: center;
+    padding-bottom: @baseLine;
     h1 {
         font-size: 64px;
         line-height: 1.2;
     }
     p {
         .open-sans-light;
-        font-size: 22px;
+        font-size: 28px;
         line-height: 1.4;
         margin: 0 0 (@baseLine / 2);
     }

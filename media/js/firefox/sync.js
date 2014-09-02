@@ -32,14 +32,19 @@
         // Variation #1-4: Firefox for Desktop
         } else {
 
-            // Variation #2: Firefox 31+ signed OUT of Sync
             if (fxMasterVersion >= 31) {
 
                 // Query if the UITour API is working before we use the API
                 Mozilla.UITour.getConfiguration('sync', function (config) {
 
-                    if (config.setup === false) {
+                    // Variation #2: Firefox 31+ signed OUT of Sync
+                    if (config.setup) {
+
                         $('body').addClass('state-fx-31-signed-out');
+
+                    // Variation #1: Firefox 31+ signed IN to Sync (default)
+                    } else {
+                        $('body').addClass('state-fx-31-signed-in');
                     }
 
                 });
