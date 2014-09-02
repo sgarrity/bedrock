@@ -24,8 +24,13 @@
     // Variations 1-5 are Firefox
     if (window.isFirefox()) {
 
-        // Variations 1-4 are Desktop-only
-        if (!window.isFirefoxMobile()) {
+        // Variation #5: Firefox for Android
+        if (window.isFirefoxMobile()) {
+
+            $('body').addClass('state-fx-android');
+
+        // Variation #1-4: Firefox for Desktop
+        } else {
 
             // Variation #2: Firefox 31+ signed OUT of Sync
             if (fxMasterVersion >= 31) {
@@ -43,18 +48,15 @@
             } else if (fxMasterVersion === 29 || fxMasterVersion === 30) {
                 $('body').addClass('state-fx-29-30');
 
-            // Variation #3: Firefox 29 or 30
+            // Variation #4: Firefox 28 or older
             } else if (fxMasterVersion <= 28) {
                 $('body').addClass('state-fx-28-older');
             }
 
-        // Variation #5: Firefox for Android
-        } else if (window.isFirefoxMobile) {
-            $('body').addClass('state-fx-android');
         }
 
     // Variation #6: Not Firefox
-    } else if (!window.isFirefox()) {
+    } else {
         $('body').addClass('state-not-fx');
     }
 
