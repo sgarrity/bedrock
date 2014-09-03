@@ -37,14 +37,14 @@
                 // Query if the UITour API is working before we use the API
                 Mozilla.UITour.getConfiguration('sync', function (config) {
 
-                    // Variation #2: Firefox 31+ signed OUT of Sync
+                    // Variation #1: Firefox 31+ signed IN to Sync (default)
                     if (config.setup) {
 
-                        $('body').addClass('state-fx-31-signed-out');
-
-                    // Variation #1: Firefox 31+ signed IN to Sync (default)
-                    } else {
                         $('body').addClass('state-fx-31-signed-in');
+
+                    // Variation #2: Firefox 31+ signed OUT of Sync
+                    } else {
+                        $('body').addClass('state-fx-31-signed-out');
                     }
 
                 });

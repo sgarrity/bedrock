@@ -18,7 +18,12 @@
 {% include 'firefox/includes/sync-animation.html' %}
 <header role="banner" class="intro container">
   <h1>{{ _('Ready, Set, Sync') }}</h1>
-  <p>{{ _('You’re signed up and ready to access <em>your</em> Firefox anywhere, anytime.') }}</p>
+  <p class="show-fx-31-signed-in">
+    {{ _('You’re signed up and ready to access <em>your</em> Firefox anywhere, anytime.') }}
+  </p>
+  <p class="show-fx-31-signed-out">
+    {{ _('Sync Firefox wherever you use it to access your bookmarks, passwords, tabs and more from any smartphone, tablet or computer.') }}
+  </p>
 </header>
 
 <section class="primary">
@@ -28,9 +33,17 @@
       {{ _('Have an Android smartphone or tablet? Connect them to your Firefox Account for the full Sync experience.') }}
     </p>
 
-    <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="primary-sync-button">
-      {{ _('DOWNLOAD FIREFOX FOR ANDROID') }}
-    </a>
+    <div class="show-fx-31-signed-in">
+      <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="primary-sync-button">
+        {{ _('Download Firefox for Android') }}
+      </a>
+    </div>
+
+    <div class="show-fx-31-signed-out">
+      <a href="#TODO" class="primary-sync-button">
+        {{ _('Get started with Sync') }}
+      </a>
+    </div>
 
   </div>
 </section>
@@ -39,7 +52,7 @@
   <div class="inner-wrapper">
     <div class="container">
       <header>
-        <h1>{{ _('Sync a little. Sync a lot') }}</h1>
+        <h1>{{ _('Sync a little. Sync a lot.') }}</h1>
         <p>
           {{ _('You choose what parts of your Firefox you want to sync and where you want to sync them. Take your open tabs on your daily commute. Access your bookmarks at work. Whatever, whenever, everywhere.') }}
         </p>

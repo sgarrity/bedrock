@@ -101,6 +101,7 @@
         background: @sync-button-green;
         color: #fff;
         font-size: @largeFontSize;
+        text-transform: uppercase;
         &:focus,
         &:active,
         &:hover {
@@ -127,8 +128,7 @@
             margin: 0 auto 10px;
             border: 2px solid @syncBlue;
             .border-radius(50%);
-            background-image: url(/media/img/firefox/sync/feature-icons.png);
-            background-size: auto 70px;
+            .at2x('/media/img/firefox/sync/feature-icons.png', 210px, 70px);
             background-position: 0 0;
         }
         &.feature-work:before { background-position: 70px 0; }
@@ -153,6 +153,26 @@
 .state-fx-28-older      .var-fx-28-older,
 .state-fx-android       .var-fx-android,
 .state-not-fx           .var-not-fx {
+    display: block;
+}
+
+// Hide elements marked for specific variations by default
+.show-fx-31-signed-in,
+.show-fx-31-signed-out,
+.show-fx-29-30,
+.show-fx-28-older,
+.show-fx-android,
+.show-not-fx {
+    display: none;
+}
+
+// Show elements for current variation
+.state-fx-31-signed-in  .show-fx-31-signed-in,
+.state-fx-31-signed-out .show-fx-31-signed-out,
+.state-fx-29-30         .show-fx-29-30,
+.state-fx-28-older      .show-fx-28-older,
+.state-fx-android       .show-fx-android,
+.state-not-fx           .show-not-fx {
     display: block;
 }
 
