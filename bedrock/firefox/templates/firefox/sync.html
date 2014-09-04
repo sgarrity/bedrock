@@ -17,32 +17,117 @@
 {% block content %}
 {% include 'firefox/includes/sync-animation.html' %}
 <header role="banner" class="intro container">
-  <h1>{{ _('Ready, Set, Sync') }}</h1>
-  <p class="show-fx-31-signed-in">
-    {{ _('You’re signed up and ready to access <em>your</em> Firefox anywhere, anytime.') }}
-  </p>
-  <p class="show-fx-31-signed-out">
-    {{ _('Sync Firefox wherever you use it to access your bookmarks, passwords, tabs and more from any smartphone, tablet or computer.') }}
-  </p>
+  <div class="show-fx-31-signed-in">
+    <h1>{{ _('Ready, Set, Sync') }}</h1>
+    <p>
+      {{ _('You’re signed up and ready to access <em>your</em> Firefox anywhere, anytime.') }}
+    </p>
+  </div>
+  <div class="show-fx-31-signed-out show-fx-29-30 show-fx-28-older show-fx-android show-not-fx">
+    <h1>{{ _('Take your Web with you') }}</h1>
+    <p>
+      {{ _('Sync Firefox wherever you use it to access your bookmarks, passwords, tabs and more from any smartphone, tablet or computer.') }}
+    </p>
+  </div>
 </header>
 
 <section class="primary">
   <div class="inner-wrapper">
 
-    <p class="warning">
-      {{ _('Have an Android smartphone or tablet? Connect them to your Firefox Account for the full Sync experience.') }}
-    </p>
+  {# Warning Text #}
+    <div class="warning">
+      <p class="show-fx-29-30">
+        {{ _('It looks like you’re running an older version of Firefox.') }}
+      </p>
 
-    <div class="show-fx-31-signed-in">
-      <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="primary-sync-button">
-        {{ _('Download Firefox for Android') }}
-      </a>
+      <p class="show-fx-28-older">
+        {{ _('The new version of Sync only works with the latest version of Firefox') }}
+      </p>
+
+      <p class="show-not-fx">
+        {{ _('Sync is just one of the great features you’ll only get with Firefox. Discover them all!') }}
+      </p>
     </div>
 
-    <div class="show-fx-31-signed-out">
-      <a href="#TODO" class="primary-sync-button">
-        {{ _('Get started with Sync') }}
-      </a>
+    {# Primary Buttons #}
+
+    <div class="buttons">
+      <div class="show-fx-31-signed-in">
+        <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="primary-sync-button">
+          {{ _('Download Firefox for Android') }}
+        </a>
+      </div>
+
+      <div class="show-fx-31-signed-out show-fx-android">
+        <a href="#TODO" class="primary-sync-button">
+          {{ _('Get started with Sync') }}
+        </a>
+      </div>
+
+      <div class="show-fx-29-30">
+        <a href="#TODO" class="primary-sync-button">
+          {{ _('Update your Firefox') }}
+        </a>
+      </div>
+
+      <div class="show-fx-28-older show-not-fx">
+        <a href="#TODO" class="primary-sync-button">
+          {{ _('Download Firefox') }}
+        </a>
+      </div>
+    </div>
+
+    {# Instructions #}
+
+    <div class="show-fx-29-30 instructions">
+      <h3>{{ _('Get started with Sync in four easy steps:') }}</h3>
+      <section>
+        <ol>
+            <li>{% trans url='https://support.mozilla.org/kb/learn-more-about-the-design-of-new-firefox' %}
+              Open the <a class="menu" href="{{ url }}#w_a-handy-new-menu">menu</a> in the top right of Firefox and select “<strong>Sign in to Sync.</strong>”
+            {% endtrans %}</li>
+            {# L10n: <strong> tags below used for font color formatting. #}
+            <li>{{ _('Click “<strong>Get started</strong>” in the tab that opens.') }}</li>
+            <li>{{ _('Enter an email address and password to “<strong>Create a Firefox Account.</strong>”') }}</li>
+            <li>{{ _('Click “<strong>Next</strong>” to get a verification sent to your email.') }}</li>
+        </ol>
+        <p>{{ _('After you check your email and click the verification link, you’ll be all set! Firefox will automatically sync in the background from then on.') }}</p>
+      </section>
+      <aside role="complimentary">
+        <ul class="unstyled">
+          <li><a class="more" href="https://support.mozilla.org/kb/how-do-i-set-up-firefox-sync">{{ _('Get more detailed instructions.') }}</a></li>
+          <li><a class="more" href="https://support.mozilla.org/kb/how-to-update-to-the-new-firefox-sync">{{ _('Using an older version of Sync?') }}</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="show-fx-28-older instructions">
+        <ul class="unstyled">
+          <li><a class="more" href="https://support.mozilla.org/kb/how-do-i-set-up-firefox-sync">{{ _('Get more detailed instructions.') }}</a></li>
+          <li><a class="more" href="https://support.mozilla.org/kb/how-to-update-to-the-new-firefox-sync">{{ _('Using an older version of Sync?') }}</a></li>
+        </ul>
+    </div>
+
+
+    <div class="show-fx-android instructions">
+      <h3>{{ _('How to set up Sync in five easy steps:') }}</h3>
+      <section>
+        <ol>
+            {# L10n: <strong> tags below used for font color formatting. #}
+            <li>{{ _('Tap the <strong>Menu</strong> button (either below the screen or at the top right corner of the browser).') }}</li>
+            <li>{{ _('Select <strong>Settings</strong> (you may need to tap <strong>More</strong> first).') }}</li>
+            <li>{{ _('Tap <strong>Sync</strong> and then <strong>Get Started</strong>.') }}</li>
+            <li>{{ _('The <strong>Create a Firefox Account page</strong> will open in a new tab.') }}</li>
+            <li>{{ _('Fill out the form and click <strong>Next</strong>.') }}</li>
+        </ol>
+        <p>{{ _('After you check your email and click the verification link, you’ll be ready to go! Don’t forget to connect all your other devices to get the most of Sync.') }}</p>
+      </section>
+      <aside role="complimentary">
+        <ul class="unstyled">
+          <li><a class="more" href="https://support.mozilla.org/kb/how-do-i-set-up-firefox-sync">{{ _('Get more detailed instructions.') }}</a></li>
+          <li><a class="more" href="https://support.mozilla.org/kb/how-to-update-to-the-new-firefox-sync">{{ _('Using an older version of Sync?') }}</a></li>
+        </ul>
+      </aside>
     </div>
 
   </div>
@@ -80,7 +165,7 @@
   </div>
 </section>
 
-<section class="android-promo">
+<section class="cta">
   <div class="inner-wrapper">
     <div class="container">
       <h1>{{ _('Have an <b>Android smartphone</b> or <b>tablet</b>?') }}</h1>
@@ -91,30 +176,6 @@
         {{ _('DOWNLOAD FIREFOX FOR ANDROID') }}
       </a>
     </div>
-  </div>
-</section>
-
-<section class="primary">
-  <div class="inner-wrapper">
-    <div class="container">
-      <div class="var-content var-fx-31-signed-in">
-        <p>Firefox 31 (signed-in)</p>
-     </div>
-      <div class="var-content var-fx-31-signed-out">
-        <p>Firefox 31 (signed-out)</p>
-     </div>
-      <div class="var-content var-fx-29-30">
-        <p>Firefox 29/30</p>
-     </div>
-      <div class="var-content var-fx-28-older">
-        <p>Firefox 28 or older</p>
-     </div>
-      <div class="var-content var-not-fx">
-        <p>Not Firefox (you should try it - it's pretty good)</p>
-     </div>
-      <div class="var-content var-fx-android">
-        <p>Firefox for Android</p>
-     </div>
   </div>
 </section>
 
