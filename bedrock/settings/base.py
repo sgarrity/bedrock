@@ -290,6 +290,9 @@ MINIFY_BUNDLES = {
         'firefox_sync': (
             'css/firefox/sync.less',
         ),
+        'firefox_sync_old': (
+            'css/firefox/sync-old.less',
+        ),
         'firefox_sync_anim': (
             'css/firefox/sync-animation.less',
         ),
