@@ -20,7 +20,7 @@
             {% endfor %}
           </ul>
         </dd>
-        <dt>Products:</dt>
+        <dt>Products</dt>
         <dd>
           <ul>
             {% for prod in advisory.products %}
@@ -28,8 +28,8 @@
             {% endfor %}
           </ul>
         </dd>
-        <dt>Impact:</dt>
-        <dd class="{{ advisory.impact_class }}">{{ advisory.impact }}</dd>
+        <dt>Impact</dt>
+        <dd class="level {{ advisory.impact_class }}">{{ advisory.impact }}</dd>
       </dl>
 
       {{ advisory.html|safe }}
