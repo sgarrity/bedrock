@@ -62,13 +62,13 @@
 
       <div class="buttons">
         <div class="show-fx-31-signed-in">
-          <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="sync-button green">
+          <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="sync-button green" id="cta-android">
             {{ _('Download Firefox for Android') }}
           </a>
         </div>
 
         <div class="show-fx-31-signed-out show-fx-android">
-          <a href="#TODO" class="sync-button">
+          <a href="#TODO" class="sync-button" id="cta-sync">
             {{ _('Get started with Sync') }}
           </a>
         </div>
@@ -80,7 +80,7 @@
         </div>
 
         <div class="show-fx-28-older show-not-fx">
-          <a href="{{ url('firefox.new') }}#download-fx" class="sync-button green">
+          <a href="{{ url('firefox.new') }}#download-fx" class="sync-button green" id="cta-firefox">
             {{ _('Download Firefox') }}
           </a>
         </div>
@@ -180,7 +180,7 @@
     <div class="container">
       <header>
         <h1>{{ _('Have an <b>Android smartphone</b> or <b>tablet</b>?') }}</h1>
-        <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="sync-button green">
+        <a href="{{ settings.GOOGLE_PLAY_FIREFOX_LINK }}" class="sync-button green" id="cta-android-footer">
           {{ _('DOWNLOAD FIREFOX FOR ANDROID') }}
         </a>
       </header>
