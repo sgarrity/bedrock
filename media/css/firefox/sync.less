@@ -111,6 +111,9 @@
         .offset(2);
         text-align: center;
         margin-bottom: @baseLine * 2;
+        h2 {
+            font-size: 48px;
+        }
         p {
             .open-sans-light();
             font-size: 18px;
@@ -146,7 +149,7 @@
             margin: 0;
         }
     }
-    h1 {
+    h3 {
         color: #fff;
         font-size: 32px;
         letter-spacing: -0.02em;
@@ -156,7 +159,7 @@
         }
     }
     &,
-    h1 {
+    h3 {
         text-shadow: 0 1px rgba(0,0,0,0.1);
     }
     .sync-button {
@@ -182,7 +185,7 @@
         &.feature-work:before { background-position: -70px 0; }
         &.feature-go:before   { background-position: -140px 0; }
     }
-    h2 {
+    h3 {
         font-size: 24px;
     }
 }
@@ -298,7 +301,7 @@
 
 .state-fx-android {
     .cta {
-        h1,
+        h3,
         .android-button {
             display: none;
         }
@@ -502,7 +505,7 @@ html[dir="rtl"] {
         header {
             .span-all();
             margin-bottom: @baseLine;
-            h1 {
+            h2 {
                 font-size: 28px;
             }
         }
