@@ -22,6 +22,10 @@
     padding-bottom: 0;
 }
 
+#masthead {
+    width: @widthDesktop - (@gridGutterWidth * 2);
+}
+
 #colophon {
     margin-top: 0;
 }
@@ -351,6 +355,10 @@ html[dir="rtl"] {
         z-index: 2;
     }
 
+    #masthead {
+        width: @widthTablet - (@gridGutterWidth * 2);
+    }
+
     .inner-wrapper {
         width: @widthTablet;
     }
@@ -441,6 +449,10 @@ html[dir="rtl"] {
     #wrapper:before {
         content: "";
         background: none;
+    }
+
+    #masthead {
+        width: @widthMobileLandscape - (@gridGutterWidth);
     }
 
     .inner-wrapper {
@@ -551,6 +563,10 @@ html[dir="rtl"] {
 
     .sync-anim {
         display: none;
+    }
+
+    #masthead {
+        width: @widthMobile - (@gridGutterWidth);
     }
 
     .inner-wrapper {
