@@ -46,13 +46,13 @@
 
                         // .state-fx-31-signed-in class is already on the body
                         // tag in the template by default
-                        state = 'Latest Version of Firefox or Higher: Signed-In';
+                        state = 'Firefox 31 or Higher: Signed-In';
 
                     // Variation #2: Firefox 31+ signed OUT of Sync
                     } else {
                         body.removeClass('state-fx-31-signed-in')
                         body.addClass('state-fx-31-signed-out');
-                        state = 'Latest Version of Firefox or Higher: Signed-Out';
+                        state = 'Firefox 31 or Higher: Signed-Out';
                     }
 
                 });
@@ -61,13 +61,13 @@
             } else if (fxMasterVersion === 29 || fxMasterVersion === 30) {
                 body.removeClass('state-fx-31-signed-in')
                 body.addClass('state-fx-29-30');
-                state = 'Previous 2 Versions of Firefox';
+                state = 'Firefox 29 or 30';
 
             // Variation #4: Firefox 28 or older
             } else if (fxMasterVersion <= 28) {
                 body.removeClass('state-fx-31-signed-in')
                 body.addClass('state-fx-28-older');
-                state = 'Older Version of Firefox';
+                state = 'Firefox 28 or Older';
             }
 
         }
