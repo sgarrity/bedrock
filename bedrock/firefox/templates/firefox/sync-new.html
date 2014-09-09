@@ -92,13 +92,13 @@
         <h3>{{ _('Get started with Sync in four easy steps:') }}</h3>
         <section>
           <ol>
-              <li>{% trans url='https://support.mozilla.org/kb/learn-more-about-the-design-of-new-firefox' %}
-                Open the <a class="menu" href="{{ url }}#w_a-handy-new-menu">menu</a> in the top right of Firefox and select “<strong>Sign in to Sync.</strong>”
-              {% endtrans %}</li>
-              {# L10n: <strong> tags below used for font color formatting. #}
-              <li>{{ _('Click “<strong>Get started</strong>” in the tab that opens.') }}</li>
-              <li>{{ _('Enter an email address and password to “<strong>Create a Firefox Account.</strong>”') }}</li>
-              <li>{{ _('Click “<strong>Next</strong>” to get a verification sent to your email.') }}</li>
+            <li>{% trans url='https://support.mozilla.org/kb/learn-more-about-the-design-of-new-firefox' %}
+              Open the <a class="menu" href="{{ url }}#w_a-handy-new-menu">menu</a> in the top right of Firefox and select “<strong>Sign in to Sync.</strong>”
+            {% endtrans %}</li>
+            {# L10n: <strong> tags below used for font color formatting. #}
+            <li>{{ _('Click “<strong>Get started</strong>” in the tab that opens.') }}</li>
+            <li>{{ _('Enter an email address and password to “<strong>Create a Firefox Account.</strong>”') }}</li>
+            <li>{{ _('Click “<strong>Next</strong>” to get a verification sent to your email.') }}</li>
           </ol>
           <p>{{ _('After you check your email and click the verification link, you’ll be all set! Firefox will automatically sync in the background from then on.') }}</p>
         </section>
@@ -170,6 +170,7 @@
           <p>
             {{ _('Keep up with your favorite sites, or finish that story you started at home — wherever you go. With Sync, it’s never been easier.') }}
           </p>
+        </div>
       </div>
     </div>
   </div>
