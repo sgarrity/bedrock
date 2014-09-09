@@ -21,7 +21,7 @@
 
     var fxMasterVersion = window.getFirefoxMasterVersion();
     var state = 'Unknown';
-
+    var body = $('body');
 
     // Variations 1-5 are Firefox
     if (window.isFirefox()) {
@@ -29,7 +29,7 @@
         // Variation #5: Firefox for Android
         if (window.isFirefoxMobile()) {
 
-            $('body').addClass('state-fx-android');
+            body.addClass('state-fx-android');
             state = 'Firefox for Android';
 
 
@@ -44,12 +44,14 @@
                     // Variation #1: Firefox 31+ signed IN to Sync (default)
                     if (config.setup) {
 
-                        $('body').addClass('state-fx-31-signed-in');
+                        // .state-fx-31-signed-in class is already on the body
+                        // tag in the template by default
                         state = 'Latest Version of Firefox or Higher: Signed-In';
 
                     // Variation #2: Firefox 31+ signed OUT of Sync
                     } else {
-                        $('body').addClass('state-fx-31-signed-out');
+                        body.removeClass('state-fx-31-signed-in')
+                        body.addClass('state-fx-31-signed-out');
                         state = 'Latest Version of Firefox or Higher: Signed-Out';
                     }
 
@@ -57,12 +59,14 @@
 
             // Variation #3: Firefox 29 or 30
             } else if (fxMasterVersion === 29 || fxMasterVersion === 30) {
-                $('body').addClass('state-fx-29-30');
+                body.removeClass('state-fx-31-signed-in')
+                body.addClass('state-fx-29-30');
                 state = 'Previous 2 Versions of Firefox';
 
             // Variation #4: Firefox 28 or older
             } else if (fxMasterVersion <= 28) {
-                $('body').addClass('state-fx-28-older');
+                body.removeClass('state-fx-31-signed-in')
+                body.addClass('state-fx-28-older');
                 state = 'Older Version of Firefox';
             }
 
@@ -70,7 +74,8 @@
 
     // Variation #6: Not Firefox
     } else {
-        $('body').addClass('state-not-fx');
+        body.removeClass('state-fx-31-signed-in')
+        body.addClass('state-not-fx');
         state = 'Not Firefox';
     }
 
