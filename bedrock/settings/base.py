@@ -598,6 +598,10 @@ MINIFY_BUNDLES = {
             'js/firefox/australis/australis-uitour.js',
             'js/firefox/sync.js',
         ),
+        'firefox_sync_old': (
+            'js/firefox/sync-animation.js',
+            'js/firefox/sync-old.js',
+        ),
         'firefox_tour': (
             'js/libs/jquery.waypoints.min.js',
             'js/firefox/australis/australis-uitour.js',
