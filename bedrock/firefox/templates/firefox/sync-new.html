@@ -8,7 +8,7 @@
 {% block body_id %}firefox-sync{% endblock %}
 {% block body_class %}
   {{ super() }}
-  state-fx-31-signed-in
+  state-default
 {% endblock %}
 
 {% block extrahead %}
@@ -27,7 +27,7 @@
       {{ _('You’re signed up and ready to access <em>your</em> Firefox anywhere, anytime.') }}
     </p>
   </div>
-  <div class="show-fx-31-signed-out show-fx-29-30 show-fx-28-older show-fx-android show-not-fx">
+  <div class="show-fx-31-signed-out show-fx-29-30 show-fx-28-older show-fx-android show-not-fx show-default">
     <h1>{{ _('Take your Web with you') }}</h1>
     <p>
       {{ _('Sync Firefox wherever you use it to access your bookmarks, passwords, tabs and more from any smartphone, tablet or computer.') }}
@@ -88,7 +88,7 @@
 
       {# Instructions #}
 
-      <div class="show-fx-29-30 instructions">
+      <div class="show-fx-29-30 show-default instructions">
         <h3>{{ _('Get started with Sync in four easy steps:') }}</h3>
         <section>
           <ol>
