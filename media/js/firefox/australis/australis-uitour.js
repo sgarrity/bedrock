@@ -183,7 +183,11 @@ if (typeof Mozilla == 'undefined') {
     Mozilla.UITour.getConfiguration = function(configName, callback) {
         _sendEvent('getConfiguration', {
             callbackID: _waitForCallback(callback),
-            configuration: configName
+            configuration: configName,
         });
+    };
+
+    Mozilla.UITour.showFirefoxAccounts = function() {
+        _sendEvent('showFirefoxAccounts');
     };
 })();
