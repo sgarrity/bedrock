@@ -29,9 +29,9 @@
         // Variation #5: Firefox for Android
         if (window.isFirefoxMobile()) {
 
+            body.removeClass('state-fx-31-signed-in');
             body.addClass('state-fx-android');
             state = 'Firefox for Android';
-
 
         // Variation #1-4: Firefox for Desktop
         } else {
@@ -50,7 +50,7 @@
 
                     // Variation #2: Firefox 31+ signed OUT of Sync
                     } else {
-                        body.removeClass('state-fx-31-signed-in')
+                        body.removeClass('state-fx-31-signed-in');
                         body.addClass('state-fx-31-signed-out');
                         state = 'Firefox 31 or Higher: Signed-Out';
                     }
@@ -59,13 +59,13 @@
 
             // Variation #3: Firefox 29 or 30
             } else if (fxMasterVersion === 29 || fxMasterVersion === 30) {
-                body.removeClass('state-fx-31-signed-in')
+                body.removeClass('state-fx-31-signed-in');
                 body.addClass('state-fx-29-30');
                 state = 'Firefox 29 or 30';
 
             // Variation #4: Firefox 28 or older
             } else if (fxMasterVersion <= 28) {
-                body.removeClass('state-fx-31-signed-in')
+                body.removeClass('state-fx-31-signed-in');
                 body.addClass('state-fx-28-older');
                 state = 'Firefox 28 or Older';
             }
@@ -74,7 +74,7 @@
 
     // Variation #6: Not Firefox
     } else {
-        body.removeClass('state-fx-31-signed-in')
+        body.removeClass('state-fx-31-signed-in');
         body.addClass('state-not-fx');
         state = 'Not Firefox';
     }
