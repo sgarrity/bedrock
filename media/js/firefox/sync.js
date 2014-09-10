@@ -113,7 +113,7 @@
     $('#cta-sync').on('click', function(e) {
         e.preventDefault();
         gaTrack(['_trackEvent', '/sync/ Page Interactions', 'button click', 'Sync CTA'],
-            Mozilla.UITour.showFirefoxAccounts());
+            Mozilla.UITour.showFirefoxAccounts);
     });
 
 })(window.jQuery);
