@@ -48,8 +48,6 @@
                     // Variation #1: Firefox 31+ signed IN to Sync (default)
                     if (config.setup) {
 
-                        // .state-fx-31-signed-in class is already on the body
-                        // tag in the template by default
                         swapState('state-fx-31-signed-in');
                         state = 'Firefox 31 or Higher: Signed-In';
 
