@@ -387,7 +387,9 @@ html[dir="rtl"] {
             font-size: 42px;
         }
         p {
-            font-size: @largeFontSize;
+            font-size: 18px;
+            margin-left: 40px;
+            margin-right: 40px;
         }
     }
 
@@ -404,6 +406,9 @@ html[dir="rtl"] {
             .span_narrow(10);
             .offset_narrow(1);
             margin-bottom: @baseLine;
+            h2 {
+                font-size: 36px;
+            }
         }
     }
 
@@ -482,7 +487,7 @@ html[dir="rtl"] {
     }
 
     .intro {
-        .span-all();
+        width: @widthMobileLandscape - (@gridGutterWidth * 2);
         padding-bottom: 0;
         h1 {
             font-size: 36px;
@@ -588,6 +593,10 @@ html[dir="rtl"] {
 
     .inner-wrapper {
         width: @widthMobile;
+    }
+
+    .intro {
+        width: @widthMobile - (@gridGutterWidth * 2);
     }
 
     #footer-email-errors li,
