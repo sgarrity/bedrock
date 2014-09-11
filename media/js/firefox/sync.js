@@ -94,7 +94,7 @@
     });
 
     // Setup GA tracking for Firefox download button
-    $('#cta-firefox').on('click', function(e) {
+    $('#cta-firefox, .download-button .download-link').on('click', function(e) {
         trackClick(['_trackEvent', 'Firefox Downloads', 'download click', 'Firefox'], this, e);
     });
 

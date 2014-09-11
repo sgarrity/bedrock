@@ -83,10 +83,14 @@
           </a>
         </div>
 
-        <div class="show-fx-28-older show-not-fx">
+        <div class="show-fx-28-older">
           <a href="{{ url('firefox.new') }}?scene=2#download-fx" class="sync-button green" id="cta-firefox">
             {{ _('Download Firefox') }}
           </a>
+        </div>
+
+        <div class="show-not-fx">
+          {{ download_firefox() }}
         </div>
       </div>
 
