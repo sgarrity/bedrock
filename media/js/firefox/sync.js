@@ -88,6 +88,11 @@
         });
     };
 
+    // Setup GA tracking for misc links
+    $('.ga-link').on('click', function(e) {
+        trackClick(['_trackEvent', '/sync/ Page Interactions', 'outbound link click', this.href], this, e);
+    });
+
     // Setup GA tracking for Firefox download button
     $('#cta-firefox').on('click', function(e) {
         trackClick(['_trackEvent', 'Firefox Downloads', 'download click', 'Firefox'], this, e);
