@@ -146,8 +146,8 @@
     padding: 0;
 
     ul {
-        margin: 0;
-        .multi-column(@count: 2; @gap: 20px;)
+        margin: @baseLine 0 0;
+        .multi-column(@count: 2; @gap: 20px;);
     }
 
     li {
@@ -194,6 +194,7 @@
         &.terms-webmaker    a:before { background-position: left -240px; }
         &.terms-thunderbird a:before { background-position: left -280px; }
     }
+
 }
 
 .sidebar {
@@ -221,6 +222,9 @@
     background-color: #fff;
     @shadow: 0 0 0 1px #fff inset;
     .box-shadow(@shadow);
+    ul {
+        margin: @baseLine 0 (@baseLine /2);
+    }
 }
 
 #legal-landing {

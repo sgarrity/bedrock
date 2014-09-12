@@ -4,7 +4,7 @@
 
 {% extends "legal/base-resp.html" %}
 
-{% block page_title %}{{ _('Legal Notices') }}{% endblock %}
+{% block page_title %}{{ _('Legal') }}{% endblock %}
 
 {% block breadcrumbs %}{% endblock %}
 
@@ -17,49 +17,40 @@
 {% endblock %}
 
 {% block article %}
+
   <section class="section-content section-terms">
-    <h2>{{ _('Terms') }}</h2>
+    <h2>{{ _('Terms, privacy and trademarks') }}</h2>
     <ul>
-      <li class="terms-firefox"><a href="{{ url('legal.terms.firefox') }}">{{ _('Firefox') }}</a></li>
-      <li class="terms-marketplace"><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
+      <li class="terms-websites"><a href="{{ url('legal.terms.mozilla') }}">{{ _('Our Websites') }}</a></li>
       <li class="terms-firefox-services"><a href="{{ url('legal.terms.services') }}">{{ _('Firefox Services') }}</a></li>
-      <li class="terms-affiliates"><a href="https://affiliates.mozilla.org/terms/">{{ _('Firefox Affiliates') }}</a></li>
-      <li class="terms-websites"><a href="{{ url('legal.terms.mozilla') }}">{{ _('Mozilla Websites') }}</a></li>
-      <li class="terms-openbadges"><a href="http://beta.openbadges.org/tou.html">{{ _('Open Badges') }}</a></li>
       <li class="terms-webmaker"><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
-      <li class="terms-thunderbird"><a href="{{ url('legal.terms.thunderbird') }}">{{ _('Thunderbird') }}</a></li>
-      <li class="terms-persona"><a href="{{ url('legal.terms.persona') }}">{{ _('Persona') }}</a></li>
-    </li>
+      <li class="terms-marketplace"><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
+    </ul>
   </section>
 
   <section class="section-content">
-    <h2>{{ _('Policies') }}</h2>
+    <h2>{{ _('Privacy notices and policy') }}</h2>
     <ul>
       <li><a href="https://addons.mozilla.org/developers/docs/policies">{{ _('Firefox Add‐On Developer Policies') }}</a></li>
       <li><a href="https://developer.mozilla.org/en-US/Marketplace/Publishing/Marketplace_review_criteria">{{ _('Firefox Marketplace Developer Policies') }}</a></li>
-      <li><a href="{{ url('legal.terms.acceptable-use') }}">{{ _('Acceptable Use Policy') }}</a></li>
       <li><a href="{{ url('mozorg.about.governance.policies.participation') }}">{{ _('Community Participation Guidelines') }}</a></li>
-    </li>
+    </ul>
   </section>
 
   <section class="section-content">
-    <h2>{{ _('Source code & trademark policies') }}</h2>
+    <h2>{{ _('Trademark policy') }}</h2>
     <ul>
       <li><a href="{{ url('legal.licensing') }}">{{ _('Mozilla Source Code & Software License Policy') }}</a></li>
-      <li><a href="{{ url('legal.trademarks') }}">{{ _('Mozilla Trademark Policy') }}</a></li>
       <li><a href="{{ url('styleguide.home') }}">{{ _('Mozilla Style Guide') }}</a></li>
-      <li><a href="{{ url('legal.report-abuse') }}">{{ _('Report abuse of Mozilla’s marks') }}</a></li>
-      <li><a href="{{ url('legal.fraud-report') }}">{{ _('Report abuse of your Copyrights or Trademarks') }}</a></li>
-    </li>
+    </ul>
   </section>
 
-  <section class="section-content">
-    <h2>{{ _('Corporate & community governance') }}</h2>
+  <section class="section-content section-terms">
+    <h2>{{ _('Downloadable software notices') }}</h2>
     <ul>
-      <li><a href="{{ url('foundation.about') }}">{{ _('Mozilla Foundation') }}</a></li>
-      <li><a href="{{ url('foundation.moco') }}">{{ _('Mozilla Corporation') }}</a></li>
-      <li><a href="{{ url('mozorg.about.governance.governance') }}">{{ _('Community Governance') }}</a></li>
-    </li>
+      <li class="terms-firefox"><a href="{{ url('legal.terms.firefox') }}">{{ _('Firefox') }}</a></li>
+      <li class="terms-thunderbird"><a href="{{ url('legal.terms.thunderbird') }}">{{ _('Thunderbird') }}</a></li>
+    </ul>
   </section>
 
 {% endblock %}
@@ -72,4 +63,12 @@
     <p>{{ _('Special thanks to all of you who help report abuses of Mozilla marks, participate in governance forums, give feedback on our localizations & legal terms, and contribute your skills to the success of the Mozilla project.') }}</p>
     <a href="{{ url('mozorg.contribute') }}">{{ _('Get involved!') }}</a>
   </section>
+  <section>
+    <h2>{{ _('Report abuse') }}</h2>
+    <ul>
+      <li>{{ _('Help us protect our users by reporting abuse of <a href="%s">Mozilla Trademarks</a>. For example, malware called Firefox, etc.')|format(url('legal.trademarks')) }}</li>
+      <li><a href="{{ url('legal.report-abuse') }}">{{ _('Request a takedown of your content') }}</a></li>
+    </ul>
+  </section>
+
 {% endblock %}
