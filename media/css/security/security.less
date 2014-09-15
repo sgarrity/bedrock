@@ -119,6 +119,44 @@ li:target {
   }  
 }
 
+
+.section-content {
+    section {
+        .span(8);
+        clear: both;
+    }
+    .intro {
+        clear: both;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    .links {
+        .clearfix();
+        clear: right;
+        .span(4);
+
+        li {
+            list-style-type: none;
+            margin: 0 0 @baseLine;
+            padding-bottom: 10px;
+            background: url(/media/img/mission/thin-stripe.png) center bottom repeat-x;
+            min-height: @baseLine * 4;
+        }
+
+        h4 {
+            margin-bottom: @baseLine / 6;
+            a:after {
+                content: " »";
+                .open-sans-light;
+            }
+        }
+
+        p {
+            font-size: .857em;
+            margin-bottom: @baseLine / 2;
+        }
+    }
+}
 .sidebar {
   float: left;
   margin: 0;
@@ -144,19 +182,8 @@ li:target {
   background-color: #fff;
   @shadow: 0 0 0 1px #fff inset;
   .box-shadow(@shadow);
-
-  p, ul {
-    margin: 1em 0;
-  }
-
-  li {
-    margin: .5em 0 0 1.5em;
-  }
 }
 
-#side-principles a:after {
-  content: "\00A0\00BB"; /* nbsp raquo */
-}
 
 #side-notices nav {
   padding: 0;
