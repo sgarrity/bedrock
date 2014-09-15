@@ -5,7 +5,7 @@
 {% block article %}
   <article class="section-content" itemscope itemtype="http://schema.org/Article">
     <header>
-      <h1 itemprop="name" class="title-shadow-box">{{ _('Mozilla Foundation Security Advisory') }}</h1>
+      <h1 itemprop="name" class="title-shadow-box">{{ _('Mozilla Foundation Security Advisory %s')|format(advisory.id) }}</h1>
     </header>
     <div itemprop="articleBody">
 
@@ -29,7 +29,7 @@
           </ul>
         </dd>
         <dt>Impact</dt>
-        <dd class="level {{ advisory.impact_class }}">{{ advisory.impact }}</dd>
+        <dd><span class="level {{ advisory.impact_class }}">{{ advisory.impact }}</span></dd>
       </dl>
 
       {{ advisory.html|safe }}
