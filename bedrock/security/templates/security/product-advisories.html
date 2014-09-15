@@ -11,20 +11,20 @@
 
       {% include "security/partials/impact_key.html" %}
 
-      <ul>
-        {% for version in product_versions %}
-          <li id="{{ version.slug }}" class="level-heading">
-            <h3>Fixed in {{ version.name }} <a class="anchor" href="#{{ version.slug }}">#</a></h3>
-          <ul>
-          {% for advisory in version.advisories.all() %}
-            <li class="level-item"><a class="level {{ advisory.impact_class }}"
-                   href="{{ advisory.get_absolute_url() }}">{{ advisory.id }}</a> {{ advisory.title|safe }}
-            </li>
-          {% endfor %}
-          </ul>
+      {% for version in product_versions %}
+        <h3 id="{{ version.slug }}" class="level-heading">
+          Fixed in {{ version.name }} <a class="anchor" href="#{{ version.slug }}">#</a>
+        </h3>
+        <ul>
+        {% for advisory in version.advisories.all() %}
+          <li class="level-item"><a class="level {{ advisory.impact_class }}"
+                 href="{{ advisory.get_absolute_url() }}">{{ advisory.id }}</a> {{ advisory.title|safe }}
           </li>
         {% endfor %}
-      </ul>
+        </ul>
+        </li>
+      {% endfor %}
+
     </div>
   </article>
 {% endblock %}

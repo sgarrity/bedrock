@@ -14,7 +14,54 @@
 .moderate {
     background-color: #FFFF80;
 }
+
+.level.critical {
+    background-color: #ffc8c8;
+    border-color: #c00;
+}
+
+.level.high {
+    background-color: #f8dfd8;
+    border-color: #d85027;
+}
+
+.level.moderate {
+    background-color: #ffedcf;
+    border-color: #f90;
+}
+
 // none for .low
+
+.section-content {
+
+    .level-item {
+        position: relative;
+        margin: 0;
+        list-style-type: none;
+        border-top: 1px solid @borderColor;
+        padding: .714rem 0 .5rem;
+        padding-left: 100px;
+    }
+}
+
+.level {
+    background: #f3f3f3;
+    border-right: 3px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05), 0 -1px 0 rgba(0,0,0,0.05) inset;
+    color: @textColorPrimary;
+    display: inline-block;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 4px 2px 4px 4px;
+    position: absolute;
+    top: .714rem;
+    left: 0;
+    text-shadow: 1px 1px 0 #fff;
+    text-transform: uppercase;
+    width: 80px;
+}
 
 li:target {
     background-color: lighten(@linkSkyBlue, 25%);
