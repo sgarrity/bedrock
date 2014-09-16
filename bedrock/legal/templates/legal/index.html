@@ -64,11 +64,13 @@
     <a href="{{ url('mozorg.contribute') }}">{{ _('Get involved!') }}</a>
   </section>
   <section>
-    <h2>{{ _('Report abuse') }}</h2>
-    <ul>
-      <li>{{ _('Help us protect our users by reporting abuse of <a href="%s">Mozilla Trademarks</a>. For example, malware called Firefox, etc.')|format(url('legal.trademarks')) }}</li>
-      <li><a href="{{ url('legal.report-abuse') }}">{{ _('Request a takedown of your content') }}</a></li>
-    </ul>
+    <h2>{{ _('Protect the Fox') }}</h2>
+    <p><a href="{{ url('legal.fraud-report') }} ">{{ _('Help us protect our users by reporting abuse of Mozilla Trademarks.') }}</a></p>
+  </section>
+  <section>
+    <h2>{{ _('Takedown Requests') }}</h2>
+    <p><a href="{{ url('legal.report-abuse') }}">{{ _('Report abuse of your copyrights
+and trademarks.') }}</a></p>
   </section>
 
 {% endblock %}
