@@ -18,13 +18,15 @@
 
 {% block article %}
 
-  <section class="section-content section-terms">
+  <section class="section-content">
     <h2>{{ _('Terms, privacy and trademarks') }}</h2>
     <ul>
       <li class="terms-websites"><a href="{{ url('legal.terms.mozilla') }}">{{ _('Our Websites') }}</a></li>
       <li class="terms-firefox-services"><a href="{{ url('legal.terms.services') }}">{{ _('Firefox Services') }}</a></li>
       <li class="terms-webmaker"><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
       <li class="terms-marketplace"><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
+      <li><a href="{{ url('privacy') }}">Privacy Notices and Policy</a></li>
+      <li><a href="{{ url('legal.trademarks' ) }}">Trademark Policy</a></li>
     </ul>
   </section>
 
