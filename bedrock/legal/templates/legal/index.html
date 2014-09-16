@@ -18,32 +18,15 @@
 
 {% block article %}
 
-  <section class="section-content">
-    <h2>{{ _('Terms, privacy and trademarks') }}</h2>
+  <section class="section-content section-terms">
+    <h2>{{ _('Terms, privacy & trademarks') }}</h2>
     <ul>
       <li class="terms-websites"><a href="{{ url('legal.terms.mozilla') }}">{{ _('Our Websites') }}</a></li>
-      <li class="terms-firefox-services"><a href="{{ url('legal.terms.services') }}">{{ _('Firefox Services') }}</a></li>
+      <li class="terms-firefox"><a href="{{ url('legal.terms.services') }}">{{ _('Firefox Services') }}</a></li>
       <li class="terms-webmaker"><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
       <li class="terms-marketplace"><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
       <li><a href="{{ url('privacy') }}">Privacy Notices and Policy</a></li>
       <li><a href="{{ url('legal.trademarks' ) }}">Trademark Policy</a></li>
-    </ul>
-  </section>
-
-  <section class="section-content">
-    <h2>{{ _('Privacy notices and policy') }}</h2>
-    <ul>
-      <li><a href="https://addons.mozilla.org/developers/docs/policies">{{ _('Firefox Add‐On Developer Policies') }}</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/Marketplace/Publishing/Marketplace_review_criteria">{{ _('Firefox Marketplace Developer Policies') }}</a></li>
-      <li><a href="{{ url('mozorg.about.governance.policies.participation') }}">{{ _('Community Participation Guidelines') }}</a></li>
-    </ul>
-  </section>
-
-  <section class="section-content">
-    <h2>{{ _('Trademark policy') }}</h2>
-    <ul>
-      <li><a href="{{ url('legal.licensing') }}">{{ _('Mozilla Source Code & Software License Policy') }}</a></li>
-      <li><a href="{{ url('styleguide.home') }}">{{ _('Mozilla Style Guide') }}</a></li>
     </ul>
   </section>
 
@@ -70,7 +53,7 @@
     <p><a href="{{ url('legal.fraud-report') }} ">{{ _('Help us protect our users by reporting abuse of Mozilla Trademarks.') }}</a></p>
   </section>
   <section>
-    <h2>{{ _('Takedown Requests') }}</h2>
+    <h2>{{ _('Takedown requests') }}</h2>
     <p><a href="{{ url('legal.report-abuse') }}">{{ _('Report abuse of your copyrights
 and trademarks.') }}</a></p>
   </section>
