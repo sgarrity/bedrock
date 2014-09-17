@@ -147,7 +147,6 @@
 
     ul {
         margin: @baseLine 0 0;
-        .multi-column(@count: 2; @gap: 20px;);
     }
 
     li {
@@ -230,6 +229,12 @@
 #legal-landing {
     #main-content {
         margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: @breakDesktop) {
+    .section-terms ul {
+        .multi-column(@count: 2; @gap: 20px;);
     }
 }
 

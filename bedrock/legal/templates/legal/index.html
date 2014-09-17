@@ -23,9 +23,9 @@
     <ul>
       <li class="terms-websites"><a href="{{ url('legal.terms.mozilla') }}">{{ _('Our Websites') }}</a></li>
       <li class="terms-firefox"><a href="{{ url('legal.terms.services') }}">{{ _('Firefox Services') }}</a></li>
+      <li><a href="{{ url('privacy') }}">Privacy Notices and Policy</a></li>
       <li class="terms-webmaker"><a href="https://webmaker.org/terms">{{ _('Webmaker') }}</a></li>
       <li class="terms-marketplace"><a href="https://marketplace.firefox.com/terms-of-use">{{ _('Firefox Marketplace') }}</a></li>
-      <li><a href="{{ url('privacy') }}">Privacy Notices and Policy</a></li>
       <li><a href="{{ url('legal.trademarks' ) }}">Trademark Policy</a></li>
     </ul>
   </section>
@@ -44,16 +44,16 @@
 
 {% block side_extra %}
   <section id="side-involved">
-    <h2>{{ _('Get involved') }}</h2>
+    <h3>{{ _('Get involved') }}</h3>
     <p>{{ _('Special thanks to all of you who help report abuses of Mozilla marks, participate in governance forums, give feedback on our localizations & legal terms, and contribute your skills to the success of the Mozilla project.') }}</p>
     <a href="{{ url('mozorg.contribute') }}">{{ _('Get involved!') }}</a>
   </section>
   <section>
-    <h2>{{ _('Protect the Fox') }}</h2>
+    <h3>{{ _('Protect the Fox') }}</h3>
     <p><a href="{{ url('legal.fraud-report') }} ">{{ _('Help us protect our users by reporting abuse of Mozilla Trademarks.') }}</a></p>
   </section>
   <section>
-    <h2>{{ _('Takedown requests') }}</h2>
+    <h3>{{ _('Takedown requests') }}</h3>
     <p><a href="{{ url('legal.report-abuse') }}">{{ _('Report abuse of your copyrights
 and trademarks.') }}</a></p>
   </section>
