@@ -10,6 +10,17 @@
 @smallFontSize:     12px;
 @largeFontSize:     16px;
 
+// Specify a px value and this converts to rem, keeping the px as fallback.
+// Assumes default 16px to match sizes but will respect user preferences.
+.font-size(@value) {
+    font-size: @value;
+}
+
+.font-size(@value) when (ispixel(@value)) {
+    font-size: @value;
+    font-size: unit(@value / 16, rem);
+}
+
 @textColorPrimary:   #333;
 @textColorSecondary: #484848;
 @textColorTertiary:  #666;
