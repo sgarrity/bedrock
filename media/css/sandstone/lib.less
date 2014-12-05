@@ -18,7 +18,7 @@
 
 .font-size(@value) when (ispixel(@value)) {
     font-size: @value;
-    font-size: unit(@value / 16, rem);
+    .font-size(unit(@value / 16, rem));
 }
 
 @textColorPrimary:   #333;
@@ -316,7 +316,7 @@
 
 .required-star() {
     content: " *";
-    font-size: @smallFontSize;
+    .font-size(@smallFontSize);
     font-weight: bold;
     color: @linkRed;
 }

@@ -9,7 +9,7 @@ body {
     padding: 0;
     max-width: 370px;
     color: #303030;
-    font-size: 13px;
+    .font-size(13px);
     font-family: Georgia, serif;
     background: #fff url('/media/img/firefox/unsupported/background.jpg') 0 0 no-repeat;
 }
@@ -17,7 +17,7 @@ body {
 h1 {
     margin: 0;
     padding: 2px 0 0 0;
-    font-size: 24px;
+    .font-size(24px);
     font-family: verdana, sans-serif;
     font-weight: bold;
 }
@@ -64,7 +64,7 @@ a:active {
 }
 
 small {
-    font-size: 11px;
+    .font-size(11px);
 }
 
 /* rtl fixes */
@@ -78,11 +78,11 @@ html[dir='rtl']  #wrapper {
 
 
 html[lang='si'], html[lang='bn-IN'], html[lang='ka'], html[lang='kn']  {
-    font-size:85%
+    .font-size(85%);
 }
 
 html[lang="th"] #details-header p {
-    font-size:80% !important;
+    .font-size(80% !important);
 }
 
 html[lang='th'] li{
@@ -100,7 +100,7 @@ html[lang='te'] li {
 
 /* Tweaks for Japanese */
 html[lang='ja'] body {
-    font-size: @smallFontSize;
+    .font-size(@smallFontSize);
     line-height: 1.5;
     font-family: "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "Verdana", "ＭＳ Ｐゴシック", "MS PGothic", "VL Pゴシック", "Takao Pゴシック", "IPA Pゴシック", sans-serif;
 }
