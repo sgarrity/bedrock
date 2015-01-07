@@ -513,6 +513,9 @@ MINIFY_BUNDLES = {
             'css/privacy/privacy.less',
         ),
         'privacy-day': (
+            'css/sandstone/sandstone-resp.less',
+            'css/base/mozilla-share-cta.less',
+            'css/libs/socialshare/socialshare.less',
             'css/privacy/privacy-day.less',
         ),
         'fb_privacy': (
@@ -956,7 +959,12 @@ MINIFY_BUNDLES = {
             'js/privacy/privacy.js',
         ),
         'privacy-day': (
+            'js/base/mozilla-pager.js',
+            'js/libs/hammer.1.1.2.min.js',
+            'js/libs/socialshare.min.js',
+            'js/base/mozilla-share-cta.js',
             'js/privacy/privacy-day.js',
+
         ),
         'products': (
             'js/libs/jquery.waypoints.min.js',
