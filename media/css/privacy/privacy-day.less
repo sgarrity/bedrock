@@ -2,243 +2,452 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@import "../sandstone/lib.less";
+@import '../sandstone/lib.less';
 
-.privacy-day #outer-wrapper {
-    background: #f8f8f8;
+/* {{{ Template overrides */
+
+#outer-wrapper {
+    background: #fff;
 }
 
-// Override sandstone base layout so we can have full-width blocks.
-#wrapper,
-#masthead,
-#main-content {
+#wrapper {
     width: 100%;
-    padding: 0;
 }
 
 #masthead {
-    background: #1677b9 url(/media/img/sandstone/grain.png);
-    z-index: 1;
+    z-index: 3;
+
+    nav > ul > li {
+        & > a,
+        & > a:link,
+        & > a:visited {
+            color: #fff;
+        }
+    }
 }
 
-.container {
-    width: (@widthDesktop - (@gridGutterWidth * 2));
-    .clearfix();
-    margin-left: auto;
-    margin-right: auto;
+#main-content {
     padding: 0;
 }
 
-#main-content header {
-    background: #1677b9 url(/media/img/sandstone/grain.png);
-    min-height: 290px;
-    width: 100%;
+#colophon {
+    background: #dfe6eb;
 
-    .container {
-        background: transparent url(/media/img/privacy/privacy-day-glass.png) 420px top no-repeat;
-        min-height: 280px;
-        padding: 50px 540px 20px 0;
-        width: 400px;
+    .logo a {
+        background: url(/media/img/sandstone/footer-mozilla-dark.png);
+    }
+}
+
+/* }}} */
+
+.container {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+#page-header {
+    margin-top: -44px;
+    background: @mozillaRed;
+    box-shadow: inset 0 -46px 0 0 darken(@mozillaRed, 5%);
+
+    h1, h2 {
+        position: relative;
+        color: #fff;
+        text-shadow: 0 1px 0 rgba(72, 72, 72, 0.3);
+        z-index: 2;
+        text-align: center;
     }
 
     h1 {
-        color: #fff;
-        .font-size(4.572em);
-        line-height: 1.175;
-        margin-bottom: 25px;
-        text-shadow: none;
+        .font-size(54px);
+        margin-bottom: @baseLine;
+        padding-top: 56px;
     }
-
-    .download-button small.download-other a:link,
-    .other .download-button-mobile small.download-other a:link,
-    .android .download-button-desktop small.download-other a:link,
-    .download-button small.download-other a:visited,
-    .other .download-button-mobile small.download-other a:visited,
-    .android .download-button-desktop small.download-other a:visited {
-        color: #ccc;
-    }
-
-}
-
-#principles a {
-    color: #fff;
-    .font-size(.857em);
-    text-transform: uppercase;
-    padding: 3px 15px;
-    background: rgba(0, 0, 0, .15);
-    border-radius: 3px;
-
-    &:hover,
-    &:focus,
-    &:active {
-        background: rgba(0, 0, 0, .2);
-    }
-}
-
-.intro {
-    .span(3);
-    padding: 20px;
-    background: #ecedee;
-    margin-top: -25px;
-
-    p {
-        margin-bottom: 0;
-    }
-}
-
-.block {
-    .span(3);
-    margin-bottom: 30px;
-}
-
-.block:nth-child(2n+1) {
-    clear: left;
-}
-
-.block:nth-child(2n+2) {
-    .offset(1);
-}
-
-.go a:after {
-    content: ' »';
-    white-space: nowrap;
-}
-
-.main {
-    width: (@gridColumnWidth * 8) + (@gridGutterWidth * 8);
-    padding-top: 50px;
-    float: right;
-    .font-size(.857em);
 
     h2 {
-        .font-size(2em);
-    }
-
-    .go {
-        .font-size(1.333em);
+        .font-size(24px);
+        padding: 0;
+        margin: 0 0 40px 0;
     }
 }
 
-/* Tablet Layout: 760px */
-@media only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) {
+#page-content {
+    padding: 0 0 48px 0;
+}
 
-    .container {
-        width: @widthTablet - (@gridGutterWidth * 2);
+#tips-nav-direct {
+    width: 826px;
+    height: 40px;
+    margin: 0;
+    overflow: hidden;
+    .clearfix();
+    ol {
+        margin: 0;
     }
 
-    #main-content header {
-        min-height: 200px;
+    li {
+        float: left;
+        width: 180px;
+        height: 40px;
+        margin-left: -20px;
+        display: table;
 
-        .container {
-            background-position: 320px top;
-            background-size: 360px 440px;
-            min-height: 240px;
-            padding: 30px 420px 20px 0;
-            width: 280px;
+        &:first-child {
+            margin-left: 0;
         }
+
+        a {
+            height: 40px;
+            width: 120px;
+            background: url(/media/img/privacy/you/sprite-tabs.png) left -84px no-repeat;
+            text-align: center;
+            color: #fff;
+            .font-size(@smallFontSize);
+            text-transform: uppercase;
+            line-height: 1.2;
+            padding: 0 30px;
+            display: table-cell;
+            vertical-align: middle;
+
+            &:hover {
+                background-position: left top;
+                text-decoration: none;
+            }
+
+            &.selected {
+                background-position: left -42px;
+                color: @textColorSecondary;
+            }
+        }
+    }
+}
+
+#share-nav-wrapper {
+    .clearfix();
+
+    .socialshare {
+        float: left;
+        width: 108px;
+        margin: 12px 6px 0 0;
+    }
+
+    .socialshare > div > a {
+        background: transparent url(/media/img/privacy/you/sprite-socialshare.png) left 6px no-repeat;
+        padding-left: 16px;
+        color: #fff;
+        text-transform: uppercase;
+
+        span {
+            border-bottom: 0;
+            .font-size(@smallFontSize);
+        }
+    }
+
+    .socialshare.open > div > a:after {
+        background-color: rgba(255, 255, 255, .6);
+    }
+}
+
+html[lang^='en'] #tips-nav-direct li a span:after {
+    content: '.';
+}
+
+#tips-nav-prev-next {
+    display: none;
+}
+
+#tips-wrapper {
+    padding-top: 50px;
+}
+
+.tip {
+    position: relative;
+    z-index: 1;
+    margin-bottom: @baseLine * 2;
+
+    .clearfix();
+}
+
+.tip-copy {
+    float: right;
+    width: 300px - (@baseLine * 2);
+    margin-left: 40px;
+    padding: 30px @baseLine 0;
+    text-align: center;
+    .font-size(@largeFontSize);
+    line-height: 1.6;
+    color: @textColorTertiary;
+    .open-sans-light();
+
+    h3 {
+        .font-size(30px);
+    }
+
+    hr {
+        width: 140px;
+        margin: 0 auto @baseLine;
+    }
+
+    h4 {
+        .font-size(20px);
+    }
+
+    strong {
+        color: #ff7200;
+    }
+
+    a {
+        display: block;
+        margin: @baseLine 0;
+        .trailing-arrow();
+    }
+}
+
+.ordinal {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 30px;
+    background: #ff7200;
+    color: #fff;
+    .open-sans-light();
+    .font-size(34px);
+    line-height: 46px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#page-footer {
+    background: #fff;
+}
+
+.socialshare > div > a {
+    background: none;
+    padding-left: 0;
+    color: @linkBlue;
+
+    &:after {
+        background-image: url(/media/img/privacy/you/sprite-socialshare.png);
+        background-repeat: no-repeat;
+        background-position: 4px -19px;
+        top: 0;
+    }
+
+    &:hover, &:focus {
+        color: @linkBlue;
+
+        &:after {
+            background-position: 4px -19px;
+        }
+
+        span {
+            border-color: @linkBlue;
+        }
+    }
+}
+
+.socialshare.open > div > a {
+    color: @linkBlueHover;
+
+    &:after {
+        background-position: 5px -42px;
+    }
+
+    span {
+        border-color: @linkBlueHover;
+    }
+}
+
+/* {{{ RTL overrides */
+
+html[dir='rtl'] {
+    #share-nav-wrapper .socialshare {
+        float: right;
+    }
+
+    #tips-nav-direct {
+        float: left;
+
+        li {
+            float: right;
+            margin-left: 0;
+            margin-right: -20px;
+
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+/* }}} */
+
+/****************************************************************************/
+// @High resolution images for @retina-type displays
+// Desktop
+@media (-webkit-min-device-pixel-ratio: 1.5),
+       (                min-resolution: 1.5dppx),
+       (                min-resolution: 144dpi) {
+
+        #tips-nav-direct li a {
+            background-image: url(/media/img/privacy/you/sprite-tabs-high-res.png);
+            background-size: 180px 84px;
+        }
+
+}
+
+/****************************************************************************/
+// @Tablet Layout: 760px and below
+@media (max-width: @breakDesktop) {
+    #tips-nav-direct {
+        li {
+            width: 25%;
+            a {
+                background: none;
+                padding: 0;
+            }
+        }
+    }
+}
+
+/****************************************************************************/
+// @Tablet Layout: 760px
+@media (max-width: @breakDesktop) and (min-width: @breakTablet) {
+    #main-content {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #masthead {
+        width: 100%;
+        padding: 0;
+    }
+
+    #page-header {
+        box-shadow: inset 0 -30px 0 0 darken(@mozillaRed, 5%);
 
         h1 {
-            .font-size(3.572em);
+            .font-size(44px);
+        }
+
+        h2 {
+            .font-size(22px);
+        }
+
+        #share-nav-wrapper {
+            margin: -20px 156px 0 0;
+
+            .socialshare {
+                margin-top: 6px;
+                padding-bottom: 5px;
+            }
         }
     }
 
-    .block,
-    .intro {
-        .span_narrow(3);
-    }
-
-    .intro {
-        margin-top: -25px;
-    }
-
-    .block:nth-child(2n+2) {
-        .offset_narrow(1);
-    }
-
-    .main {
-        width: (@gridColumnWidthNarrow * 8) + (@gridGutterWidth * 8);
+    .container {
+        width: @breakTablet - (@baseLine * 2);
     }
 
 }
 
-/* Mobile layout: 320px */
-@media only screen and (max-width: @breakTablet) {
+/****************************************************************************/
+// @High resolution images for @retina-type displays
+// Tablet
+@media only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) and (                min-resolution: 1.5dppx),
+       only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) and (                min-resolution: 144dpi) {
 
-    .container {
-        width: @widthMobile - (@gridGutterWidth * 2);
+    .js #tips-nav-prev-next button {
+        background-image: url(/media/img/firefox/desktop/tips/sprite-arrows-high-res.png);
+        background-size: 120px 60px;
+    }
+}
+
+/****************************************************************************/
+// @Wide mobile Layout: 480px
+@media (max-width: @breakTablet) {
+    #wrapper {
+        padding-bottom: @baseLine;
     }
 
-    #masthead h2 {
+    #main-content {
+        padding-top: 0;
+    }
+
+    #masthead {
+        padding-bottom: 0;
+
+        nav > ul > li {
+            & > a,
+            & > a:link,
+            & > a:visited {
+                color: @textColorSecondary;
+            }
+        }
+
+        .container {
+            padding-bottom: 0;
+        }
+    }
+
+    #page-header {
+        box-shadow: inset 0 -16px 0 0 darken(@mozillaRed, 5%);
+
+        h1 {
+            .font-size(30px);
+        }
+
+        h2 {
+            .font-size(20px);
+        }
+
+        .container {
+            padding-bottom: 10px;
+        }
+    }
+
+    #page-content {
+        padding-bottom: 20px;
+    }
+
+    .container {
+        width: @breakMobileLandscape - (@baseLine * 2);
+    }
+
+    #tips-wrapper {
+        padding-top: 30px;
+    }
+
+    .socialshare {
         display: none;
     }
 
-    #main-content header {
-        min-height: 0;
-        text-align: center;
-
-        .container {
-            background-image: none;
-            padding: 20px 0 40px;
-            width: @widthMobile - (@gridGutterWidth * 2);
-            min-height: 0;
-        }
-
-        h1 {
-            .font-size(48px);
-        }
-    }
-
-    .intro,
-    .main {
-        width: auto;
-        float: none;
-        margin: 0;
-    }
-
-    .intro {
-        margin-top: -25px;
-    }
-
-    .block {
-        width: auto;
-        margin: 0;
-    }
-
-    .block:nth-child(2n+2) {
-        margin-left: 0;
-    }
-
-    .go {
-        padding-bottom: 30px;
-        margin-bottom: 30px;
-        border-bottom: 1px dotted @borderColor;
-    }
-
-    .block:last-child .go {
-        border-bottom: 0;
-        padding-bottom: 0;
-    }
-
 }
 
-/* Wide mobile layout: 480px; */
-@media only screen and (min-width: @breakMobileLandscape) and (max-width: @breakTablet) {
+
+@media (max-width: @breakMobileLandscape) {
+    #main-content, #masthead {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #page-header {
+        width: 100%;
+        box-shadow: inset 0 -8px 6px -4px darken(@mozillaRed, 5%);
+        padding-bottom: 0;
+        overflow: hidden;
+
+        .container {
+            padding-bottom: 0;
+        }
+    }
 
     .container {
-        width: @widthMobileLandscape - @gridGutterWidth;
+        width: @breakMobile - @baseLine;
     }
 
-    #masthead h2 {
-        display: block;
-    }
-
-    .intro,
-    .main {
-        .span-all();
-    }
-
-    .intro {
-        margin-top: -25px;
-    }
 
 }
