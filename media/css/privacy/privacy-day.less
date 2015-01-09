@@ -4,6 +4,8 @@
 
 @import '../sandstone/lib.less';
 
+@privacyGreen: #00af84;
+
 /* {{{ Template overrides */
 
 #outer-wrapper {
@@ -42,7 +44,7 @@
 
 .container {
     position: relative;
-    width: 940px;
+    width: @gridRowWidth + @gridGutterWidth;
     margin: 0 auto;
 }
 
@@ -72,7 +74,7 @@
 }
 
 #page-content {
-    padding: 0 0 48px 0;
+    padding: 0 0 20px 0;
 }
 
 #tips-nav-direct {
@@ -159,7 +161,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
 }
 
 #tips-wrapper {
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .tip {
@@ -168,47 +170,57 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     margin-bottom: @baseLine * 2;
 
     .clearfix();
-}
 
-.tip-copy {
-    float: right;
-    width: 300px - (@baseLine * 2);
-    margin-left: 40px;
-    padding: 30px @baseLine 0;
-    text-align: center;
-    .font-size(@largeFontSize);
-    line-height: 1.6;
-    color: @textColorTertiary;
-    .open-sans-light();
-
-    h3 {
-        .font-size(30px);
-    }
-
-    hr {
-        width: 140px;
-        margin: 0 auto @baseLine;
-    }
-
-    h4 {
+    .intro {
+        .open-sans-light();
         .font-size(20px);
     }
 
-    strong {
-        color: #ff7200;
+    .tip-column {
+        .span(8)
     }
 
-    a {
-        display: block;
-        margin: @baseLine 0;
-        .trailing-arrow();
+    aside {
+        .span(3);
+        .offset(1);
+        .quote {
+            position: relative;
+            .open-sans-light();
+            color: @privacyGreen;
+            font-style: italic;
+            .font-size(20px);
+            &:before,
+            &:after {
+                content: "“";
+                font-family: sans-serif;
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: -1em;
+            }
+            &:after {
+                content: "”";
+            }
+        }
+    }
+
+    .tip-title {
+        color: @mozillaRed;
+        .font-size(42px);
+        .span-all();
+        margin-bottom: @baseLine;
     }
 }
+
+
 
 .tip-footer {
     margin: @baseLine auto;
     padding: @baseLine 0;
     border-top: 1px dotted @borderColor;
+    clear: both;
+    .span-all();
     .previous {
         float: left;
         a {
