@@ -185,9 +185,10 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         .offset(1);
         .quote {
             position: relative;
-            .open-sans-light();
             color: @privacyGreen;
             font-style: italic;
+            margin-bottom: 5px;
+            .open-sans-light();
             .font-size(20px);
             &:before,
             &:after {
@@ -197,11 +198,14 @@ html[lang^='en'] #tips-nav-direct li a span:after {
             &:before {
                 position: absolute;
                 top: 0;
-                left: -1em;
+                left: -.5em;
             }
             &:after {
                 content: "”";
             }
+        }
+        .attribute {
+            color: @textColorLight;
         }
     }
 
@@ -211,9 +215,143 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         .span-all();
         margin-bottom: @baseLine;
     }
+
+    h4 {
+        color: @mozillaRed;
+        margin-bottom: @baseLine;
+    }
+
+    h5 {
+        .open-sans();
+        text-transform: uppercase;
+    }
+
+    .footnote {
+        color: @textColorLight;
+        font-style: italic;
+    }
 }
 
 
+/* 1. ASK section */
+
+.charts {
+    margin-left: -(@gridGutterWidth / 2);
+    margin-right: -(@gridGutterWidth / 2);
+    padding-bottom: @baseLine;
+    color: @textColorSecondary;
+    .clearfix();
+    .chart {
+        .span(4);
+    }
+    .percentage {
+        display: block;
+        margin: 0 auto @baseLine/2 auto;
+        height: 140px;
+        width: 140px;
+        background: url(/media/img/privacy/you/charts.png) no-repeat 0 0;
+        color: #00af84;
+        line-height: 140px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        .open-sans-light;
+        .font-size(62px);
+        sup {
+            .font-size(24px);
+        }
+
+    }
+    .chart2 .percentage {
+        background-position: 0 -140px;
+    }
+    p {
+        margin: @baseLine;
+    }
+}
+
+
+/* 2. LEARN section */
+
+.greenwald {
+    position: relative;
+    margin-bottom: @baseLine*2;
+    text-align: center;
+    img {
+        .border-radius(6px);
+        width: 100%;
+    }
+    figcaption {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: -1.5em;
+        text-align: center;
+        span {
+            padding: (@baseLine / 2) @baseLine;
+            background: @buttonBlue;
+            color: #fff;
+            .border-radius();
+        }
+    }
+    a:hover,
+    a:active {
+        span {
+            background: @buttonBlueDark;
+        }
+    }
+}
+
+
+/* 3. ACT section */
+
+.features-list {
+    margin: @baseLine auto;
+    padding: 0;
+    > li {
+        list-style-type: none;
+        margin-bottom: @baseLine/2;
+        > a {
+            display: block;
+            position: relative;
+            padding: @baseLine/2 0 @baseLine/2 160px;
+            padding-bottom: @baseLine;
+            min-height: 120px;
+            color: @textColorSecondary;
+            &:hover,
+            &:active {
+                text-decoration: none;
+                h5 {
+                    text-decoration: underline;
+                }
+            }
+            &:before {
+                content: ' ';
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                height: 120px;
+                width: 140px;
+                .at2x('/media/img/privacy/you/features-logos.png', 140px, 480px);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+        &.feature-forget  > a:before { background-position: 0 -120px; }
+        &.feature-ddg     > a:before { background-position: 0 -240px; }
+        &.feature-add-ons > a:before { background-position: 0 -360px; }
+    }
+    h5 {
+        .trailing-arrow();
+        color: @linkBlue;
+    }
+}
+
+.lightbeam {
+    padding-left: 160px;
+    background: transparent url(/media/img/privacy/you/lightbeam.png) 0 10px no-repeat;
+    margin-bottom: @baseLine*2;
+}
 
 .tip-footer {
     margin: @baseLine auto;
