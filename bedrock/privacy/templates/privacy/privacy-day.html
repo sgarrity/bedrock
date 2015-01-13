@@ -4,6 +4,8 @@
 
 {% extends "base-resp.html" %}
 
+{% from "macros.html" import share_cta with context %}
+
 {% block page_title_prefix %}{% endblock %}
 {% block page_title %}{{ _('Get smart on privacy') }}{% endblock %}
 
@@ -35,7 +37,7 @@
 
   <div id="share-nav-wrapper" class="share-wrapper">
     <div class="container">
-      {% include 'firefox/includes/social-share.html' %}
+      <div class="socialshare" data-type="small-bubbles" data-label="{{_('Share')}}" data-fb-lang="{{ facebook_locale }}"></div>
       <nav id="tips-nav-direct">
         <ol role="tablist">
           <li role="presentation">
@@ -175,34 +177,40 @@ But even you’re not a Firefox user there are a lot of simple things you can do
               <p>{{ _('Most Web browsers — like Safari, Internet Explorer, Chrome and (of course) Firefox — offer a Private Browsing option that lets you visit sites without saving your information.') }}</p>
               <p><em>{{ _('Follow the links to learn how to turn on Private Browsing:') }}</em></p>
               <ul class="private-browsing">
-                <li class="private-browsing-firefox">
+                <li class="browser-firefox">
                   <a href="">{{ _('Firefox') }}</a>
                 </li>
-                <li class="private-browsing-ie">
+                <li class="browser-ie">
                   <a href="">{{ _('Internet Explorer') }}</a>
                 </li>
-                <li class="private-browsing-chrome">
+                <li class="browser-chrome">
                   <a href="">{{ _('Chrome') }}</a>
                 </li>
-                <li class="private-browsing-safari">
+                <li class="browser-safari">
                   <a href="">{{ _('Safari') }}</a>
                 </li>
-                <li class="private-browsing-opera">
+                <li class="browser-opera">
                   <a href="">{{ _('Opera') }}</a>
                 </li>
               </ul>
               <h5>{{ _('Privacy tips from StaySafeOnline.Org') }}</h5>
               <p>{{ _('Stay Safe Online has several guides that can help, including social networking and mobile privacy tips and a one-stop shop for updating your privacy settings on the services many of us use every day.') }}</p>
               <ul class="stay-safe-online">
-                <li><a href="http://staysafeonline.org/stay-safe-online/mobile-and-on-the-go/mobile-devices">
-                  {{ _('Stay safe on the go') }}
-                </a></li>
-                <li><a href="http://staysafeonline.org/stay-safe-online/protect-your-personal-information/social-networks">
-                  {{ _('Protect yourself on social networks') }}
-                </a></li>
-                <li><a href="http://www.staysafeonline.org/data-privacy-day/check-your-privacy-settings/">
-                  {{ _('Check your privacy settings') }}
-                </a></li>
+                <li class="safe-go">
+                  <a href="http://staysafeonline.org/stay-safe-online/mobile-and-on-the-go/mobile-devices">
+                    {{ _('Stay safe on the go') }}
+                  </a>
+                </li>
+                <li class="safe-social">
+                  <a href="http://staysafeonline.org/stay-safe-online/protect-your-personal-information/social-networks">
+                    {{ _('Protect yourself on social networks') }}
+                  </a>
+                </li>
+                <li class="safe-privacy">
+                  <a href="http://www.staysafeonline.org/data-privacy-day/check-your-privacy-settings/">
+                    {{ _('Check your privacy settings') }}
+                  </a>
+                </li>
               </ul>
             </div>
             <aside>
@@ -225,9 +233,9 @@ But even you’re not a Firefox user there are a lot of simple things you can do
             <h3 class="tip-title">{{ _('Start a conversation') }}</h3>
             <div class="tip-column">
               <p class="intro">{{ _('At Mozilla, empowering people to be in control of their online lives is an important part of our mission — it guides our <a href="%s">principles</a> and it’s why we want everyone to be smart on privacy. If you feel like we’ve helped raise your privacy IQ, help your friends and family raise theirs. It’s as easy as starting a conversation.')|format(url('mozorg.about.manifesto')) }}</p>
-              <div >
+              <div>
                 <h4>{{ _('Here are some questions you can ask to get the ball rolling:') }}</h4>
-                <ol>
+                <ol class="big-list">
                   <li>
                     <p>{{ _('How much does privacy matter to you? Why?') }}</p>
                   </li>
@@ -237,9 +245,18 @@ But even you’re not a Firefox user there are a lot of simple things you can do
                   <li>
                     <p>{{ _('How much do you think about who has access to your online data and behaviour?') }}</p>
                   </li>
-                </ul>
+                </ol>
                 <h4>{{ _('Spread the word') }}</h4>
-                {% include 'firefox/includes/social-share.html' %}
+                <div class="share-widget">
+                  {%
+                  set share_urls = {
+                      'twitter': 'http://mzl.la/fx10',
+                      'googleplus': 'https://www.mozilla.org/' + LANG + '/firefox/independent/?utm_source=Google&utm_medium=MozLandingPage&utm_campaign=FX10&utm_content=WebsiteShare',
+                      'facebook': 'https://www.mozilla.org/' + LANG + '/firefox/independent/?utm_source=Facebook&utm_medium=MozLandingPage&utm_campaign=FX10&utm_content=WebsiteShare#play'
+                  }
+                  %}
+                  {{ share_cta(_('Share the video'), share_urls, _('Keep the passion for a free and open Internet burning bright! #ChooseIndependent. Choose Firefox:')) }}
+                </div>
                 <p>{{ _('Feeling smart on privacy? <b>Share this site</b> with your friends and help them raise their awareness, too.') }}</p>
               </div>
             </div>

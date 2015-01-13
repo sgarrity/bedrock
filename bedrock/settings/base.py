@@ -926,6 +926,7 @@ MINIFY_BUNDLES = {
             'js/base/mozilla-pager.js',
             'js/libs/hammer.1.1.2.min.js',
             'js/libs/socialshare.min.js',
+            'js/base/mozilla-share-cta.js',
             'js/privacy/privacy-day.js',
 
         ),

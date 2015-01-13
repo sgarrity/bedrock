@@ -301,6 +301,12 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     }
 }
 
+.lightbeam {
+    padding-left: 160px;
+    background: transparent url(/media/img/privacy/you/lightbeam.png) 0 10px no-repeat;
+    margin-bottom: @baseLine*2;
+}
+
 
 /* 3. ACT section */
 
@@ -347,11 +353,129 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     }
 }
 
-.lightbeam {
-    padding-left: 160px;
-    background: transparent url(/media/img/privacy/you/lightbeam.png) 0 10px no-repeat;
-    margin-bottom: @baseLine*2;
+.private-browsing {
+    margin: @baseLine auto;
+    padding: 0;
+    .clearfix();
+    > li {
+        list-style-type: none;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+        float: left;
+        text-align: center;
+        > a {
+            display: block;
+            position: relative;
+            padding: 0 2px 10px;
+            .trailing-arrow();
+            &:before {
+                content: ' ';
+                display: block;
+                height: 80px;
+                width: 80px;
+                margin: 0 auto;
+                .at2x('/media/img/privacy/you/browsers.png', 400px, 80px);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+        &.browser-ie     > a:before { background-position:  -80px 0; }
+        &.browser-chrome > a:before { background-position: -160px 0; }
+        &.browser-safari > a:before { background-position: -240px 0; }
+        &.browser-opera  > a:before { background-position: -320px 0; }
+    }
+    h5 {
+        .trailing-arrow();
+        color: @linkBlue;
+    }
 }
+
+.stay-safe-online {
+    margin: @baseLine auto;
+    padding: 0;
+    .clearfix();
+    > li {
+        list-style-type: none;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+        float: left;
+        text-align: center;
+        > a {
+            display: block;
+            position: relative;
+            padding: 0 2px 10px;
+            .trailing-arrow();
+            &:before {
+                content: ' ';
+                display: block;
+                height: 80px;
+                width: 80px;
+                margin: 0 auto;
+                .at2x('/media/img/privacy/you/safe-icons.png', 240px, 80px);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+        &.safe-social  > a:before { background-position:  -80px 0; }
+        &.safe-privacy > a:before { background-position:  -160px 0; }
+    }
+    h5 {
+        .trailing-arrow();
+        color: @linkBlue;
+    }
+}
+
+
+/* 4. DISCUSS setion */
+
+.big-list {
+    margin: @baseLine auto;
+    padding: 0;
+    > li {
+        position: relative;
+        counter-increment: steps;
+        list-style-type: none;
+        margin: 0 0 @baseLine 0;
+        padding: @baseLine/2 @baseLine/2 @baseLine/2 80px;
+        min-height: 60px;
+        border-bottom: 1px dotted @borderColor;
+        &:before {
+            content: counter(steps);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 60px;
+            width: 60px;
+            margin: 0 auto;
+            line-height: 60px;
+            border-radius: 30px;
+            text-align: center;
+            background: #00af84;
+            color: #fff;
+            .font-size(42px);
+            .open-sans-light();
+        }
+    }
+    h5 {
+        .trailing-arrow();
+        color: @linkBlue;
+    }
+}
+
+.spread .socialshare {
+    float: right;
+    width: 160px;
+    margin-right: @baseLine;
+    margin-bottom: @baseLine/2;
+    border: 2px solid @buttonBlue;
+    text-align: center;
+    padding: @baseLine/2 @baseLine;
+    .border-radius();
+}
+
 
 .tip-footer {
     margin: @baseLine auto;
