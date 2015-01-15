@@ -38,34 +38,35 @@
     </div>
   </div>
 
+  <div class="pager pager-auto-init pager-with-tabs">
+
   <div id="share-nav-wrapper" class="share-wrapper">
     <div class="container">
       <div class="socialshare" data-type="small-bubbles" data-label="{{_('Share')}}" data-fb-lang="{{ facebook_locale }}"></div>
       <nav id="tips-nav-direct">
-        <ol role="tablist">
+        <ol role="tablist" class="pager-tabs">
           <li role="presentation">
-            <a role="tab" aria-controls="ask-tip" aria-selected="true" href="#ask" id="tab-ask"><span>{{ _('1') }}</span> {{ _('ASK') }}</a>
+            <a role="tab" aria-controls="ask" aria-selected="true" href="#ask" id="tab-ask"><span>{{ _('1') }}</span> {{ _('ASK') }}</a>
           </li>
           <li role="presentation">
-            <a role="tab" aria-controls="learn-tip" aria-selected="false" href="#learn" id="tab-learn"><span>{{ _('2') }}</span> {{ _('LEARN') }}</a>
+            <a role="tab" aria-controls="learn" aria-selected="false" href="#learn" id="tab-learn"><span>{{ _('2') }}</span> {{ _('LEARN') }}</a>
           </li>
           <li role="presentation">
-            <a role="tab" aria-controls="act-tip" aria-selected="false" href="#act" id="tab-act"><span>{{ _('3') }}</span> {{ _('ACT') }}</a>
+            <a role="tab" aria-controls="act" aria-selected="false" href="#act" id="tab-act"><span>{{ _('3') }}</span> {{ _('ACT') }}</a>
           </li>
           <li role="presentation">
-            <a role="tab" aria-controls="discuss-tip" aria-selected="false" href="#discuss" id="tab-discuss"><span>{{ _('4') }}</span> {{ _('DISCUSS') }}</a>
+            <a role="tab" aria-controls="discuss" aria-selected="false" href="#discuss" id="tab-discuss"><span>{{ _('4') }}</span> {{ _('DISCUSS') }}</a>
           </li>
         </ol>
       </nav>
     </div>{# /#share-nav-wrapper #}
   </div>{# /.container #}
 
-  </div>{# /#page-header #}
 
   <div id="page-content">
-    <div class="container pager pager-no-history pager-auto-init">
+    <div class="container">
       <div id="tips-wrapper" class="pager-content">
-        <div class="tip pager-page default-page" id="ask-tip" role="tabpanel" aria-labelledby="tab-ask">
+        <div class="tip pager-page default-page" id="ask" role="tabpanel" aria-labelledby="tab-ask">
           <div class="tip-content">
             <h3 class="tip-title">{{ _('How important is privacy to you?') }}</h3>
             <div class="tip-column">
@@ -109,7 +110,7 @@
           </div>
         </div>
 
-        <div class="tip pager-page" id="learn-tip" role="tabpanel" aria-labelledby="tab-learn">
+        <div class="tip pager-page" id="learn" role="tabpanel" aria-labelledby="tab-learn">
           <div class="tip-content">
             <h3 class="tip-title">{{ _('Understanding privacy') }}</h3>
             <div class="tip-column">
@@ -159,7 +160,7 @@ Privacy Matters”') }}">
           </div>
         </div>
 
-        <div class="tip pager-page" id="act-tip" role="tabpanel" aria-labelledby="tab-act">
+        <div class="tip pager-page" id="act" role="tabpanel" aria-labelledby="tab-act">
           <div class="tip-content">
             <h3 class="tip-title">{{ _('What you can do') }}</h3>
             <div class="tip-column">
@@ -260,7 +261,7 @@ Privacy Matters”') }}">
           </div>
         </div>
 
-        <div class="tip pager-page" id="discuss-tip" role="tabpanel" aria-labelledby="tab-discuss">
+        <div class="tip pager-page" id="discuss" role="tabpanel" aria-labelledby="tab-discuss">
           <div class="tip-content">
             <h3 class="tip-title">{{ _('Start a conversation') }}</h3>
             <div class="tip-column">
@@ -307,6 +308,8 @@ Privacy Matters”') }}">
             </ul>
           </div>
         </div>
+
+      </div>
 
       </div>{# /#tips-wrapper #}
     </div>{# /.container #}
