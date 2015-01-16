@@ -61,24 +61,31 @@
     margin-top: -44px;
     background: @mozillaRed;
 
+    .container {
+        .at2x('/media/img/privacy/you/logo.png', 120px, 140px);
+        background-repeat: no-repeat;
+        background-position: 30px 40px;
+        min-height: 210px;
+    }
+
     h1, h2 {
         position: relative;
+        margin-left: 150px;
         color: #fff;
         text-shadow: 0 1px 0 rgba(72, 72, 72, 0.3);
-        z-index: 2;
-        text-align: center;
     }
 
     h1 {
-        .font-size(54px);
-        margin-bottom: @baseLine;
+        .font-size(64px);
+        margin-bottom: @baseLine/2;
         padding-top: 56px;
+        left: -.05em;
     }
 
     h2 {
-        .font-size(24px);
+        .font-size(34px);
         padding: 0;
-        margin: 0 0 40px 0;
+        margin-bottom: 40px;
     }
 }
 
@@ -138,7 +145,7 @@
     .socialshare {
         position: absolute;
         top: 0;
-        left: 20px;
+        left: 30px;
         width: 108px;
         margin: 6px 0 0 0;
         border-right: 1px dotted #f38794;
@@ -633,11 +640,11 @@ html[dir='rtl'] {
     #page-header {
 
         h1 {
-            .font-size(44px);
+            .font-size(54px);
         }
 
         h2 {
-            .font-size(22px);
+            .font-size(32px);
         }
 
         #share-nav-wrapper {
@@ -722,6 +729,13 @@ html[dir='rtl'] {
 
         .container {
             padding-bottom: 10px;
+            background-size: 60px 70px;
+            background-position: 20px 50px;
+            min-height: 60px;
+            h1,
+            h2 {
+                margin-left: 90px;
+            }
         }
     }
 
