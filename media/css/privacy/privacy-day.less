@@ -143,30 +143,33 @@
     .clearfix();
     background: #ac2b22;
     padding-top: 8px;
-
-    .socialshare {
+    .share-widget {
+        z-index: 8;
+        float: none;
         position: absolute;
         top: 0;
-        left: 30px;
-        width: 108px;
-        margin: 6px 0 0 0;
-        border-right: 1px dotted #f38794;
-    }
-
-    .socialshare > div > a {
-        background: transparent url(/media/img/privacy/you/sprite-socialshare.png) left 6px no-repeat;
-        padding-left: 16px;
-        color: #fff;
-        text-transform: uppercase;
-
-        span {
-            border-bottom: 0;
-            .font-size(@smallFontSize);
+        left: 0;
+        width: 140px;
+        .mozilla-share-cta {
+            background: #ac2b22;
+            color: #fff;
+            border: 0;
+            width: 140px;
+            h3 {
+                color: #fff;
+                width: 120px;
+                padding: .75em 10px;
+                opacity: .75;
+                .font-size(14px);
+            }
+            ul li a {
+                color: #fff;
+                &:before {
+                    line-height: 36px;
+                    .font-size(20px);
+                }
+            }
         }
-    }
-
-    .socialshare.open > div > a:after {
-        background-color: rgba(255, 255, 255, .6);
     }
 }
 
@@ -556,44 +559,6 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     background: #fff;
 }
 
-.socialshare > div > a {
-    background: none;
-    padding-left: 0;
-    color: @linkBlue;
-
-    &:after {
-        background-image: url(/media/img/privacy/you/sprite-socialshare.png);
-        background-repeat: no-repeat;
-        background-position: 4px -19px;
-        top: 0;
-    }
-
-    &:hover, &:focus {
-        color: @linkBlue;
-
-        &:after {
-            background-position: 4px -19px;
-        }
-
-        span {
-            border-color: @linkBlue;
-        }
-    }
-}
-
-.socialshare.open > div > a {
-    color: @linkBlueHover;
-
-    &:after {
-        background-position: 5px -42px;
-    }
-
-    span {
-        border-color: @linkBlueHover;
-    }
-}
-
-
 
 /* {{{ RTL overrides */
 
@@ -638,7 +603,7 @@ html[dir='rtl'] {
         margin-left: 30px;
         margin-right: 30px;
     }
-    #share-nav-wrapper .socialshare {
+    #share-nav-wrapper .share-widget {
         display: none;
     }
 }
@@ -792,14 +757,13 @@ html[dir='rtl'] {
         padding-top: 30px;
     }
 
-    .socialshare {
-        display: none;
-    }
-
     #share-nav-wrapper {
         padding-top: 0;
         .container {
             padding-bottom: 0;
+        }
+        .share-widget {
+            display: none;
         }
     }
 

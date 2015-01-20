@@ -515,7 +515,6 @@ MINIFY_BUNDLES = {
         'privacy-day': (
             'css/sandstone/sandstone-resp.less',
             'css/base/mozilla-share-cta.less',
-            'css/libs/socialshare/socialshare.less',
             'css/privacy/privacy-day.less',
         ),
         'fb_privacy': (
@@ -960,7 +959,6 @@ MINIFY_BUNDLES = {
         ),
         'privacy-day': (
             'js/base/mozilla-pager.js',
-            'js/libs/socialshare.min.js',
             'js/base/mozilla-share-cta.js',
 
         ),

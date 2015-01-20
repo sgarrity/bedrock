@@ -20,6 +20,14 @@
   {{ css('privacy-day') }}
 {% endblock %}
 
+{%
+set share_urls = {
+    'twitter': 'http://mzl.la/fx10',
+    'googleplus': 'https://www.mozilla.org/' + LANG + '/privacy/tips/?utm_source=Google&utm_medium=MozLandingPage&utm_campaign=FX10&utm_content=WebsiteShare',
+    'facebook': 'https://www.mozilla.org/' + LANG + '/privacy/tips/?utm_source=Facebook&utm_medium=MozLandingPage&utm_campaign=FX10&utm_content=WebsiteShare#play'
+}
+%}
+
 {% block site_header %}
   <header id="masthead">
     <div class="container">
@@ -42,7 +50,9 @@
 
   <div id="share-nav-wrapper" class="share-wrapper">
     <div class="container">
-      <div class="socialshare" data-type="small-bubbles" data-label="{{_('Share')}}" data-fb-lang="{{ facebook_locale }}"></div>
+      <div class="share-widget">
+        {{ share_cta(_('Share'), share_urls, _('I’m taking control of my online privacy. Here’s how you can, too: #SmartOnPrivacy')) }}
+      </div>
       <nav id="tips-nav-direct">
         <ol role="tablist" class="pager-tabs">
           <li role="presentation">
@@ -285,13 +295,6 @@ Privacy Matters”') }}">
                 </ol>
                 <h4>{{ _('Spread the word') }}</h4>
                 <div class="share-widget">
-                  {%
-                  set share_urls = {
-                      'twitter': 'http://mzl.la/fx10',
-                      'googleplus': 'https://www.mozilla.org/' + LANG + '/privacy/tips/?utm_source=Google&utm_medium=MozLandingPage&utm_campaign=FX10&utm_content=WebsiteShare',
-                      'facebook': 'https://www.mozilla.org/' + LANG + '/privacy/tips/?utm_source=Facebook&utm_medium=MozLandingPage&utm_campaign=FX10&utm_content=WebsiteShare#play'
-                  }
-                  %}
                   {{ share_cta(_('Share this site'), share_urls, _('I’m taking control of my online privacy. Here’s how you can, too: #SmartOnPrivacy')) }}
                 </div>
                 <p class="share-p">{{ _('Feeling smart on privacy? <b>Share this site</b> with your friends and help them raise their awareness too.') }}</p>
