@@ -960,7 +960,7 @@ MINIFY_BUNDLES = {
         'privacy-day': (
             'js/base/mozilla-pager.js',
             'js/base/mozilla-share-cta.js',
-
+            'js/privacy/privacy-day.js',
         ),
         'products': (
             'js/libs/jquery.waypoints.min.js',
