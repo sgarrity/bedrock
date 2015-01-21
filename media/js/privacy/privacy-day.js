@@ -44,13 +44,23 @@ $(function() {
         ], $(this).attr('href'), e);
     });
 
-    // Setup GA tracking for misc links
-    $('.tip-content a').on('click', function(e) {
+    // Setup GA tracking for paragraph and list links
+    $('.tip-column p a, .tip-column li a').on('click', function(e) {
         trackClick([
             '_trackEvent',
             '/privacy/ Interactions',
             getCurrentTab(),
             $(this).attr('href')
+        ], $(this).attr('href'), e);
+    });
+
+    // Setup GA tracking TED video link
+    $('.greenwald a').on('click', function(e) {
+        trackClick([
+            '_trackEvent',
+            '/privacy/ Interactions',
+            getCurrentTab(),
+            'Why Privacy Matters CTA Btn'
         ], $(this).attr('href'), e);
     });
 
