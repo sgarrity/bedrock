@@ -5,8 +5,31 @@
 $(function() {
     'use strict';
 
+    var pager = Mozilla.Pager.pagers[0];
+
+    // scroll to top of pager when switching tabs so all
+    // tab content is visible after switching tabs
+    pager.$container.on('changePage', function() {
+
+        // Get the current document scroll position
+        var scrollPos = $(document).scrollTop();
+
+        // Get the offset of the top of the pager section
+        var pagerTopPos = $('.pager').first().offset().top;
+
+        // If we're scrolled passed the header, jump back up
+        // to the tabs when the tab is switched
+        if (scrollPos > pagerTopPos) {
+            $('html, body').scrollTop($('.pager').first().offset().top);
+        }
+    });
+
+    // enable sticky tab nagivation
+    $('#button-nav-wrapper').waypoint('sticky');
+
+    // Get the text of an element excluding any children elements
     jQuery.fn.justtext = function() {
-        return $(this)  .clone()
+        return $(this) .clone()
                 .children()
                 .remove()
                 .end()
