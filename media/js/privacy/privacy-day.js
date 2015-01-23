@@ -27,16 +27,6 @@ $(function() {
     // enable sticky tab nagivation
     $('#button-nav-wrapper').waypoint('sticky');
 
-    // Get the text of an element excluding any children elements
-    jQuery.fn.justtext = function() {
-        return $(this) .clone()
-                .children()
-                .remove()
-                .end()
-                .text()
-                .trim();
-    };
-
     var trackClick = function (gaArgs, href, event) {
         if (event.metaKey || event.ctrlKey) {
             // Open link in new tab
@@ -47,21 +37,13 @@ $(function() {
         }
     };
 
-    var getCurrentTab = function () {
-        var el = $('#tips-nav-direct a.selected');
-        if ($(el).length) {
-            return el.justtext();
-        } else {
-            return 'None';
-        }
-    }
-
     // Setup GA tracking for main tabs
     $('#tips-nav-direct a').on('click', function(e) {
+        var thisTabName = $(this).attr('href');
         trackClick([
             '_trackEvent',
             '/privacy/ Interactions',
-            $(this).justtext(),
+            thisTabName.substr(1), // strip # char from tab hash
             'Tab Click'
         ], $(this).attr('href'), e);
     });
@@ -71,7 +53,7 @@ $(function() {
         trackClick([
             '_trackEvent',
             '/privacy/ Interactions',
-            getCurrentTab(),
+            pager.currentPage.id,
             $(this).attr('href')
         ], $(this).attr('href'), e);
     });
@@ -81,7 +63,7 @@ $(function() {
         trackClick([
             '_trackEvent',
             '/privacy/ Interactions',
-            getCurrentTab(),
+            pager.currentPage.id,
             'Why Privacy Matters CTA Btn'
         ], $(this).attr('href'), e);
     });
@@ -91,7 +73,7 @@ $(function() {
         trackClick([
             '_trackEvent',
             '/privacy/ Interactions',
-            getCurrentTab(),
+            pager.currentPage.id,
             'Next'
         ], $(this).attr('href'), e);
     });
@@ -101,7 +83,7 @@ $(function() {
         trackClick([
             '_trackEvent',
             '/privacy/ Interactions',
-            getCurrentTab(),
+            pager.currentPage.id,
             'Previous'
         ], $(this).attr('href'), e);
     });
