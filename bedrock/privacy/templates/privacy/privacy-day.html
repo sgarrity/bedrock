@@ -58,16 +58,16 @@ set share_urls = {
       <nav id="tips-nav-direct">
         <ol role="tablist" class="pager-tabs">
           <li role="presentation">
-            <a role="tab" aria-controls="ask" aria-selected="true" href="#ask" id="tab-ask"><span>{{ _('1') }}</span> {{ _('ASK') }}</a>
+            <a href="#ask" id="tab-ask"><span>{{ _('1') }}</span> {{ _('ASK') }}</a>
           </li>
           <li role="presentation">
-            <a role="tab" aria-controls="learn" aria-selected="false" href="#learn" id="tab-learn"><span>{{ _('2') }}</span> {{ _('LEARN') }}</a>
+            <a href="#learn" id="tab-learn"><span>{{ _('2') }}</span> {{ _('LEARN') }}</a>
           </li>
           <li role="presentation">
-            <a role="tab" aria-controls="act" aria-selected="false" href="#act" id="tab-act"><span>{{ _('3') }}</span> {{ _('ACT') }}</a>
+            <a href="#act" id="tab-act"><span>{{ _('3') }}</span> {{ _('ACT') }}</a>
           </li>
           <li role="presentation">
-            <a role="tab" aria-controls="discuss" aria-selected="false" href="#discuss" id="tab-discuss"><span>{{ _('4') }}</span> {{ _('DISCUSS') }}</a>
+            <a href="#discuss" id="tab-discuss"><span>{{ _('4') }}</span> {{ _('DISCUSS') }}</a>
           </li>
         </ol>
       </nav>
@@ -78,7 +78,7 @@ set share_urls = {
   <div id="page-content">
     <div class="container">
       <div id="tips-wrapper" class="pager-content">
-        <div class="tip pager-page default-page" id="ask" role="tabpanel" aria-labelledby="tab-ask">
+        <div class="tip pager-page default-page" id="ask">
           <h3 class="tip-title">{{ _('How important is privacy to you?') }}</h3>
           <div class="tip-content">
             <div class="tip-column">
@@ -122,7 +122,7 @@ set share_urls = {
           </div>
         </div>
 
-        <div class="tip pager-page" id="learn" role="tabpanel" aria-labelledby="tab-learn">
+        <div class="tip pager-page" id="learn">
           <h3 class="tip-title">{{ _('Understanding privacy') }}</h3>
           <div class="tip-content">
             <div class="tip-column">
@@ -172,7 +172,7 @@ Privacy Matters”') }}">
           </div>
         </div>
 
-        <div class="tip pager-page" id="act" role="tabpanel" aria-labelledby="tab-act">
+        <div class="tip pager-page" id="act">
           <h3 class="tip-title">{{ _('What you can do') }}</h3>
           <div class="tip-content">
             <div class="tip-column">
@@ -252,7 +252,7 @@ Privacy Matters”') }}">
           </div>
         </div>
 
-        <div class="tip pager-page" id="discuss" role="tabpanel" aria-labelledby="tab-discuss">
+        <div class="tip pager-page" id="discuss">
           <h3 class="tip-title">{{ _('Start a conversation') }}</h3>
           <div class="tip-content">
             <div class="tip-column">
