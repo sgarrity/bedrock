@@ -38,14 +38,15 @@ $(function() {
     };
 
     // Setup GA tracking for main tabs
-    $('#tips-nav-direct a').on('click', function(e) {
+    $('#tips-nav-direct a').on('click', function() {
         var thisTabName = $(this).attr('href');
-        trackClick([
+        console.log(thisTabName);
+        gaTrack([
             '_trackEvent',
             '/privacy/ Interactions',
             thisTabName.substr(1), // strip # char from tab hash
             'Tab Click'
-        ], $(this).attr('href'), e);
+        ]);
     });
 
     // Setup GA tracking for paragraph and list links
@@ -69,23 +70,23 @@ $(function() {
     });
 
     // Setup GA tracking for next tab buttons
-    $('.tip-footer .next a').on('click', function(e) {
-        trackClick([
+    $('.tip-footer .next a').on('click', function() {
+        gaTrack([
             '_trackEvent',
             '/privacy/ Interactions',
             pager.currentPage.id,
             'Next'
-        ], $(this).attr('href'), e);
+        ]);
     });
 
     // Setup GA tracking for previous tab buttons
-    $('.tip-footer .previous a').on('click', function(e) {
-        trackClick([
+    $('.tip-footer .previous a').on('click', function() {
+        gaTrack([
             '_trackEvent',
             '/privacy/ Interactions',
             pager.currentPage.id,
             'Previous'
-        ], $(this).attr('href'), e);
+        ]);
     });
 
 });
