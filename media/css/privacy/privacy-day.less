@@ -98,6 +98,7 @@
 #tips-nav-direct {
     margin: 0 150px; // leave room for social-share widget
     .clearfix();
+
     ol {
         margin: 0;
     }
@@ -143,6 +144,7 @@
     position: fixed;
     top: 0;
     z-index: 2;
+
     &#button-nav-wrapper {
         box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.2);
     }
@@ -155,6 +157,7 @@
     width: 100%;
     .transition(box-shadow 0.6s ease 0.2s);
     box-shadow: 0 0 0 0 #fff;
+
     .share-widget {
         z-index: 8;
         float: none;
@@ -162,11 +165,13 @@
         top: 0;
         left: 0;
         width: 140px;
+
         .mozilla-share-cta {
             background: #ac2b22;
             color: #fff;
             border: 0;
             width: 140px;
+
             h3 {
                 color: #fff;
                 width: 120px;
@@ -174,8 +179,10 @@
                 opacity: .75;
                 .font-size(14px);
             }
+
             ul li a {
                 color: #fff;
+
                 &:before {
                     line-height: 36px;
                     .font-size(20px);
@@ -224,6 +231,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         .span(3);
         .offset(1);
         margin-bottom: @baseLine*4;
+
         .quote {
             position: relative;
             color: @privacyGreen;
@@ -231,20 +239,24 @@ html[lang^='en'] #tips-nav-direct li a span:after {
             margin-bottom: 5px;
             .open-sans-light();
             .font-size(22px);
+
             &:before,
             &:after {
                 content: "“";
                 font-family: sans-serif;
             }
+
             &:before {
                 position: absolute;
                 top: 0;
                 left: -.5em;
             }
+
             &:after {
                 content: "”";
             }
         }
+
         .attribute {
             color: @textColorLight;
         }
@@ -275,9 +287,11 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     margin-right: -(@gridGutterWidth / 2);
     padding-bottom: @baseLine;
     .clearfix();
+
     .chart {
         .span(4);
     }
+
     .percentage {
         display: block;
         margin: 0 auto @baseLine/2 auto;
@@ -290,6 +304,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         text-align: center;
         .open-sans-light;
         .font-size(62px);
+
         sup {
             .font-size(24px);
         }
@@ -310,10 +325,12 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     position: relative;
     margin-bottom: @baseLine*2;
     text-align: center;
+
     img {
         border-radius: 6px;
         width: 100%;
     }
+
     figcaption {
         position: absolute;
         top: 50%;
@@ -327,6 +344,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
             .border-radius();
         }
     }
+
     a:hover,
     a:active {
         span {
@@ -347,22 +365,27 @@ html[lang^='en'] #tips-nav-direct li a span:after {
 .features-list {
     margin: @baseLine*2 auto @baseLine*3;
     padding: 0;
+
     > li {
         list-style-type: none;
         margin-bottom: @baseLine/2;
+
         > a {
             display: block;
             position: relative;
             padding: @baseLine/2 0 @baseLine/2 160px;
             min-height: 132px;
             color: @textColorSecondary;
+
             &:hover,
             &:active {
                 text-decoration: none;
+
                 h5 {
                     text-decoration: underline;
                 }
             }
+
             &:before {
                 content: ' ';
                 position: absolute;
@@ -376,10 +399,12 @@ html[lang^='en'] #tips-nav-direct li a span:after {
                 background-position: 0 0;
             }
         }
+
         &.feature-forget  > a:before { background-position: 0 -120px; }
         &.feature-ddg     > a:before { background-position: 0 -240px; }
         &.feature-add-ons > a:before { background-position: 0 -360px; }
     }
+
     h5 {
         .trailing-arrow();
         color: @linkBlue;
@@ -390,6 +415,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     margin: @baseLine auto;
     padding: 0;
     .clearfix();
+
     > li {
         list-style-type: none;
         width: 25%;
@@ -397,11 +423,13 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         padding: 0;
         float: left;
         text-align: center;
+
         > a {
             display: block;
             position: relative;
             padding: 0 2px 10px;
             .trailing-arrow();
+
             &:before {
                 content: ' ';
                 display: block;
@@ -413,9 +441,11 @@ html[lang^='en'] #tips-nav-direct li a span:after {
                 background-position: 0 0;
             }
         }
-        &.safe-social  > a:before { background-position:  -80px 0; }
-        &.safe-privacy > a:before { background-position:  -160px 0; }
+
+        &.safe-social  > a:before { background-position: -80px 0; }
+        &.safe-privacy > a:before { background-position: -160px 0; }
     }
+
     h5 {
         .trailing-arrow();
         color: @linkBlue;
@@ -428,6 +458,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
 .big-list {
     margin: 25px auto @baseLine*3;
     padding: 0;
+
     > li {
         position: relative;
         counter-increment: steps;
@@ -436,9 +467,11 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         padding: @baseLine/2 @baseLine/2 @baseLine/2 80px;
         min-height: 60px;
         border-bottom: 1px dotted @borderColor;
+
         &:last-child {
             border-bottom: 0;
         }
+
         &:before {
             content: counter(steps);
             position: absolute;
@@ -457,6 +490,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
             .open-sans-light();
         }
     }
+
     h5 {
         .trailing-arrow();
         color: @linkBlue;
@@ -471,18 +505,22 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     float: right;
     margin-left: @baseLine*1.5;
     margin-bottom: @baseLine/2;
+
     .mozilla-share-cta {
         background: #fff;
         color: @localBlue;
         border: 2px solid @localBlue;
         width: 220px;
+
         h3 {
             color: @localBlue;
             width: 200px;
             padding: .75em 10px;
         }
+
         ul li a {
             color: @localBlue;
+
             &:before {
                 line-height: 46px;
                 .font-size(24px);
@@ -498,23 +536,28 @@ html[lang^='en'] #tips-nav-direct li a span:after {
     padding: @baseLine 0;
     border-top: 1px solid #efefef;
     clear: both;
+
     .previous {
         float: left;
         a {
             .leading-arrow();
         }
     }
+
     .next {
         float: right;
+
         a {
             .trailing-arrow();
         }
     }
+
     li {
         list-style-type: none;
         margin: 0 0 @baseLine/2 0;
         padding: 0;
     }
+
     a {
         display: block;
         padding: (@baseLine / 2) @baseLine;
@@ -522,6 +565,7 @@ html[lang^='en'] #tips-nav-direct li a span:after {
         color: #fff;
         text-align: center;
         .border-radius();
+
         &:hover,
         &:active {
             background: @localBlueDark;
@@ -581,6 +625,7 @@ html[dir='rtl'] {
         margin-left: 30px;
         margin-right: 30px;
     }
+
     #button-nav-wrapper .share-widget {
         display: none;
     }
@@ -629,6 +674,7 @@ html[dir='rtl'] {
             .span-all();
             margin-bottom: @baseLine;
         }
+
         .tip-column {
             .span_narrow(8);
             margin-bottom: @baseLine*4;
@@ -701,6 +747,7 @@ html[dir='rtl'] {
             background-size: 60px 70px;
             background-position: 20px 50px;
             min-height: 60px;
+
             h1,
             h2 {
                 margin-left: 90px;
@@ -719,15 +766,19 @@ html[dir='rtl'] {
     #tips-nav-direct {
         margin-left: 0;
         margin-right: 0;
+
         li {
             width: 25%;
             margin-left: auto;
+
             a {
                 background: none;
                 padding: 0;
+
                 &.selected {
                     background: rgba(255,255,255,0.7);
                 }
+
                 span {
                     display: block;
                 }
@@ -741,19 +792,23 @@ html[dir='rtl'] {
 
     #button-nav-wrapper {
         padding-top: 0;
+
         .container {
             padding-bottom: 0;
         }
+
         .share-widget {
             display: none;
         }
     }
 
     .tip {
+
         .tip-title {
             .span-all();
             margin-bottom: @baseLine;
         }
+
         .tip-column,
         aside {
             .span-all();
@@ -789,12 +844,14 @@ html[dir='rtl'] {
         padding-left: 0;
         padding-top: 140px;
         min-height: 0;
+
         &:before {
             top: 0;
             left: 50%;
             margin-left: -70px;
             display: block;
         }
+
         h5 {
             text-align: center;
         }
@@ -821,6 +878,5 @@ html[dir='rtl'] {
     .container {
         width: @breakMobile - @baseLine;
     }
-
 
 }
