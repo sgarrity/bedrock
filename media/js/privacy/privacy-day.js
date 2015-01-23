@@ -48,7 +48,6 @@ $(function() {
     };
 
     var getCurrentTab = function () {
-        var currentTab = 'None';
         var el = $('#tips-nav-direct a.selected');
         if ($(el).length) {
             return el.justtext();
