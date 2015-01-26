@@ -6,7 +6,7 @@ $(function() {
     'use strict';
 
     var pager = Mozilla.Pager.pagers[0];
-    var documentRoot = $(document);
+    var $documentRoot = $(document);
     var firstPager = $('.pager').first();
 
     // scroll to top of pager when switching tabs so all
@@ -22,7 +22,7 @@ $(function() {
         // If we're scrolled passed the header, jump back up
         // to the tabs when the tab is switched
         if (scrollPos > pagerTopPos) {
-            $(documentRoot).scrollTop($(firstPager).offset().top);
+            $documentRoot.scrollTop($(firstPager).offset().top);
         }
     });
 
