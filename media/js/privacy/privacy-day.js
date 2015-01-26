@@ -72,7 +72,9 @@ $(function() {
     });
 
     // Setup GA tracking for next tab buttons
-    $('.tip-footer .next a').on('click', function() {
+    $('.tip-footer .next a').on('click', function(e) {
+        e.preventDefault();
+        pager.nextPageWithAnimation();
         gaTrack([
             '_trackEvent',
             '/privacy/ Interactions',
@@ -82,7 +84,9 @@ $(function() {
     });
 
     // Setup GA tracking for previous tab buttons
-    $('.tip-footer .previous a').on('click', function() {
+    $('.tip-footer .previous a').on('click', function(e) {
+        e.preventDefault();
+        pager.prevPageWithAnimation();
         gaTrack([
             '_trackEvent',
             '/privacy/ Interactions',
