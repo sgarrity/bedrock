@@ -6,6 +6,8 @@ $(function() {
     'use strict';
 
     var pager = Mozilla.Pager.pagers[0];
+    var documentRoot = $(document);
+    var firstPager = $('.pager').first();
 
     // scroll to top of pager when switching tabs so all
     // tab content is visible after switching tabs
@@ -15,12 +17,12 @@ $(function() {
         var scrollPos = $(document).scrollTop();
 
         // Get the offset of the top of the pager section
-        var pagerTopPos = $('.pager').first().offset().top;
+        var pagerTopPos = $(firstPager).offset().top;
 
         // If we're scrolled passed the header, jump back up
         // to the tabs when the tab is switched
         if (scrollPos > pagerTopPos) {
-            $('html, body').scrollTop($('.pager').first().offset().top);
+            $(documentRoot).scrollTop($(firstPager).offset().top);
         }
     });
 
