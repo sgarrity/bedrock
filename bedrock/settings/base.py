@@ -539,12 +539,6 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_os_mwc_2015_preview-bundle.css',
     },
-    'firefox_os_mwc_2015_preview_ie7': {
-        'source_filenames': (
-            'css/firefox/os/mwc-2015-preview-ie7.less',
-        ),
-        'output_filename': 'css/firefox_os_mwc_2015_preview_ie7-bundle.css',
-    },
     'firefox_os_tv': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
