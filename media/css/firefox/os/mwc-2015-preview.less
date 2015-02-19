@@ -42,7 +42,7 @@ html, body {
 }
 
 .container {
-  width: 940px;
+  width: @widthDesktop - (@gridGutterWidth * 2);
   z-index: 2; // forces grain/noise :after bg to be under text
 }
 
@@ -52,15 +52,11 @@ html, body {
   top: -44px;
   padding-top: 44px;
   width: 100%;
-  background: #0f9fdb;
-  background: -webkit-linear-gradient(top,  #0f9fdb 0%,#0055a0 100%);
-  background: linear-gradient(to bottom,  #0f9fdb 0%,#0055a0 100%);
+  background: #0095dd url(/media/img/firefox/os/mwc-2015-preview/background-shapes.png) top right no-repeat;
   overflow: hidden;
-  box-shadow: inset 0 -14px 14px -10px rgba(0, 0, 0, 0.4);
 
   .logo {
-    display: block;
-    margin-bottom: @baseLine * 2;
+    margin-left: @gridGutterWidth/2;
   }
 
   .container {
@@ -68,12 +64,16 @@ html, body {
   }
 }
 
+#intro-copy,
+#intro-phone {
+    .span(6);
+}
+
 #intro-copy {
-  float: left;
-  width: 480px;
+
   color: #fff;
   .font-size(@largeFontSize);
-  padding-bottom: @baseLine * 3;
+  padding-bottom: @baseLine * 2;
 
   header {
     margin-bottom: @baseLine * 1.5;
@@ -94,7 +94,7 @@ html, body {
     color: #fff;
     text-shadow: none;
     .font-size(20px);
-    font-weight: bold;
+    font-style: italic;
     letter-spacing: 0;
   }
 
@@ -102,14 +102,9 @@ html, body {
     margin-bottom: @baseLine * 1.5;
   }
 
-  img {
-    margin-top: @baseLine * 1.5;
-  }
 }
 
 #intro-phone {
-  float: left;
-  width: 460px;
   height: 650px;
   position: relative;
 
@@ -157,59 +152,29 @@ html, body {
   }
 
   h3 {
-    color: #4e4f53;
-    .font-size(20px);
+    .font-size(48px);
     line-height: 140%;
     text-align: center;
-    font-weight: bold;
-    margin: 0 auto @baseLine*2 auto;
-    padding-bottom: @baseLine/2;
-    width: 500px;
-    border-bottom: 1px solid #cacaca;
+    margin-bottom: @baseLine*2;
   }
 
   .arrow:after {
     content: ' »';
   }
 
-  .modal-link {
-    background: url(/media/img/firefox/os/mwc-2015-preview/sprite-icons.png) left 2px no-repeat;
-    padding-left: 24px;
-  }
-
   // common list properties
   ul {
     .clearfix;
     margin-bottom: @baseLine*4;
-
-    li {
-      float: left;
-      list-style-type: none;
-      margin-left: 0;
-      .font-size(@smallFontSize);
-      line-height: 20px;
-
-      h4 {
-        .font-size(20px);
-        font-style: italic;
-        margin-bottom: @baseLine;
-        display: block;
-        font-weight: normal;
-      }
-
-      small {
-        font-style: italic;
-        color: #888;
-      }
-    }
   }
 
   #list-partners {
     li {
-      width: 235px;
+      .span(3);
+      list-style-type: none;
       height: 73px;
       text-align: center;
-      margin: 0 0 @baseLine 0;
+      margin-bottom: @baseLine;
       &:before, &:after {
         content: "";
         display: inline-block;
@@ -224,56 +189,64 @@ html, body {
   }
 
   #list-how {
+    text-align: center;
     li {
-      width: 210px;
-      margin-right: 65px;
-      padding-left: 60px;
-      background-image: url(/media/img/firefox/os/mwc-2015-preview/sprite-how.png);
-      background-repeat: no-repeat;
-      &.last {
-        margin-right: 0;
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-        li {
-          margin: 0;
-          padding: 0;
-          background-image: none;
-          a {
-            padding-left: 24px;
-          }
-        }
+      .span(4);
+      position: relative;
+      list-style-type: none;
+      padding-top: 160px;
+      &:before {
+          content: ' ';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -70px;
+          display: block;
+          height: 140px;
+          width: 140px;
+          border: 2px solid #81bae5;
+          border-radius: 50%;
+          .at2x('/media/img/firefox/os/mwc-2015-preview/sprite-how.png', 140px, 420px);
+          background-repeat: no-repeat;
+          background-position: 0 0;
       }
     }
-  }
-
-  #how-look {
-    background-position: 0 50px;
-  }
-
-  #how-listen {
-    background-position: 0 -150px;
-  }
-
-  #how-learn {
-    background-position: 0 -350px;
+    #how-listen:before {
+      background-position: 0 -140px;
+    }
+    #how-learn:before {
+      background-position: 0 -280px;
+    }
+    p,
+    a {
+      .font-size(@largeFontSize);
+      .open-sans-light();
+      margin-bottom: 0;
+    }
   }
 
   #list-platform {
-    width: 860px;
-    margin-left: auto;
-    margin-right: auto;
-    li {
-      width: 380px;
-      padding-top: 175px;
-      background-image: url(/media/img/firefox/os/mwc-2015-preview/sprite-platform.png);
-      background-repeat: no-repeat;
-      background-position: -550px 0;
+    .font-size(@largeFontSize);
+    .open-sans-light();
+    .arrow {
+      margin-top: @baseLine/2;
+      display: block;
     }
-    #platform-firefoxos {
-      margin-right: 100px;
-      background-position: 0 0;
+
+    h4 {
+        min-height: 76px;
+        img {
+          height: auto;
+        }
+    }
+
+    li {
+      list-style-type: none;
+      .span(6);
+    }
+
+    p {
+      margin-right: 20px;
     }
   }
 }
@@ -456,8 +429,13 @@ html, body {
     min-height: 700px;
   }
 
+  #intro-copy,
+  #intro-phone {
+    .span_narrow(6);
+  }
+
+
   #intro-copy {
-    width: 380px;
     .font-size(@baseFontSize);
 
     h1 {
@@ -470,7 +448,6 @@ html, body {
   }
 
   #intro-phone {
-    width: 340px;
     height: auto;
 
     img {
@@ -487,19 +464,12 @@ html, body {
   }
 
   #info {
-    #list-how {
-      li {
-        width: 152px;
-        margin-right: 40px;
-      }
+    #list-how li {
+      .span_narrow(4);
     }
 
-    #list-platform {
-      width: 720px;
-      li {
-        width: 310px;
-        background-position: -585px 0;
-      }
+    #list-platform li {
+      .span_narrow(6);
     }
   }
 
@@ -545,14 +515,10 @@ html, body {
 
   #intro {
     min-height: 0;
-    .logo {
-      margin-bottom: @baseLine * 2;
-    }
   }
 
   #intro-copy {
-    float: none;
-    width: 300px;
+    .span-all();
     .font-size(@baseFontSize);
 
     h1 {
@@ -566,15 +532,10 @@ html, body {
     br {
       display: none;
     }
-
-    img {
-      margin-top: @baseLine / 2;
-    }
   }
 
   #intro-phone {
-    float: none;
-    width: 300px;
+    .span-all();
     height: auto;
 
     img {
@@ -592,9 +553,12 @@ html, body {
 
   #info {
     h3 {
-      width: auto;
-      .font-size(22px);
+      .font-size(28px);
       margin-bottom: @baseLine;
+    }
+
+    h4 {
+        .font-size(22px);
     }
 
     ul {
@@ -606,16 +570,14 @@ html, body {
       }
     }
 
-    #list-partners {
-      li {
-        width: 300px;
-      }
+    #list-partners li {
+        .span-all();
     }
 
     #list-how {
       li {
-        width: 240px;
-        margin: 0 0 @baseLine 0;
+        .span-all();
+        margin-bottom: @baseLine*2;
       }
     }
 
@@ -631,19 +593,8 @@ html, body {
       background-position: 0 -390px;
     }
 
-    #list-platform {
-      width: 300px;
-      li {
-        float: none;
-        width: 300px;
-        padding-top: 90px;
-        background-position: -185px 0;
-        background-size: 120%;
-      }
-      #platform-firefoxos {
-        margin-right: 0;
-        background-position: 80px 0;
-      }
+    #list-platform li {
+      .span-all();
     }
   }
 
@@ -692,14 +643,10 @@ html, body {
 
   #intro {
     min-height: 0;
-    .logo {
-      margin-bottom: @baseLine * 2;
-    }
   }
 
   #intro-copy {
-    float: none;
-    width: 420px;
+    .span-all();
     .font-size(@baseFontSize);
 
     h1 {
@@ -712,8 +659,7 @@ html, body {
   }
 
   #intro-phone {
-    float: none;
-    width: 420px;
+    .span-all();
     height: auto;
 
     img {
@@ -731,9 +677,12 @@ html, body {
 
   #info {
     h3 {
-      width: auto;
-      .font-size(22px);
+      .font-size(28px);
       margin-bottom: @baseLine;
+    }
+
+    h4 {
+        .font-size(22px);
     }
 
     ul {
@@ -745,17 +694,9 @@ html, body {
       }
     }
 
-    #list-partners {
-      li {
-        width: 210px;
-      }
-    }
-
-    #list-how {
-      li {
-        width: 360px;
-        margin: 0 0 @baseLine 0;
-      }
+    #list-how li {
+      .span-all();
+      margin-bottom: @baseLine*2;
     }
 
     #how-look {
@@ -770,19 +711,12 @@ html, body {
       background-position: 0 -390px;
     }
 
-    #list-platform {
-      width: 420px;
-      li {
-        float: none;
-        width: 420px;
-        padding-top: 120px;
-        background-position: -410px 0;
-        background-size: 160%;
-      }
-      #platform-firefoxos {
-        margin-right: 0;
-        background-position: 80px 0;
-      }
+    #list-partners li {
+        .span-all();
+    }
+
+    #list-platform li {
+      .span-all();
     }
   }
 

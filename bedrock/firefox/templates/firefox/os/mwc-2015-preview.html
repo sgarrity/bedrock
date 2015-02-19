@@ -24,7 +24,9 @@
 <main role="main">
   <section id="intro">
     <div class="container">
-      <img class="logo" src="{{ static('img/firefox/os/mwc-2015-preview/firefox-os.png') }}" alt="{{ _('Firefox OS') }}">
+      <h2 class="logo">
+        {{ high_res_img('img/firefox/os/mwc-2015-preview/firefox-os.png', {'alt': 'Firefox OS', 'width': '224', 'height': '70'}) }}
+      </h2>
 
       <div id="intro-copy">
         <header>
@@ -53,7 +55,7 @@
         {% endtrans %}
         </p>
 
-        <img src="{{ static('img/firefox/os/mwc-2015-preview/mwc-logo.png') }}" alt="{{ _('Mobile World Congress') }}">
+        {{ high_res_img('img/firefox/os/mwc-2015-preview/mwc-logo.png', {'alt': 'Mobile World Congress', 'width': '168', 'height': '68'}) }}
       </div>
       <figure id="intro-phone">
         <img src="{{ static('img/firefox/os/mwc-2015-preview/phone-fox.png') }}" alt="{{ _('Firefox OS') }}" />
@@ -106,31 +108,20 @@
       <ul id="list-how">
         <li id="how-look">
           <h4>{{ _('Visit our booth') }}</h4>
-
           <p>
             {{ _('Join us at our stand in Hall 3 to see our products in action and what they can do for you.') }}
           </p>
-
           <a id="map-link" class="arrow modal-link" href="#map">{{ _('View the map') }}</a>
         </li>
         <li id="how-listen">
           <h4>{{ _('Watch a presentation') }}</h4>
-
           <p>
             {{ _('We’ll be delivering a few at our booth and participating in some sponsored MWC sessions.') }}
           </p>
-
           <a id="schedule-link" class="arrow modal-link" href="#schedule">{{ _('See the schedule') }}</a>
         </li>
         <li id="how-learn" class="last">
           <h4>{{ _('Partner with us') }}</h4>
-
-          <p>
-          {% trans url1=url('mozorg.partnerships') %}
-            Contact our <a href="{{ url1 }}">business development team</a> to get on board.
-          {% endtrans %}
-          </p>
-
           <p>
           {% trans url1='mailto:mwc2015@mozilla.com' %}
             To get on board with us, or for any partnership inquiries, email our Business Development Team at <a class="ga" href="{{ url1 }}">mwc2015@mozilla.com</a>.
@@ -143,7 +134,9 @@
 
       <ul id="list-platform">
         <li id="platform-firefoxos">
-          <h4>{{ _('Firefox OS') }}</h4>
+          <h4>
+            {{ high_res_img('img/firefox/os/mwc-2015-preview/platform-firefox-os.png', {'alt': 'Firefox OS', 'width': '262', 'height': '76'}) }}
+          </h4>
 
           <p>
             {{ _('We’re working with major global partners to enable the Open Web as a platform for mobile devices, free from the rules and restrictions of existing proprietary platforms.') }}
@@ -154,7 +147,9 @@
           </p>
         </li>
         <li>
-          <h4>{{ _('Firefox Marketplace') }}</h4>
+          <h4>
+            {{ high_res_img('img/firefox/os/mwc-2015-preview/platform-firefox-marketplace.png', {'alt': 'Firefox Marketplace', 'width': '436', 'height': '76'}) }}
+          </h4>
 
           <p>
             {{ _('Firefox Marketplace offers an open app environment that leverages the scale of the Web as a development platform, allowing operators, manufacturers and developers greater flexibility.') }}
