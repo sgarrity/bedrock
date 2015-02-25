@@ -60,12 +60,14 @@
       <li id="menu-marketplace"><a href="#marketplace">{{_('Marketplace')}}</a></li>
       <li id="menu-android"><a href="#android">{{_('Android')}}</a></li>
     </ul>
-    {# Save for probable re-use during MWC 2015
     <ul id="mwc-menu" class="menu">
-      <li id="menu-mwc-map"><a href="#map" class="modal">{{ _('Map') }}</a></li>
+      <li class="title">MWC</li>
+      <li id="menu-mwc-map" class="first"><a href="#map" class="modal">{{ _('Map') }}</a></li>
       <li id="menu-mwc-schedule"><a href="#schedule" class="modal">{{ _('Schedule') }}</a></li>
     </ul>
-    #}
+    <ul id="devices-menu" class="menu">
+      <li id="menu-devices"><a href="{{ url('firefox.os.devices') }}">{{ _('Devices') }}</a></li>
+    </ul>
   </nav>
 {% endblock %}
 
@@ -102,7 +104,7 @@
             {% endtrans %}
           </p>
 
-          <p class="partner-button"><a href="https://mobilepartners.mozilla.org/" class="button">
+          <p class="partner-button"><a href="https://mobilepartners.mozilla.org/" class="button-flat">
           {% if l10n_has_tag('mwc_2015') %}
             {{ _('Be a partner') }}
           {% else %}
@@ -120,10 +122,6 @@
                 </ul>
               </div> <!--/#overview-news-->
             </div> <!--/#overview-news-wrapper-->
-
-            <div id="overview-links">
-              <a class="fxos-devices-link" href="{{ url('firefox.os.devices') }}">{{ _('View available Firefox OS devices') }}</a>
-            </div> <!--/#overview-links-->
           </div> <!--/#overview-news-links-->
 
           <div class="partner-logos">
@@ -651,6 +649,14 @@
       </div>
     </form>
     <button id="pageslider-close" type="button" class="modal-close close">{{ _('Close') }}</button>
+  </section>
+  <section id="schedule" class="overlay-contents">
+    <h2 class="overlay-title">{{ _('Firefox at MWC 2015 &ndash; Schedule of Events') }}</h2>
+    {% include "firefox/includes/mwc_2015_schedule.html" %}
+  </section>
+  <section id="map" class="overlay-contents">
+    <h2 class="overlay-title">{{ _('Firefox at MWC 2015 &ndash; Hall 3, Stand 3C30') }}</h2>
+    {% include "firefox/includes/mwc_2015_map.html" %}
   </section>
 </div>
 

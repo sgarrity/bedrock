@@ -1003,6 +1003,8 @@ PIPELINE_CSS = {
             'css/base/mozilla-modal.less',
             'css/libs/jquery.pageslide.css',
             'css/firefox/partners.less',
+            'css/firefox/mwc-2015-schedule.less',
+            'css/firefox/mwc-2015-map.less',
         ),
         'output_filename': 'css/partners-bundle.css',
     },

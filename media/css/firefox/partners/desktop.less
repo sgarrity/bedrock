@@ -582,7 +582,9 @@ body #partner-nav {
     padding: 0;
 }
 
-body #partner-menu, body #mwc-menu {
+body #partner-menu,
+body #mwc-menu,
+body #devices-menu {
     width: 60px;
     li {
         width: auto;
@@ -613,15 +615,20 @@ body #partner-menu, body #mwc-menu {
         display: block;
         float: none;
         width: auto;
+        border-radius: 0;
         a {
             @shadow: 0 -1px rgba(0,0,0,0.1) inset;
             .box-shadow(@shadow);
+            border-radius: 0;
         }
         &:first-child a {
             border-radius: 3px 3px 0 0;
         }
         &:last-child a {
             border-radius: 0 0 3px 3px;
+        }
+        &.first a {
+            border-radius: 0;
         }
         &.title {
             border-radius: 3px 3px 0 0;
