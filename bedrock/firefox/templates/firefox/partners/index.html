@@ -253,18 +253,11 @@
                 <li>{{ _('Customized phones that meet the specific needs of various target markets') }}</li>
                </ul>
             {% endif %}
-            <p class="partner-button"><a href="https://mobilepartners.mozilla.org/" class="button">
-            {% if l10n_has_tag('mwc_2015') %}
-              {{ _('Be a partner') }}
-            {% else %}
-              {{ _('Partner with us') }}
-            {% endif %}
-            </a></p>
             <div id="os-promos" class="promos">
               <div>
                 {% if l10n_has_tag('mwc_2015') %}
                   <h4>{{ _('Firefox OS at home') }}</h4>
-                  <a href="https://mobilepartners.mozilla.org/">{{ _('The power of the Web is coming to Panasonic TVs later this year') }}</a>
+                  <a href="{{ url('firefox.os.tv') }}">{{ _('The power of the Web is coming to Panasonic TVs later this year') }}</a>
                 {% else %}
                   <h4>{{ _('Get involved') }}</h4>
                   <a href="https://mobilepartners.mozilla.org/">{{ _('Contact our business development team to get on board') }}</a>
@@ -276,36 +269,9 @@
               </div>
             </div>
           </div>
-
-          <ul id="os-operators-logos1" class="logos">
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/telefonica.png') }}" alt="Telefonica" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/dt.png') }}" alt="DT" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/lg.png') }}" alt="LG" ></li>
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/qualcomm.png') }}" alt="Qualcomm" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/zte.png') }}" alt="ZTE" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/telenor.png') }}" alt="Telenor" ></li>
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/kddi.png') }}" alt="KDDI" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/tcl.png') }}" alt="TCL" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/telecomitalia.png') }}" alt="Telecom Italia" ></li>
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/chinaunicom.png') }}" alt="China Unicom" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/sprint.png') }}" alt="Sprint" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/vimpelcom.png') }}" alt="VimpelCom" ></li>
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/singtel.png') }}" alt="SingTel" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/etisalat.png') }}" alt="Etisalat" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/koreatelecom.png') }}" alt="Korea Telecom" ></li>
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/smartcom.png') }}" alt="SMART Communications" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/megafon.png') }}" alt="Megafon" ></li>
-            <li><img src="{{ static('img/firefox/partners/logos/dark/portugaltelecom.png') }}" alt="Portugal Telecom" ></li>
-
-            <li><img src="{{ static('img/firefox/partners/logos/dark/americamovil.png') }}" alt="American Movil" ></li>
-
-          </ul>
+          <div class="operator-screenshots">
+            <img src="{{ static('img/firefox/partners/firefox-os-partners.png')}}" alt="{{ _('Firefox OS partners') }}" />
+          </div>
         </div>
       </div>
     </section>
