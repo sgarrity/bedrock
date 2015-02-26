@@ -61,7 +61,9 @@
       <li id="menu-android"><a href="#android">{{_('Android')}}</a></li>
     </ul>
     <ul id="mwc-menu" class="menu">
-      <li class="title">MWC</li>
+      {% if l10n_has_tag('mwc_2015') %}
+      <li class="title">{{ _('MWC') }}</li>
+      {% endif %}
       <li id="menu-mwc-map" class="first"><a href="#map" class="modal">{{ _('Map') }}</a></li>
       <li id="menu-mwc-schedule"><a href="#schedule" class="modal">{{ _('Schedule') }}</a></li>
     </ul>
