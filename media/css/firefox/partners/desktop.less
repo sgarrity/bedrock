@@ -239,12 +239,6 @@
     .partner-button, #overview-news-links {
         display: none;
     }
-    .partner-button {
-        margin-top: -35px;
-    }
-    .intro #more-partners {
-        display: block;
-    }
 }
 #overview {
     background: url(/media/img/firefox/partners/overview-bg.png) center -15px no-repeat;
@@ -265,27 +259,14 @@
         .partner-logos {
             margin-top: @baseLine;
         }
-        #more-partners {
-            margin: -30px 0 0 0;
-            float: left;
-            display: none;
-            font-family: Journal;
-            .font-size(23px);
-            color: @textColorTertiary;
-            padding-right: 50px;
-            text-align: right;
-            width: 210px;
-            background: url(/media/img/firefox/partners/partners-arrow.png) 100% 50% no-repeat;
-        }
         .partner-button {
             float: right;
-            margin-bottom: 5px;
         }
     }
 }
 
 #overview-news-links {
-    padding-top: (@baseLine * 1.5);
+    clear: both;
 }
 
 #overview-news-wrapper {
