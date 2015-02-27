@@ -88,9 +88,9 @@
         <div class="intro">
           <p>
             {% if l10n_has_tag('mwc_2015') %}
-              {{ _('In our first year, we’ve brought openness, accessibility and opportunity to 15 countries with 4 hardware partners, 7 operators and 16 launches.') }}
-            {% else %}
               {{ _('Firefox OS has brought openness, accessibility and opportunity to 30 countries with more than 50 launches and 14 global operators — and that momentum continues in 2015.') }}
+            {% else %}
+              {{ _('In our first year, we’ve brought openness, accessibility and opportunity to 15 countries with 4 hardware partners, 7 operators and 16 launches.') }}
             {% endif %}
             {% trans url1='class="nav" href="#os"'|safe, url2='class="nav" href="#marketplace"'|safe, url3='class="nav" href="#android"'|safe %}
               See what’s next for mobile with <a {{url1}}>Firefox OS</a>, <a {{url2}}>Firefox Marketplace</a>
