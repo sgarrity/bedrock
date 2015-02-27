@@ -19,6 +19,9 @@
 
 {% block extrahead %}
   {% stylesheet 'partners' %}
+<!--[if IE 9]>
+  {% javascript 'matchmedia_addlistener' %}
+<![endif]-->
 <!--[if lte IE 7]>
   {% stylesheet 'partners-ie7' %}
 <![endif]-->
@@ -37,24 +40,14 @@
   {% javascript 'partners' %}
 {% endblock %}
 
-{% block site_header %}
-  <header id="masthead">
-    <a href="{{ url('mozorg.home') }}" id="tabzilla" data-infobar="{{ settings.TABZILLA_INFOBAR_OPTIONS }}">{{ _('Mozilla') }}</a>
-    {% block site_header_nav %}
-    <nav id="nav-main" role="navigation">
-      <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
-      <ul id="nav-main-menu">
-        <li class="first"><a href="#os">{{_('Firefox OS')}}</a></li>
-        <li><a href="#marketplace">{{_('Marketplace')}}</a></li>
-        <li class="last"><a href="#android">{{_('Android')}}</a></li>
-      </ul>
-    </nav>
-    {% endblock %}
-  </header>
+{% block site_header %}{% endblock %}
+
+{% block site_header_unwrapped %}
+  {% set fxfamilynav_class = 'dark' %}
+  {% include 'firefox/includes/family-nav.html' %}
 {% endblock %}
 
 {% block content %}
-  <h3 id="explore">{{_('Explore the site') }}</h3>
   <nav id="partner-nav" role="navigation">
     <ul id="partner-menu" class="menu">
       <li id="menu-overview" class="active"><a href="#overview">{{_('Overview')}}</a></li>
