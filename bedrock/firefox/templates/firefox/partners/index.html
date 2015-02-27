@@ -50,8 +50,10 @@
       </ul>
     </nav>
     {% endblock %}
-
   </header>
+{% endblock %}
+
+{% block content %}
   <h3 id="explore">{{_('Explore the site') }}</h3>
   <nav id="partner-nav" role="navigation">
     <ul id="partner-menu" class="menu">
@@ -71,9 +73,6 @@
       <li id="menu-devices"><a href="{{ url('firefox.os.devices') }}">{{ _('Devices') }}</a></li>
     </ul>
   </nav>
-{% endblock %}
-
-{% block content %}
 
 <div class="phone-container" id="phone-common">
   <div class="phone">
