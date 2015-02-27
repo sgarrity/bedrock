@@ -110,11 +110,15 @@
             <div id="overview-news-wrapper">
               <img src="{{ static('img/firefox/partners/mwc-2015-banner.png') }}" alt="{{ _('Mobile World Congress 2015') }}">
               <div id="overview-news">
+              {% set feed_links = firefox_os_feed_links(LANG) %}
+              {% if feed_links %}
+                {% set feed_link = feed_links[0] %}
                 <h3>{{ _('Recent news') }}</h3>
                 <ul>
-                  <li><a href="{{ locale_headline_url }}">{{ locale_headline_title }}</a></li>
+                  <li><a href="{{ feed_link[0] }}">{{ feed_link[1] }}</a></li>
                 </ul>
-              </div> <!--/#overview-news-->
+              {% endif %}
+            </div> <!--/#overview-news-->
             </div> <!--/#overview-news-wrapper-->
           </div> <!--/#overview-news-links-->
 
