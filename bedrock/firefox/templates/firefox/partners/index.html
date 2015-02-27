@@ -19,9 +19,6 @@
 
 {% block extrahead %}
   {% stylesheet 'partners' %}
-<!--[if IE 9]>
-  {% javascript 'matchmedia_addlistener' %}
-<![endif]-->
 <!--[if lte IE 7]>
   {% stylesheet 'partners-ie7' %}
 <![endif]-->
@@ -34,6 +31,9 @@
 
 {% block site_js %}
   {% javascript 'firefox-resp' %}
+  <!--[if IE 9]>
+    {% javascript 'matchmedia_addlistener' %}
+  <![endif]-->
 {% endblock %}
 
 {% block js %}
