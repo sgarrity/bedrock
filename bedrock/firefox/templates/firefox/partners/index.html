@@ -113,9 +113,10 @@
               {% set feed_links = firefox_os_feed_links(LANG) %}
               {% if feed_links %}
                 {% set feed_link = feed_links[0] %}
+                {% set feed_url, feed_title = feed_links[0] %}
                 <h3>{{ _('Recent news') }}</h3>
                 <ul>
-                  <li><a href="{{ feed_link[0] }}">{{ feed_link[1] }}</a></li>
+                  <li><a href="{{ feed_url }}">{{ feed_title }}</a></li>
                 </ul>
               {% endif %}
             </div> <!--/#overview-news-->
