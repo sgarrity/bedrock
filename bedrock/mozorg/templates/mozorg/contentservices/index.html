@@ -1,0 +1,67 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "mozorg/base-resp.html" %}
+
+{% block page_title %}{{ _('We’re building a better Internet') }}{% endblock %}
+{% block body_id %}contentservices{% endblock %}
+{% block body_class %}sand{% endblock %}
+
+{% block site_css %}{% endblock %}
+
+{% block extrahead %}
+  {% stylesheet 'contentservices' %}
+{% endblock %}
+
+{% block js %}
+  {% javascript 'video' %}
+{% endblock %}
+
+{% block content %}
+<article id="main-content">
+  <h1 class="title-shadow-box">{{ _('Lorem ipsum dolor sit amet') }}</h1>
+
+  <div class="main">
+    <p class="lede">{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim.') }}</p>
+    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
+    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
+  </div>
+
+  <div class="video">
+    <div id="welcome-video" class="mozilla-video-control mozilla-video-shadow">
+      {{ video('Mozilla_2011_Story.webm',
+               'Mozilla_2011_Story.ogv',
+               'Mozilla_2011_Story.mp4',
+               h=259, w=460,
+               prefix='//videos.cdn.mozilla.net/brand/',
+               poster=static('img/mission/poster-mission.jpg')) }}
+    </div>
+    <p class="caption">{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim.') }}</p>
+  </div>
+
+  <ul class="links">
+    <li class="start">
+      <a href="{{ url('mozorg.contentservices.start') }}" class="button-flat">{{ _('Get Started') }}</a>
+      <p>{{ _('Lorem ipsum dolor sit amet consectetur adipiscing elit') }}</p>
+    </li>
+    <li>
+      <h4><a href="#">{{ _('What are Tiles?') }}</a></h4>
+      <p>{{ _('Lorem ipsum dolor sit amet consectetur adipiscing elit') }}</p>
+    </li>
+    <li>
+      <h4><a href="#">{{ _('Frequently Asked Questions') }}</a></h4>
+      <p>{{ _('Lorem ipsum dolor sit amet consectetur adipiscing elit') }}</p>
+    </li>
+    <li>
+      <h4><a href="#">{{ _('User Respect') }}</a></h4>
+      <p>{{ _('Lorem ipsum dolor sit amet consectetur adipiscing elit') }}</p>
+    </li>
+    <li>
+      <h4><a href="#">{{ _('About Content Services') }}</a></h4>
+      <p>{{ _('Lorem ipsum dolor sit amet consectetur adipiscing elit') }}</p>
+    </li>
+  </ul>
+
+</article>
+{% endblock %}
