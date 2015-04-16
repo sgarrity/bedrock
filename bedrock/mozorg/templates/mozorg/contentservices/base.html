@@ -8,10 +8,10 @@
 {% set navigation_bar = [
     (url('mozorg.contentservices.index'), _('Content Services')),
     (url('mozorg.contentservices.start'),  _('Get started')),
-    ('#',  _('What are Tiles?')),
-    ('#',  _('Frequently asked questions')),
-    ('#',  _('User respect')),
-    ('#',  _('About Content Services')),
+    (url('mozorg.contentservices.tiles'),  _('What are Tiles?')),
+    (url('mozorg.contentservices.faq'),  _('Frequently asked questions')),
+    (url('mozorg.contentservices.user-respect'),  _('User respect')),
+    (url('mozorg.contentservices.about'),  _('About Content Services')),
 ] -%}
 
 {% block extrahead %}
