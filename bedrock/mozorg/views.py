@@ -330,8 +330,6 @@ def process_content_services_form(request, template, success_url_name, template_
                 stat = 400
             else:
                 # rename custom Salesforce fields to their real GUID name
-                interest = data.pop('interest')
-                data['00NU0000002pDJr'] = interest
 
                 interested_countries = data.pop('interested_countries')
                 data['00NU00000053D4G'] = interested_countries

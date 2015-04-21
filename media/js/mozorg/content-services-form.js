@@ -7,11 +7,18 @@
 
     var $sfForm = $('#sf-form');
     var $sfFormSubmit = $('#sf-form-submit');
+
     var $campaign_type = $('#campaign_type');
     var $typeFields = $('.type-field');
     var $typeInputs = $typeFields.find('input, textarea, select');
 
-    var $partnerFormError = $('#partner-form-error');
+    var $country = $('#country');
+    var $stateField = $('.state-field');
+    var $provinceField = $('.province-field');
+    var $stateInput = $stateField.find('input, textarea, select');
+    var $provinceInput = $provinceField.find('input, textarea, select');
+
+    var $contentFormError = $('#content-form-error');
     var $mainContent = $('#main-content');
     var $htmlBody = $('html, body');
 
@@ -20,6 +27,8 @@
     var scrollup = function() {
         $htmlBody.animate({ scrollTop: $mainContent.offset().top }, 500);
     };
+
+    // If Campagin Type is set to "Other", then show the description field
 
     var campaign_type_other = function() {
         return $campaign_type.val().indexOf('Other') > -1;
@@ -38,6 +47,27 @@
         toggleTypeFields(campaign_type_other());
     });
 
+    // If Country is set to "United States", then hide Prov/Region field
+    // and show State field
+
+    var country_is_us = function() {
+        return $country.val().indexOf('United States') > -1;
+    }
+
+    var toggleStateFields = function(activate) {
+        if (activate) {
+            $stateField.show();
+            $provinceField.hide();
+        } else {
+            $provinceField.show();
+            $stateField.hide();
+        }
+    };
+
+    $country.on('change', function() {
+        toggleStateFields(country_is_us());
+    });
+
     $sfFormSubmit.on('click', function(e) {
         e.preventDefault();
 
@@ -47,14 +77,22 @@
                 $typeInputs.val('');
             }
 
+            // if country is US, we can ignore Province/Region
+            // if country isn't US, we can ignore State
+            if(country_is_us) {
+                $provinceField.val('');
+            } else {
+                $stateField.val('');
+            }
+
             $.ajax({
                 url: $sfForm.attr('action'),
                 data: $sfForm.serialize(),
                 type: $sfForm.attr('method'),
                 dataType: 'json',
                 success: function(data, status, xhr) {
-                    $('#partner-form').fadeOut('fast', function() {
-                        $('#partner-form-success').css('visibility', 'visible').fadeIn('fast', function() {
+                    $('#sf-form').fadeOut('fast', function() {
+                        $('#content-form-success').css('visibility', 'visible').fadeIn('fast', function() {
                             scrollup();
                         });
                     });
@@ -63,7 +101,7 @@
                     // grab json string from server and convert to JSON obj
                     var json = $.parseJSON(xhr.responseText);
                     Mozilla.FormHelper.displayErrors(json.errors);
-                    $partnerFormError.css('visibility', 'visible').slideDown('fast', function() {
+                    $contentFormError.css('visibility', 'visible').slideDown('fast', function() {
                         scrollup();
                     });
                 }

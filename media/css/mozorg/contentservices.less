@@ -4,9 +4,18 @@
 
 @import "../sandstone/sandstone-resp.less";
 
-.type-field {
+/* Hide fields to be shown with JS later */
+
+.type-field,
+.state-field {
     display: none;
 }
+
+.cloaked {
+    display: none;
+    visibility: hidden;
+}
+
 
 #wrapper {
     width: 100%;
@@ -96,6 +105,18 @@ ul.links {
     p {
         .font-size(.857em);
         margin-bottom: @baseLine / 2;
+    }
+}
+
+/* Salesforce Form */
+
+.content-services-form {
+    .span(4);
+    margin-left: 0;
+    input,
+    textarea {
+        .border-box();
+        width: 100%;
     }
 }
 

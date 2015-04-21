@@ -20,11 +20,20 @@
     <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
     <p class="lede">{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim.') }}</p>
     <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
 
-    <form action="{{ secure_url('mozorg.contentservices.start') }}" method="POST" id="sf-form">
+    <div id="content-form-success" class="{% if not form_success %}cloaked{% endif %}">
+      <h3>{{ _('Thank you') }}</h3>
+      <p>{{ _('We will review your request and get back to you as soon as possible.') }}</p>
+    </div>
+
+    <div id="content-form" class="{% if form_success %}cloaked{% endif %}">
+      <div id="content-form-error" class="tooltip{% if not form.errors %} cloaked{% endif %}">
+        {{ _('An error has occurred with your submission. Please review your information and try again.') }}
+      </div>
+    </div>
+
+
+    <form action="{{ secure_url('mozorg.contentservices.start') }}" method="POST" id="sf-form" class="content-services-form">
 
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
@@ -37,36 +46,59 @@
 
     <!--  ----------------------------------------------------------------------  -->
 
-    <div class="field">
+    <div class="field required">
       {{ form.first_name.errors }}
-      <label for="first_name">{{ _('First Name') }}</label>
+      <label for="first_name">{{ _('First name') }}</label>
       {{ form.first_name }}
     </div>
 
-    <div class="field">
+    <div class="field required">
       {{ form.last_name.errors }}
-      <label for="last_name">{{ _('Last Name') }}</label>
+      <label for="last_name">{{ _(' Last Name') }}</label>
       {{ form.last_name }}
     </div>
 
-    <div class="field">
+    <div class="field required">
       {{ form.company.errors }}
       <label for="company">{{ _('Company') }}</label>
       {{ form.company }}
     </div>
 
-    <div class="field">
+    <div class="field required">
       {{ form.email.errors }}
       <label for="email">{{ _('Email') }}</label>
       {{ form.email }}
     </div>
 
-    <div class="field">
+    <div class="field required">
+      {{ form.phone.errors }}
       <label for="phone">{{ _('Phone') }}</label>
       {{ form.phone }}
     </div>
 
+    <div class="field">
+      <label for="mobile">{{ _('Mobile') }}</label>
+      {{ form.mobile }}
+    </div>
+
     {{ form.office_fax }}
+
+    <div class="field required">
+      {{ form.country.errors }}
+      <label for="country">{{ _('Country') }}</label>
+      {{ form.country }}
+    </div>
+
+    <div class="field required state-field">
+      {{ form.state.errors }}
+      <label for="state">{{ _('State') }}</label>
+      {{ form.state }}
+    </div>
+
+    <div class="field province-field">
+      <label for="state">{{ _('Province / Region') }}</label>
+      {{ form.province }}
+    </div>
 
     <div class="field">
       <label for="street">{{ _('Address') }}</label>
@@ -76,16 +108,6 @@
     <div class="field">
       <label for="city">{{ _('City') }}</label>
       {{ form.city }}
-    </div>
-
-    <div class="field">
-      <label for="state">{{ _('State/Province') }}</label>
-      {{ form.state }}
-    </div>
-
-    <div class="field">
-      <label for="country">{{ _('Country') }}</label>
-      {{ form.country }}
     </div>
 
     <div class="field">
