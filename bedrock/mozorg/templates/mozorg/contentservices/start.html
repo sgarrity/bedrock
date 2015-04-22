@@ -26,14 +26,13 @@
       <p>{{ _('We will review your request and get back to you as soon as possible.') }}</p>
     </div>
 
+    <form action="{{ secure_url('mozorg.contentservices.start') }}" method="POST" id="sf-form" class="content-services-form">
+
     <div id="content-form" class="{% if form_success %}cloaked{% endif %}">
       <div id="content-form-error" class="tooltip{% if not form.errors %} cloaked{% endif %}">
         {{ _('An error has occurred with your submission. Please review your information and try again.') }}
       </div>
     </div>
-
-
-    <form action="{{ secure_url('mozorg.contentservices.start') }}" method="POST" id="sf-form" class="content-services-form">
 
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 

@@ -51,7 +51,7 @@
     // and show State field
 
     var country_is_us = function() {
-        return $country.val().indexOf('United States') > -1;
+        return $country.val().indexOf('us') > -1;
     }
 
     var toggleStateFields = function(activate) {

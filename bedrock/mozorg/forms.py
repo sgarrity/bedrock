@@ -698,7 +698,7 @@ class ContentServicesForm(forms.Form):
         max_length=40
     )
     state = forms.CharField(
-        required=False,
+        required=True,
         max_length=40
     )
     province = forms.CharField(
