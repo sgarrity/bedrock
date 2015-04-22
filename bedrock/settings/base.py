@@ -315,6 +315,7 @@ INSTALLED_APPS = (
     'waffle',
     'south',
     'pipeline',
+    'localflavor',
 
     # Django contrib apps
     'django.contrib.admin',

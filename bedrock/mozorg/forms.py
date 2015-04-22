@@ -14,6 +14,9 @@ from django.forms import widgets
 from django.utils.safestring import mark_safe
 from django.core.urlresolvers import reverse
 
+from localflavor.us.forms import USStateField
+from localflavor.us.forms import USStateSelect
+
 import basket
 from basket.base import request
 
@@ -697,9 +700,10 @@ class ContentServicesForm(forms.Form):
         required=False,
         max_length=40
     )
-    state = forms.CharField(
+    state = USStateField(
         required=True,
-        max_length=40
+        initial='',
+        widget=USStateSelect()
     )
     province = forms.CharField(
         required=False,
