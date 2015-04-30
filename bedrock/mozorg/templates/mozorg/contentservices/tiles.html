@@ -9,10 +9,63 @@
 {% block body_class %}sand{% endblock %}
 
 {% block article %}
-    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
-    <p class="lede">{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
+  <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+
+  <p>
+  {{ _('Online advertising can be an ongoing battle for user attention — a fight against content as well as other ads.') }}
+  {{ _('Consumers are also increasingly concerned about the privacy of their online data, and are opting out in greater numbers.') }}
+  {{ _('The lack of transparency is an additional problem for digital advertisers, because ROI is often hard to measure.') }}
+  {{ _('Nobody really wins.') }}
+  </p>
+
+  <p>
+  {{ _('What if ads could work with users, instead of against them?') }}
+  </p>
+
+  <p>
+  {{ _('We believe this is possible, and we’re moving in that direction using Tiles, which are visual bookmarks that Firefox users see when they open new browser tabs.') }}
+  {{ _('By providing sponsored content in Tiles, as long as it’s relevant, brands can reach large numbers of consumers, scaling to millions more over time, while enhancing the user experience.') }}
+  </p>
+
+  <p>
+  {{ _('New users with no browsing history will see Mozilla Directory Tiles, a set of default Tiles that may include sponsored content.') }}
+  {{ _('Directory Tiles allow advertisers to reach all of the new Firefox users within a given country, as long as they meet our criteria for new-user content.') }}
+  {{ _('The user can opt out at any time, with just a few clicks.') }}
+  </p>
+
+  <p>
+  {{ _('After users browse, they generate their own browsing histories, and Firefox begins to use Tiles to show suggested sites, based on sites that the user has visited frequently and recently.') }}
+  {{ _('Mozilla Suggested Tiles offer sponsored placement in a designated category of Tiles among a user’s tiles.') }}
+  {{ _('The browser makes these suggestions based on categories of sites that the user has already shown an interest in.') }}
+  {{ _('To protect users’ privacy, Mozilla never shares personally identifiable information, always encrypts data in transmission and promptly discards all data after a week.') }}
+  </p>
+
+  <p>
+  {{ _('Firefox has over 350 million users worldwide, and Web usage continues to grow unabated.') }}
+  {{ _('Using Suggested Tiles, advertisers can quickly reach users across 110 countries in 17 different languages.') }}
+  {{ _('And they can simplify this effort by working directly with a single party on their media plan and reporting requirements.') }}
+  </p>
+
+  <p>
+  {{ _('Unlike banners and other traditional online ads, tiles appear in an uncluttered grid at the start of a search or site visit, when users are highly receptive to saving time by clicking on a helpful link.') }}
+  {{ _('Because Suggested Tiles appear alongside other tiles that share a common category, advertisers do not have to worry about inappropriate placements.') }}
+  </p>
+
+  <p>
+  {{ _('As with Directory Tiles, users can always opt out of Suggested Tiles, so those who use the service are generally receptive.') }}
+  {{ _('Firefox users can view the rationale behind every suggestion with a single click — so advertisers are connecting with an engaged audience.') }}
+  </p>
+
+  <p>
+  {{ _('It’s easy to run a Tiles campaign.') }}
+  {% trans url=url('mozorg.contentservices.start') %}
+    Just visit our <a href="{{ url }}">Get Started</a> page, ensure that your content adheres to our guidelines for addressing general audiences and answer some basic questions about your campaign.') }}
+  {{ _('For Suggested Tiles, we will help you define the most effective interest categories, based on the most recent and frequent online destinations of your target audience.') }}
+  {{ _('Campaigns are based on performance-based metrics such as cost-per-click, cost-per-impression or cost-per-action, so advertisers have clear insight into how users are responding to the tile, as well as the bottom line.') }}
+  </p>
+
+  <p>
+  {{ _('Everybody wins.') }}
+  </p>
+
 {% endblock %}

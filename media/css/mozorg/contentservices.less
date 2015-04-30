@@ -40,16 +40,37 @@
         float: left;
         clear: left;
         margin-bottom: @baseLine;
-    }
 
-    .lede {
-        .open-sans-light;
-        .font-size(28px);
-        line-height: 1.3;
-        letter-spacing: -.5px;
-        margin-top: -.25em;
-    }
+        .lede {
+            .open-sans-light;
+            .font-size(20px);
+            line-height: 1.3;
+            margin-bottom: @baseLine * 2;
+        }
 
+        .start {
+            text-align: center;
+            h4 {
+                text-shadow: none;
+            }
+
+            .button-flat {
+                min-width: 240px;
+                margin-bottom: 10px;
+                padding: @baseLine;
+                font-size: @largeFontSize;
+                .trailing-arrow();
+            }
+
+            p {
+                margin: auto;
+                max-width: 240px;
+                .font-size(@baseFontSize);
+                .open-sans;
+                color: @textColorTertiary;
+            }
+        }
+    }
 }
 
 .video {
@@ -78,20 +99,6 @@ ul.links {
         list-style-type: none;
         padding-top: 25px;
         background: url(/media/img/mission/thin-stripe.png) center top repeat-x;
-        &.start {
-            .span-all();
-            margin-bottom: @baseLine * 2;
-            text-align: center;
-            h4 {
-                text-shadow: none;
-            }
-            .button-flat {
-                min-width: 240px;
-                padding: @baseLine;
-                font-size: @largeFontSize;
-                .trailing-arrow();
-            }
-        }
     }
 
     h4 {
@@ -105,6 +112,35 @@ ul.links {
     p {
         .font-size(.857em);
         margin-bottom: @baseLine / 2;
+    }
+}
+
+/* FAQ */
+
+.accordion {
+    margin-bottom: @baseLine * 2;
+
+    h3 {
+        .font-size(20px);
+        letter-spacing: normal;
+    }
+
+    &.zebra > section:nth-of-type(odd) {
+        background: #eee;
+    }
+}
+
+.toc {
+    .open-sans-light;
+    li {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0 .3em 0 0;
+        padding: .3em .5em .3em 0;
+        border-right: 1px dotted @borderColor;
+        &:last-child {
+            border-right: none;
+        }
     }
 }
 

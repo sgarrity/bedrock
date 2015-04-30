@@ -9,10 +9,29 @@
 {% block body_class %}sand{% endblock %}
 
 {% block article %}
-    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
-    <p class="lede">{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
+  <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+  <p class="lede">{{ _('Mozilla believes that advertising must respect the needs and preferences of the user, and that advertisers have much to gain by doing so.') }}</p>
+
+  <p>{{ _('To deliver Suggested Tiles, our first advertising product, we are looking to partner with companies that share this vision, such as those committed to respecting Do Not Track.') }}</p>
+
+  <p>
+    {{ _('<strong>We do not build user profiles,</strong> and we will not work with companies that attempt to do so using techniques like canvas fingerprinting or supercookies.') }}
+    {{ _('Spyware, adware or any form of malware will never be included in a Suggested Tiles campaign.') }}
+  </p>
+  <p>
+    <strong>{{ _('No personally identifiable information is shared.') }}</strong>
+    {{ _('Mozilla applies strict limits to the data it uses to deliver Tiles products, and we disassociate data from individuals and delete it as soon as possible.') }}
+    {{ _('Data is encrypted in transmission and the limited data that Mozilla collects, (specifically IP addresses), is deleted within a week of collection.') }}
+    {{ _('User data is only shared with advertisers in aggregate form.') }}
+  </p>
+  <p>
+    {{ _('<strong>Users can opt out of Suggested Tiles at any time,</strong> simply by unchecking a box, independently from their Do Not Track preferences.') }}
+  </p>
+
+  <p>
+    {% trans url=url('privacy.principles') %}
+      Learn more about our <a href="{{ url }}">data privacy</a> principles.
+    {% endtrans %}
+  </p>
+
 {% endblock %}

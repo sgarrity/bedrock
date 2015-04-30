@@ -5,6 +5,8 @@
 {%- set_lang_files "main" -%}
 {% extends "mozorg/base-resp.html" %}
 
+{% block body_class %}sand{% endblock %}
+
 {% set navigation_bar = [
     (url('mozorg.contentservices.index'), _('Content Services')),
     (url('mozorg.contentservices.start'),  _('Get started')),

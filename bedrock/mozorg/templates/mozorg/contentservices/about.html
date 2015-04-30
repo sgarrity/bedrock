@@ -9,10 +9,49 @@
 {% block body_class %}sand{% endblock %}
 
 {% block article %}
-    <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
-    <p class="lede">{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
-    <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac auctor magna, a iaculis enim. Nulla quis odio erat. Suspendisse ligula lorem, dignissim et aliquam at, congue efficitur velit. Sed dui urna, interdum fermentum posuere dapibus, finibus nec dui. Nam blandit libero eu ligula tempus ultricies.') }}</p>
-    <p>{{ _('Pellentesque a risus nec massa congue euismod. Sed pulvinar ante dapibus vestibulum consequat. Vivamus sapien metus, fringilla sed turpis vitae, volutpat consequat nibh. Suspendisse potenti. Aliquam erat volutpat.') }}</p>
+  <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
+
+
+  <p>
+    {{ _('Content Services sustains the Mozilla mission with innovative advertising products and services that raise revenue while enhancing the user’s experience and agency.') }}
+  </p>
+
+  <p>
+    {{ _('Advertising is the primary way that the Web is funded, but it often comes at the expense of users, who want to access information and services with as few interruptions as possible.') }}
+    {{ _('Also, advertising often relies on data that is gathered from users without their explicit consent and without respecting their preferences.') }}
+  </p>
+
+  <p>
+    {{ _('Content Services is driven by the need to develop and promote advertising that serves the needs of the user.') }}
+    {{ _('Our mission is to promote this form of advertising across all Internet services, including mobile protocols, at any scale. We believe that this kind of advertising has the potential for higher profits than invasive approaches, while also enhancing the user experience.') }}
+  </p>
+
+  <p>
+    {{ _('We provide in-browser promoted content experiences for advertisers who want better, higher-quality relationships with their audience. Our first targeted product, Suggested Tiles, lays the foundation for our user-centered approach.') }}
+  </p>
+
+  <p>
+    {{ _('If we can begin to use the browser to improve relations between users and advertisers, we can also begin to close the distance between browser vendors and the ad industry.') }}
+    {{ _('By collaborating, we can better address fraud and barriers to trust on the Web.') }}
+  </p>
+
+  <p>
+  {% trans url='https://blog.mozilla.org/advancingcontent/' %}
+    Learn more about Content Services in <a href="{{ url }}">the team’s blog</a>.
+  {% endtrans %}
+  </p>
+
+  <p>
+  {% trans team_url='https://wiki.mozilla.org/Content_services', doc_url='https://wiki.mozilla.org/Tiles' %}
+    Get Involved: See the Content Services <a href="{{ team_url }}">team page</a> and <a href="{{ doc_url }}">Tiles documentation</a> on the Mozilla Wiki.
+  {% endtrans %}
+  </p>
+
+  <p>
+  {% trans url='https://careers.mozilla.org/listings/' %}
+    Content Services is hiring.
+  {% endtrans %}
+  {{ _('If you share our vision for sustainability on the Web, maybe we can work together.') }}
+  </p>
+
 {% endblock %}
