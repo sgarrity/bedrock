@@ -27,21 +27,19 @@
     <p class="lede">{{ _('Get the attention of millions of Web users interested in what you have to say.') }}</p>
     <div class="start">
       <a href="{{ url('mozorg.contentservices.start') }}" class="button-flat">{{ _('Get Started') }}</a>
-      <p>{{ _('Share your brand with millions of interested Web users worldwide.') }}</p>
     </div>
 
   </div>
 
   <div class="video">
     <div id="welcome-video" class="mozilla-video-control mozilla-video-shadow">
-      {{ video('Mozilla_2011_Story.webm',
-               'Mozilla_2011_Story.ogv',
-               'Mozilla_2011_Story.mp4',
+      {{ video('Moz_SuggestedTiles-V1.webm',
+               'Moz_SuggestedTiles-V1.mp4',
                h=259, w=460,
-               prefix='//videos.cdn.mozilla.net/brand/',
-               poster=static('img/mission/poster-mission.jpg')) }}
+               prefix='//videos.cdn.mozilla.net/uploads/drafts/',
+               poster=static('img/contentservices/poster.jpg')) }}
     </div>
-    <p class="caption">{{ _('Discover the power of Suggested Tiles, for both users and advertisers.') }}</p>
+    <p class="caption">{{ _('Discover the power of Suggested Tiles') }}</p>
   </div>
 
   <ul class="links">
@@ -51,11 +49,11 @@
     </li>
     <li class="link-faq">
       <h4><a href="{{ url('mozorg.contentservices.faq') }}">{{ _('Frequently asked questions') }}</a></h4>
-      <p>{{ _('How do Suggested Tiles differ from other online advertising approaches?') }}</p>
+      <p>{{ _('How do Tiles differ from other online advertising approaches?') }}</p>
     </li>
     <li class="link-respect">
       <h4><a href="{{ url('mozorg.contentservices.user-respect') }}">{{ _('User respect') }}</a></h4>
-      <p>{{ _('Learn how Tiles give users complete control over their data.') }}</p>
+      <p>{{ _('Learn how Tiles give users complete control over their experience.') }}</p>
     </li>
     <li class="link-about">
       <h4><a href="{{ url('mozorg.contentservices.about') }}">{{ _('About Content Services') }}</a></h4>

@@ -20,7 +20,7 @@
 
 <ul class="toc">
   <li><a href="#top">{{ _('Top Questions') }}</a></li>
-  <li><a href="#audience">{{ _('Audiences and Coverage') }}</a></li>
+  <li><a href="#audience">{{ _('Audience and Coverage') }}</a></li>
   <li><a href="#requirements">{{ _('Requirements') }}</a></li>
   <li><a href="#reporting">{{ _('Reporting') }}</a></li>
   <li><a href="#pricing">{{ _('Pricing') }}</a></li>
@@ -98,6 +98,17 @@
     </div>
   </section>
 
+
+  <section>
+    <h3 data-accordion-role="tab">{{ _('Will you only work with brand owners or also sell to advertising agencies / publishers?') }}</h3>
+    <div data-accordion-role="tabpanel">
+      <p>
+        {{ _('No: we plan to work with brands, agencies, and advertising technology companies.') }}
+        {{ _('We are talking to brands, agencies (creative, media, digital, social, content) and advertising technology companies.') }}
+      </p>
+    </div>
+  </section>
+
 </section>
 
 <section id="audience" class="accordion accordion-auto-init zebra">
@@ -156,9 +167,7 @@
     <h3 data-accordion-role="tab">{{ _('What are the general requirements for engaging in a Tiles campaign?') }}</h3>
     <div data-accordion-role="tabpanel">
       <p>
-      {% trans url=url('mozorg.contentservices.start') %}
-        Please see our <a href="{{ url }}">Get Started</a> page.
-      {% endtrans %}
+        {{ _('We are looking to partner with companies that share our vision for user-respecting advertising and who can bring useful, fun or valuable new experiences to Firefox users.') }}
       </p>
     </div>
   </section>
@@ -186,12 +195,12 @@
   </section>
 
   <section>
-    <h3 data-accordion-role="tab">{{ _('What are your content guidelines?') }}</h3>
+    <h3 data-accordion-role="tab">{{ _('Do you have any content guidelines?') }}</h3>
     <div data-accordion-role="tabpanel">
       <p>
-      {% trans url=url('mozorg.contentservices.start') %}
-        Please see our <a href="{{ url }}">Get Started</a> page.
-      {% endtrans %}
+        {{ _('We are interested in content that will enhance a user’s experience of Firefox and which will add value for both them and the advertiser.') }}
+        {{ _('There are certain categories of promotional content which we will not work with.') }}
+        {{ _('Those include adult content, drugs/alcohol/tobacco, gambling, weapons, politics and religion.') }}
       </p>
     </div>
   </section>

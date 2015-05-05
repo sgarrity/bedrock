@@ -18,14 +18,15 @@
 
 {% block article %}
   <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
-  <p class="lede">{{ _('Glad you’re ready. So are we! Here’s what we need from you:') }}</p>
+  <p class="lede">{{ _('Glad you’re ready. So are we!') }}</p>
 
   <ol class="start-list">
     <li>
       <p>
-      {% trans url=url('mozorg.contentservices.user-respect') %}
-        First, please review our <a href="{{ url }}">User Respect</a> page; we are actively seeking to partner with companies that share our vision for user-centered advertising.
+      {% trans url=url('mozorg.contentservices.faq') %}
+        Please review our <a href="{{ url }}">Frequently Asked Questions</a> page.
       {% endtrans %}
+      {{ _('We also have a set of creative guidelines, which cover everything you need to know to build your own Tile.') }}
       </p>
       <p>
         {{ _('Also, know that we are not able to engage in campaigns that promote the following:') }}
@@ -47,7 +48,7 @@
     </li>
     <li>
       <p>
-        {{ _('Finally, complete the contact form below, and we will be in touch shortly to discuss next steps.') }}
+        {{ _('Then complete the contact form below, and we will be in touch shortly to discuss next steps.') }}
       </p>
     </li>
   </ol>
