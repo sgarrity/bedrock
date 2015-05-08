@@ -447,7 +447,7 @@ PIPELINE_CSS = {
             'css/libs/tipsy.css',
             'css/sandstone/sandstone-resp.less',
             'css/firefox/family-nav.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/firefox/os/get_device.less',
             'css/firefox/os/devices.less',
         ),
