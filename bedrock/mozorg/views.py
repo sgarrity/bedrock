@@ -342,12 +342,13 @@ def process_content_services_form(request, template, success_url_name, template_
 
                 data['oid'] = '00DU0000000IrgO'
 
-                data['lead_source'] = form_kwargs.get('lead_source', 'www.mozilla.org/contentservices/')
+                data['lead_source'] = form_kwargs.get('lead_source', 'www.mozilla.org/about/partnerships/contentservices/')
                 # As we're doing the Salesforce POST in the background here,
                 # `retURL` is never visited/seen by the user. I believe it
                 # is required by Salesforce though, so it should hang around
                 # as a placeholder (with a valid URL, just in case).
                 data['retURL'] = ('http://www.mozilla.org/en-US/'
+                                  'about/partnerships/'
                                   'contentservices/start?success=1')
 
                 r = requests.post('https://www.salesforce.com/servlet/'
