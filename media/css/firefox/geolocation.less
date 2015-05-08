@@ -30,22 +30,36 @@
     }
 }
 
-#locateButton {
-    margin: 0 0 10px 0;
-}
+#modal {
+    .inner {
+        width: 540px;
+    }
 
-#geo-busy {
-    width: 16px;
-    height: 15px;
-    vertical-align: middle;
-}
+    #geo-demo {
+        position: relative;
+        top: 70px;
+        background: rgba(100, 100, 100, 0.5);
+        padding: 0px 0px 10px 0px;
+    }
 
-#geodemo-error {
-    color: red;
-}
+    #locateButton {
+        margin: 0 0 10px 15px;
+        background-color: #FFF;
+        border: none;
+        padding: 1em;
+        cursor: pointer;
+    }
 
-#modal .inner {
-    width: 540px;
+    #geodemo-error {
+        color: red;
+        margin-left: 15px;
+    }
+
+    #geo-busy {
+        width: 16px;
+        height: 15px;
+        vertical-align: middle;
+    }
 }
 
 /* Mobile Layout: 320px */
