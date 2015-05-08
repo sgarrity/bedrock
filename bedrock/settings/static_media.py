@@ -363,7 +363,7 @@ PIPELINE_CSS = {
             'css/firefox/template-resp.less',
             'css/firefox/menu-resp.less',
             'css/base/mozilla-accordion.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/libs/mapbox-2.1.5.css',
             'css/firefox/geolocation.less'
         ),
@@ -373,7 +373,7 @@ PIPELINE_CSS = {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/base/mozilla-share-cta.less',
             'css/firefox/menu-resp.less',
             'css/firefox/developer.less',
@@ -830,14 +830,14 @@ PIPELINE_CSS = {
     },
     'annual_2012': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/foundation/annual2012.less',
         ),
         'output_filename': 'css/annual_2012-bundle.css',
     },
     'annual_2013': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/foundation/annual2013.less',
         ),
         'output_filename': 'css/annual_2013-bundle.css',
