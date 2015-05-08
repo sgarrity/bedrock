@@ -20,42 +20,18 @@
   <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
   <p class="lede">{{ _('Glad you’re ready. So are we!') }}</p>
 
-  <ol class="start-list">
-    <li>
-      <p>
-      {% trans url=url('mozorg.contentservices.faq') %}
-        Please review our <a href="{{ url }}">Frequently Asked Questions</a> page.
-      {% endtrans %}
-      {{ _('We also have a set of creative guidelines, which cover everything you need to know to build your own Tile.') }}
-      {% trans url='http://static.mozilla.com/moco/en-US/pdf/Partner_Specs_Directory_Tiles.pdf', url2='http://static.mozilla.com/moco/en-US/pdf/Partner_Specs_Suggested_Tiles.pdf' %}
-        Download for <a href="{{ url }}">Directory Tiles</a> or <a href="{{ url2 }}">Suggested Tiles</a>.
-      {% endtrans %}
-      </p>
-      <p>
-        {{ _('Also, know that we are not able to engage in campaigns that promote the following:') }}
-      </p>
-      <ul>
-        <li>{{ _('Adult content') }}</li>
-        <li>{{ _('Drugs (illegal, prescription or recreational)') }}</li>
-        <li>{{ _('Alcohol, tobacco and related products') }}</li>
-        <li>{{ _('Gambling') }}</li>
-        <li>{{ _('Guns, weapons, ammunition or explosives') }}</li>
-        <li>{{ _('Politics') }}</li>
-        <li>{{ _('Religion') }}</li>
-      </ul>
-    </li>
-    <li>
-      <p>
-        {{ _('Next, download our creative guidelines, which cover everything you need to build a tile.') }}
-      </p>
-    </li>
-    <li>
-      <p>
-        {{ _('Then complete the contact form below, and we will be in touch shortly to discuss next steps.') }}
-      </p>
-    </li>
-  </ol>
-
+  <p>
+  {% trans url=url('mozorg.contentservices.faq') %}
+    Please review our <a href="{{ url }}">Frequently Asked Questions</a> page.
+  {% endtrans %}
+  {{ _('We also have a set of creative guidelines, which cover everything you need to know to build your own Tile.') }}
+  {% trans url='http://static.mozilla.com/moco/en-US/pdf/Partner_Specs_Directory_Tiles.pdf', url2='http://static.mozilla.com/moco/en-US/pdf/Partner_Specs_Suggested_Tiles.pdf' %}
+    Download for <a href="{{ url }}">Directory Tiles</a> or <a href="{{ url2 }}">Suggested Tiles</a>.
+  {% endtrans %}
+  </p>
+  <p>
+    {{ _('Then complete the contact form below, and we will be in touch shortly to discuss next steps.') }}
+  </p>
 
   <div id="content-form-success" class="{% if not form_success %}cloaked{% endif %}">
     <h3>{{ _('Thank you') }}</h3>
