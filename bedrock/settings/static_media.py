@@ -429,7 +429,7 @@ PIPELINE_CSS = {
     'firefox_os_new': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/firefox/family-nav.less',
             'css/firefox/os/get_device.less',
             'css/firefox/os/firefox-os-new.less',
