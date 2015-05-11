@@ -641,7 +641,7 @@ PIPELINE_CSS = {
     },
     'manifesto': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/libs/socialshare/socialshare.less',
             'css/mozorg/mosaic.less',
             'css/mozorg/manifesto.less',
