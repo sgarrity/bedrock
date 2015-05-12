@@ -301,7 +301,6 @@ PIPELINE_CSS = {
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
             'css/sandstone/video.less',
-            'css/base/mozilla-modal.less',
             'css/firefox/firstrun.less',
         ),
         'output_filename': 'css/firefox_firstrun-bundle.css',
