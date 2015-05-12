@@ -799,7 +799,7 @@ PIPELINE_CSS = {
     },
     'contribute-2015': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/mozorg/contribute/contribute-2015.less',
         ),
         'output_filename': 'css/contribute-2015-bundle.css',
