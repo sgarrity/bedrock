@@ -547,7 +547,7 @@ PIPELINE_CSS = {
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
             'css/firefox/menu-resp.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/firefox/installer-help.less',
         ),
         'output_filename': 'css/installer_help-bundle.css',
