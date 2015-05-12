@@ -461,7 +461,7 @@ PIPELINE_CSS = {
     'firefox_os_mwc_2015_preview': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/firefox/family-nav.less',
             'css/firefox/os/mwc-2015-preview.less',
         ),
