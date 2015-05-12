@@ -844,7 +844,7 @@ PIPELINE_CSS = {
     },
     'partners': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/libs/jquery.pageslide.css',
             'css/firefox/partners.less',
             'css/firefox/family-nav.less',
