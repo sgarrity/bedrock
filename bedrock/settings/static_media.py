@@ -335,7 +335,7 @@ PIPELINE_CSS = {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/firefox/dev-firstrun.less',
         ),
         'output_filename': 'css/firefox_developer_firstrun-bundle.css',
@@ -418,7 +418,7 @@ PIPELINE_CSS = {
     'firefox_os': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
-            'css/base/mozilla-modal.less',
+            'css/base/mozid-modal.less',
             'css/libs/jquery.pageslide.css',
             'css/firefox/os/get_device.less',
             'css/firefox/os/firefox-os.less',
