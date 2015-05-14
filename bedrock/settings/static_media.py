@@ -335,7 +335,7 @@ PIPELINE_CSS = {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/firefox/dev-firstrun.less',
         ),
         'output_filename': 'css/firefox_developer_firstrun-bundle.css',
@@ -362,7 +362,7 @@ PIPELINE_CSS = {
             'css/firefox/template-resp.less',
             'css/firefox/menu-resp.less',
             'css/base/mozilla-accordion.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/libs/mapbox-2.1.5.css',
             'css/firefox/geolocation.less'
         ),
@@ -372,7 +372,7 @@ PIPELINE_CSS = {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/base/mozilla-share-cta.less',
             'css/firefox/menu-resp.less',
             'css/firefox/developer.less',
@@ -390,7 +390,7 @@ PIPELINE_CSS = {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
             'css/firefox/family-nav.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/base/svg-animation-check.less',
             'css/base/mozilla-share-cta.less',
             'css/firefox/hello/index.less',
@@ -418,7 +418,7 @@ PIPELINE_CSS = {
     'firefox_os': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/libs/jquery.pageslide.css',
             'css/firefox/os/get_device.less',
             'css/firefox/os/firefox-os.less',
@@ -428,7 +428,7 @@ PIPELINE_CSS = {
     'firefox_os_new': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/firefox/family-nav.less',
             'css/firefox/os/get_device.less',
             'css/firefox/os/firefox-os-new.less',
@@ -446,7 +446,7 @@ PIPELINE_CSS = {
             'css/libs/tipsy.css',
             'css/sandstone/sandstone-resp.less',
             'css/firefox/family-nav.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/firefox/os/get_device.less',
             'css/firefox/os/devices.less',
         ),
@@ -461,7 +461,7 @@ PIPELINE_CSS = {
     'firefox_os_mwc_2015_preview': {
         'source_filenames': (
             'css/sandstone/sandstone-resp.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/firefox/family-nav.less',
             'css/firefox/os/mwc-2015-preview.less',
         ),
@@ -547,7 +547,7 @@ PIPELINE_CSS = {
             'css/sandstone/sandstone-resp.less',
             'css/firefox/template-resp.less',
             'css/firefox/menu-resp.less',
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/firefox/installer-help.less',
         ),
         'output_filename': 'css/installer_help-bundle.css',
@@ -640,7 +640,7 @@ PIPELINE_CSS = {
     },
     'manifesto': {
         'source_filenames': (
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/libs/socialshare/socialshare.less',
             'css/mozorg/mosaic.less',
             'css/mozorg/manifesto.less',
@@ -798,7 +798,7 @@ PIPELINE_CSS = {
     },
     'contribute-2015': {
         'source_filenames': (
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/mozorg/contribute/contribute-2015.less',
         ),
         'output_filename': 'css/contribute-2015-bundle.css',
@@ -829,21 +829,21 @@ PIPELINE_CSS = {
     },
     'annual_2012': {
         'source_filenames': (
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/foundation/annual2012.less',
         ),
         'output_filename': 'css/annual_2012-bundle.css',
     },
     'annual_2013': {
         'source_filenames': (
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/foundation/annual2013.less',
         ),
         'output_filename': 'css/annual_2013-bundle.css',
     },
     'partners': {
         'source_filenames': (
-            'css/base/mozid-modal.less',
+            'css/base/mozilla-modal.less',
             'css/libs/jquery.pageslide.css',
             'css/firefox/partners.less',
             'css/firefox/family-nav.less',
