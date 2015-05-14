@@ -33,12 +33,11 @@
 #modal {
     .inner {
         width: 540px;
-        margin: auto auto;
     }
 
     #geo-demo {
         position: relative;
-        top: 70px;
+        top: 50px;
         background: rgba(100, 100, 100, 0.5);
         padding: 0px 0px 10px 0px;
     }
@@ -67,5 +66,14 @@
 @media only screen and (max-width: @breakTablet) {
     .main-column {
         .span-all();
+    }
+
+    #modal .window .inner {
+        margin: 60px auto;
+        > header {
+            height: auto;
+            overflow: inherit;
+            padding: 0;
+        }
     }
 }
