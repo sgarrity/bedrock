@@ -15,7 +15,7 @@ from django.utils.safestring import mark_safe
 from django.core.urlresolvers import reverse
 
 from localflavor.us.forms import USStateField
-from localflavor.us.forms import USStateSelect
+from localflavor.us.us_states import STATE_CHOICES
 
 import basket
 from basket.base import request
@@ -509,6 +509,16 @@ class WebToLeadForm(forms.Form):
         )
 
 
+class USStateSelectBlank(widgets.Select):
+    """Version of USStateSelect widget with a blank first selection."""
+
+    def __init__(self, attrs=None, empty_msg=None):
+        if empty_msg is None:
+            empty_msg = ''
+        us_states_blank = (('', empty_msg),) + STATE_CHOICES
+        super(USStateSelectBlank, self).__init__(attrs, choices=us_states_blank)
+
+
 class ContentServicesForm(forms.Form):
     industries = (
         ('', 'Select Industry'),
@@ -644,7 +654,7 @@ class ContentServicesForm(forms.Form):
     state = USStateField(
         required=True,
         initial='',
-        widget=USStateSelect()
+        widget=USStateSelectBlank()
     )
     province = forms.CharField(
         required=False,
