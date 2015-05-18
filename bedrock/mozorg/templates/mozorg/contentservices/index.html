@@ -23,8 +23,12 @@
   <h1 class="title-shadow-box">{{ self.page_title() }}</h1>
 
   <div class="main">
-    <h2>{{ _('Introducing Suggested Tiles') }}</h2>
-    <p class="lede">{{ _('Get the attention of millions of Web users interested in what you have to say.') }}</p>
+    <h2>{{ _('Get the attention of millions of Web users interested in what you have to say.') }}</h2>
+    <p class="lede">
+      {% trans url=url('mozorg.contentservices.tiles') %}
+        Introducing <a href="%s">Suggested Tiles</a>
+      {% endtrans %}
+    </p>
     <div class="start">
       <a href="{{ url('mozorg.contentservices.start') }}" class="button-flat">{{ _('Get Started') }}</a>
     </div>
@@ -52,7 +56,7 @@
       <p>{{ _('How do Tiles differ from other online advertising approaches?') }}</p>
     </li>
     <li class="link-respect">
-      <h4><a href="{{ url('mozorg.contentservices.user-respect') }}">{{ _('User respect') }}</a></h4>
+      <h4><a href="{{ url('mozorg.contentservices.user-respect') }}">{{ _('User Respect') }}</a></h4>
       <p>{{ _('Learn how Tiles give users complete control over their experience.') }}</p>
     </li>
     <li class="link-about">
