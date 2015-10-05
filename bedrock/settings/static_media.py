@@ -467,6 +467,7 @@ PIPELINE_CSS = {
     'firefox_private_browsing': {
         'source_filenames': (
             'css/firefox/family-nav.less',
+            'css/firefox/tracking-protection-animation.less',
             'css/firefox/private-browsing.less',
         ),
         'output_filename': 'css/firefox_private_browsing-bundle.css',
@@ -1153,9 +1154,12 @@ PIPELINE_JS = {
     },
     'firefox_private_browsing': {
         'source_filenames': (
+            'js/firefox/australis/australis-uitour.js',
+            'js/base/mozilla-highlight-target.js',
             'js/libs/jquery.waypoints.min.js',
             'js/libs/jquery.waypoints-sticky.min.js',
             'js/firefox/family-nav.js',
+            'js/firefox/private-browsing.js'
         ),
         'output_filename': 'js/firefox_private_browsing-bundle.js',
     },

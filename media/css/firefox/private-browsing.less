@@ -5,220 +5,331 @@
 @import "../sandstone/lib.less";
 
 #wrapper {
-    width: 100%;
+    border-top: 2px solid #fff;
+    background-color: #0095dd;
     margin-top: -162px; // family nav
     padding-bottom: 0;
-    border-top: 2px solid #fff;
+    width: 100%;
 }
 
+.container {
+    .border-box();
+    .font-size(22px);
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    width: @widthDesktop;
 
-.intro {
-    padding-top: 162px;
-    background: #0c99d5;
-    color: #fff;
-
-    .container {
-        padding-bottom: 60px;
+    h2, h3 {
+        text-align: center;
+    }
+    h1 {
+        color: #fff;
+        .open-sans-light();
+        .font-size(66px);
+        line-height: 1.1;
+        text-shadow: none;
+        margin-bottom: 40px;
+    }
+    h2 {
+        color: #652562;
+        .open-sans();
+        .font-size(48px);
+        margin-bottom: (@baseLine * 2);
+    }
+    h3 {
+        color: #652562;
+        .font-size(25px);
+        line-height: 1.2;
+        margin: @baseLine auto;
     }
 
-    .header {
-        width: 50%;
-        float: left;
-        padding-top: 120px;
+    p {
+        color: @mozIDGrey;
+        .open-sans-light();
+        .font-size(20px);
+    }
+    .footer {
+        margin-top: (@baseLine * 3);
+        text-align: center;
 
-        h1,
-        h2 {
-            color: #fff;
-            text-shadow: none;
+        small {
+            color: #56565a;
+            .open-sans-italic();
+            display: block;
+            margin: @baseLine auto;
         }
+    }
+}
 
-        h1 {
-            font-size: 65px;
-            margin-bottom: 40px;
+.button-flat-dark {
+    .open-sans-light;
+    .font-size(24px);
+    padding: 12px @baseLine;
+    .transition(background-color 250ms linear 0s);
+}
+
+.download-buttons  {
+    width: 385px; 
+
+    > div {
+        display: none;
+    }
+    .firefox-up-to-date & .firefox-latest-button,
+    .firefox-old & .firefox-old-button {
+        display: block;
+    }
+    .non-firefox & .non-firefox-button {
+        display: block;
+
+        > div {
+            display: none;
         }
-
-        .firefox-latest {
+        & .desktop-download-button {
+           display: block;  
         }
-
-        .non-firefox {
+    }
+    .android.non-firefox & .non-firefox-button {
+        & .desktop-download-button {
+            display: none;
         }
-
-        .firefox-old {
+        .android-download-button {
+            display: block;
         }
-
-        .download-button {
-            small.download-other {
-                color: #71C4EA;
-                a:link {
-                    color: #71C4EA;
-                }
+    }
+    .ios.non-firefox & .non-firefox-button {
+        & .desktop-download-button {
+            display: none;
+        }
+        .ios-download-button {
+            display: block;
+        }
+    }
+    .firefox-latest-button {
+    }
+    p {
+        color: #fff;
+        .font-size(22px);
+        line-height: 1.1;
+    } 
+    .download-button {
+        small.download-other {
+            color: #71C4EA;
+            a {
+                color: inherit;
             }
         }
     }
-    .animation {
-        width: 50%;
+}
+
+.intro {
+    margin-top: 50px;
+
+    header {
+        padding-top: 80px;
         float: left;
+    }
+
+    .critter-animation {
+        float: right;
+        margin: 0 -85px 0 0; 
     }
 }
 
 .tracking-protection {
-    background: #fff;
+    background-color: #fff;
 
-    .container {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    } 
     h2 {
-        font-size: 50px;
-        text-align: center;
-        color: #652562;
-        margin-bottom: 40px;
+        margin-bottom: (@baseLine * 3);
+        padding: 0 30px;
     }
-    
-    .private-browsing,
-    .with-tracking {
-        text-align: center;
-        width: 45%; 
-        float: left;
+    h3 {
+        .open-sans-extrabold();
+        .font-size(30px);
 
-        h3 {
-            color: #652562;
-            font-weight: bold;
-            margin-top: 20px;
+        sup {
+            line-height: 0;
         }
-        img {
-            width: 200px; 
-        }
-        p {
-            padding: 0 4em;
-            font-size: 16px;
-        }
+    }
+    p {
+        margin: @baseLine auto;
+        padding: 0 @baseLine;
+    }
+    .blurb {
+        background: url('/media/img/firefox/private-browsing/sprite-tracking-protection.svg') no-repeat;
+        background-size: 710px;
+        display: inline-block;
+        margin: 0 auto;
+        padding-top: 210px;
+        position: relative;
+        text-align: center;
+        vertical-align: top;
+        width: 465px;
+    } 
+    .with-tracking {
+        background-position: -410px 0;
     }
     .private-browsing {
-        background-image: url('/media/img/firefox/private-browsing/plus.png');
-        background-position: 100% 25%;
-        background-repeat: no-repeat;
-        background-size: 45px;
-        width: 45%;
-        padding-right: 5%;
+        background-position: 135px 0;
+        padding-right: 24px;
     }
-
+    .private-browsing::after {
+        color: #6fbf4a;
+        content: "+";
+        .open-sans-extrabold();
+        .font-size(100px);
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        right: -30px;
+        top: 0px;
+    }
     .footer {
-        clear: both;
-        text-align: center;
-
-        small {
-            color: @textColorLight;
-            font-style: italic;
-        }
-        strong, small {
-            display: block;
-            clear: both;
-        }
-
         a::after {
             content:" »";
             white-space: nowrap;
         }
+        a {
+            display: none;
+        } 
+
+        .desktop-link {
+            display: block;
+        }
+       
+    }
+}
+
+.android {
+    .footer .android-link {
+        display: block;
+    }
+    .footer .desktop-link {
+        display: none;
+    }
+}
+
+.ios {
+    .footer .ios-link {
+        display: block;
+    }
+    .footer .desktop-link {
+        display: none;
     }
 }
 
 .when-to-use {
     background-color: #bee1f5;
-
     .container {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    } 
-
-    h2 {
-        font-size: 50px;
-        text-align: center;
-        color: #652562;
-        margin-bottom: 40px;
-    }
-
-    h3 {
-        font-size: 23px;
-        margin-bottom: 40px;
-        color: #652562;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     ul {
         list-style-type: none;
-        margin: 0px;
-
+        margin: 0;
         li {
-            text-align: center;
-            margin: 0px;
+            background-image: url('/media/img/firefox/private-browsing/sprite-features.png');
+            background-repeat: no-repeat;
+            background-position: -2327px 135px;
             float: left;
-            width: 28%;
-            margin-right: 8%;
-            img {
-                width: 130px;
+            margin: 0;
+            text-align: center;
+            width: 305px;
+            h3 {
+                .open-sans();
+                margin: (@baseLine * 2) auto;
             }
             p {
-                margin-top: 30px;
-                font-size: 16px;
+                padding: 175px 20px 0;
             }
         }
-
-        li:last-child {
-            margin-right: 0;
+        li:first-child {
+            background-position: -1130px 135px;
+            margin-right: 40px;
+            margin-left: -10px;
+        }
+        li:first-child + li {
+            background-position: -1735px 135px;
+            margin-right: 40px;
         }
     }
 }
 
 .control-center {
-    background-color: #fff;
+    background: url('/media/img/firefox/private-browsing/control-center.png') #fff no-repeat center 120px;
+    padding-top: 350px;
     text-align: center;
 
-    h2 {
-        font-size: 50px;
-        color: #652562;
-        margin-bottom: 40px;
-    }
-
     p {
-        margin-top: 30px;
-        font-size: 16px;
+        .font-size(25px);
+        padding: 0 30px;
     }
-
-    .container {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }    
-
     .footer {
-        clear: both;
-        text-align: center;
-
         small {
-            color: @textColorLight;
-            font-style: italic;
+            width: 37%;
         }
-        strong, small {
-            display: block;
-            clear: both;
-        }
-
         a::after {
             content:" »";
             white-space: nowrap;
         }
     }
-
 }
 
 .cta {
-    background: #0c99d5;
-    h3 {
+    .container {
+        min-height: 230px;
+        padding: 0; 
+    }
+    h2 {
         color: #fff;
         float: left;
+        margin: 0;
+        text-shadow: none;
+        text-align: left;
+        width: 60%;
+    }
+    .download-buttons {
+        float: left;
+        width: 100%;
+    }
+    .button-flat-dark,
+    .dl-button,
+    .desktop-download-button,
+    .ios-download-button a {
+        float: right;
     }
 
-    .firefox-latest {
-        float: right;
+    .firefox-latest-button {
+        margin: 85px 0;
+    }
+    .non-firefox-button {
+        margin: 73px 0;
+    }
+    .non-firefox-button,
+    .firefox-old-button {
+        h2 {
+            .font-size(30px);
+            line-height: 1.4;
+        }
+    }
+
+    .firefox-old-button {
+        margin: 55px 0;
+
+        h2 {
+            width: 45%;
+        }
+        .download-button {
+            margin-top: 30px;
+            float: right;
+        } 
+    }
+
+    .non-firefox-button {
+        h2 {
+            width: 52%;
+        }
     }
 }
 
@@ -226,20 +337,216 @@
     margin-top: 0;
 }
 
-.container {
-    .border-box();
-    width: @widthDesktop;
-    margin: 0 auto;
+html[lang^='en'] {
+    .button-flat-dark {
+        text-transform: none;
+        margin-bottom: 0;
+    }
+}
 
-    @media only screen and (max-width: @breakDesktop) {
+@media only screen and (max-width: @breakDesktop) {
+    .button-flat-dark {
+        .font-size(20px);
+    }
+    .container {
         width: @widthTablet;
+
+        h1 {
+            .font-size(45px);
+        } 
+        h2 {
+            .font-size(38px);
+        }
+        h3 {
+            .font-size(19px);
+        }
+    }
+    .intro {
+        .critter-animation {
+           margin: 35px -44px 0 0; 
+        }
+    }
+    .tracking-protection {
+        .blurb {
+            width: 320px;
+        }
+        .with-tracking {
+            background-position: -468px 0;
+        }
+        .private-browsing {
+            background-position: 57px 0;
+            padding-right: 70px;
+        }
+         .private-browsing::after {
+            right: -18px;
+        }
+    }
+    .when-to-use {
+        ul {
+            li {
+                width: 230px;
+                background-position: -2358px 110px;
+                p {
+                    .font-size(14px);
+                    padding-top: 155px;
+                }
+            }
+            li:first-child {
+                background-position: -1155px 110px;
+            }
+            li:first-child + li {
+                background-position: -1765px 110px;
+            }
+        }
     }
 
-    @media only screen and (max-width: @breakTablet) {
+    .cta {
+        .non-firefox-button,
+        .firefox-old-button {
+            h2 {
+                .font-size(25px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: @breakTablet) {
+    .button-flat-dark {
+        .font-size(18px);
+    }
+    .container {
+        padding-top: 60px;
         width: @widthMobile;
-    }
 
-    @media only screen and (min-width: @breakMobileLandscape) and (max-width: @breakTablet) {
-        width: @widthMobileLandscape;
+        h1 {
+            .font-size(32px);
+        } 
+        h2 {
+            .font-size(30px);
+        }
+        h3 {
+            .font-size(20px);
+        }
+        p {
+            .font-size(14px);
+            line-height: 1.2;
+        }
+    }
+    .intro {
+        header {
+            clear: both;
+            float: none;
+        }
+        .critter-animation {
+            float: none;
+            margin: 30px 0 0 -20px;
+            clear: both;
+        }
+        h1, .download-buttons {
+            text-align: center;
+            width: 100%;
+        }
+    }
+    .tracking-protection {
+        h2 {
+            padding: 0;
+        }
+        .blurb {
+            display: block;
+            width: 100%;
+        }
+        .with-tracking {
+            margin: (@baseLine * 5) auto 0;
+            background-position: -482px 0;
+        }
+        .private-browsing {
+            padding-right: 0;
+        }
+        .private-browsing::after {
+            bottom: -69px;
+            right: 102px;
+            top: initial;
+        }
+    }
+    .when-to-use {
+        h3 {
+            padding: 0 30px;
+        }
+        ul li {
+            float: none;
+            width: 100%;
+            background-position: -2324px 60px;
+            margin: 0;
+            &:first-child {
+                background-position: -1112px 60px;
+            }
+            &:first-child + li {
+                background-position: -1730px 60px;
+            }
+        }
+    }
+    .control-center {
+        background-position: center 30px;
+        .footer small {
+            width: 100%;
+        }
+    }
+    .cta {
+        .container {
+            min-height: 170px;
+        }
+        h2 {
+            .font-size(30px);
+            float: none;
+            margin-bottom: @baseLine;
+            text-align: center;
+            width: 100%;
+        }
+        .download-buttons {
+            float: none;
+            text-align: center;
+        }
+
+        .button-flat-dark,
+        .android-download-button a,
+        .desktop-download-button,
+        .ios-download-button a {
+            float: none;
+        }
+
+        .firefox-latest-button,
+        .firefox-old-button,
+        .non-firefox-button {
+            h2 {
+                width: 100%;
+                .font-size(22px);
+            }     
+        }
+        .non-firefox-button {
+            margin: 60px 0;
+        }
+        .firefox-latest-button {
+            margin: 60px 0 0 0;
+            h2 {
+                .font-size(26px;)
+            }
+        }
+        .firefox-old-button {
+            margin: 30px 0;
+            .download-button {
+                float: none;
+                margin-top: 0;
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width: @breakMobile) and (max-width: @breakMobileLandscape) {
+    .button-flat-dark {
+        .font-size(@largeFontSize);
+    }
+    .container {
+        width: @widthMobile;
     }
 }
