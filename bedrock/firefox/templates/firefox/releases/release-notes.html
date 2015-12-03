@@ -50,13 +50,13 @@
         {% block notes_heading_primary %}
           <h1>{{ _('See what’s new in Firefox!') }}</h1>
         {% endblock %}
-          <p> 
-            {% trans 
-            feedback='https://input.mozilla.org/feedback/android/' + release.version + '?utm_source=releasenotes' 
-            if release.product == 'Firefox for Android' 
+          <p>
+            {% trans
+            feedback='https://input.mozilla.org/feedback/android/' + release.version + '?utm_source=releasenotes'
+            if release.product == 'Firefox for Android'
             else 'https://input.mozilla.org/feedback/firefox/' + release.version + '?utm_source=releasenotes',
             bugzilla='https://bugzilla.mozilla.org/',
-            bug_search_url=release.get_bug_search_url() 
+            bug_search_url=release.get_bug_search_url()
             %}
               Release Notes tell you what’s new in Firefox. As always, we welcome your <a href="{{ feedback }}">feedback</a>. You can also <a href="{{ bugzilla }}"> file a bug in Bugzilla </a> or see the <a href="{{ bug_search_url }}">complete list of changes</a> in this release.
             {% endtrans %}
@@ -248,10 +248,10 @@
       </div>
     </section>
 
-    {% block notes_download_footer %} 
+    {% block notes_download_footer %}
     <section class="notes-footer">
       <div class="container">
-        <div class="all-download"> 
+        <div class="all-download">
           <p class="message">{{ _('Download the latest version of Firefox') }}</p>
           <a rel="external" href="https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/">{{ _('All Firefox downloads') }}</a>
         </div>
@@ -285,7 +285,7 @@
   </article>
 </main>
 
-{% block releasenotes_footer %} 
+{% block releasenotes_footer %}
 <footer class="release-footer">
   <div class="container">
     <div class="col">
@@ -311,8 +311,8 @@
 
 {% endblock %}
 
-{% block email_form %} {% endblock %}
+{% block email_form %}{% endblock %}
 
 {% block js %}
-   {% javascript 'releasenotes' %}
+  {% javascript 'releasenotes' %}
 {% endblock %}
