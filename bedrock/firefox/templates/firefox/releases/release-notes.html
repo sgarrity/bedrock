@@ -8,7 +8,7 @@
 {% block page_title %}{{ _('{product} — {channel} Notes ({version})')|f(product=release.product, channel=channel_name, version=release.version) }}{% endblock %}
 
 {% block body_id %}notes{% endblock %}
-{% block body_class %}fx-notes blank{% endblock %}
+{% block body_class %}fx-notes{% endblock %}
 
 {% block page_css %}
   {% stylesheet 'firefox_releasenotes_firefox' %}
