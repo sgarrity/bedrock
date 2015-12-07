@@ -130,7 +130,7 @@
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
@@ -141,11 +141,11 @@
             <div class="section-wrapper">
               <p id="{{ note.tag }}">{{ note.tag }}</p>
               <ul class="section-items">
-                {% endif %}
+              {% endif %}
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
@@ -156,11 +156,11 @@
             <div class="section-wrapper">
               <p id="{{ note.tag }}">{{ note.tag }}</p>
               <ul class="section-items">
-               {% endif %}
+              {% endif %}
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
@@ -175,7 +175,7 @@
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
               <a class="mdn-icon more" rel="external" href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/{{ release.major_version() }}">{{ _('Developer Information') }}</a>
             </div>
@@ -191,7 +191,7 @@
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
@@ -202,11 +202,11 @@
             <div class="section-wrapper">
               <p id="{{ note.tag }}">{{ note.tag }}</p>
               <ul class="section-items">
-                {% endif %}
+              {% endif %}
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
@@ -217,11 +217,11 @@
             <div class="section-wrapper">
               <p id="{{ note.tag }}">{{ note.tag }}</p>
               <ul class="section-items untagged">
-                {% endif %}
+              {% endif %}
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
@@ -234,11 +234,11 @@
             <div class="section-wrapper">
               <p id="Known">{{ _('unresolved') }}</p>
               <ul class="section-items">
-                {% endif %}
+              {% endif %}
                 <li id="note-{{ note.id }}">
                   <p>{{ note.note|markdown|safe }}</p>
                 </li>
-                {% if loop.last %}
+              {% if loop.last %}
               </ul>
             </div>
             {% endif %}
