@@ -7,7 +7,7 @@
 {% set channel_name = 'Beta' %}
 
 {% block platform_switch %}
-  <div id="nav" class="navigator">
+  <nav id="nav" class="navigator">
     <div class="container">
       <ul class="menu">
         <li><a href="{{ url('firefox') + 'notes/' }}">{{ _('Desktop') }}</a></li>
@@ -26,5 +26,5 @@
         </li>
       </ul>
     </div>
-  </div>
+  </nav>
 {% endblock %}
