@@ -231,8 +231,8 @@
         {% if known_issues %}
           {% for note in known_issues %}
             {% if loop.first %}
-            <div class="section-wrapper">
-              <p id="Known">{{ _('unresolved') }}</p>
+            <div class="section-wrapper" id="known">
+              <h3>{{ _('unresolved') }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
