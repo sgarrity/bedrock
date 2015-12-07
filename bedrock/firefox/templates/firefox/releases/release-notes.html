@@ -124,7 +124,7 @@
           {% for note in new_features if note.tag == "New" %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
@@ -139,7 +139,7 @@
           {% for note in new_features if note.tag == "Fixed" %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
@@ -154,7 +154,7 @@
           {% for note in new_features if note.tag == "Changed" %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
@@ -169,7 +169,7 @@
           {% for note in new_features if note.tag == "Developer" %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
@@ -185,7 +185,7 @@
           {% for note in new_features if note.tag == "HTML5" %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
@@ -200,7 +200,7 @@
           {% for note in new_features if note.tag == "Resolved" %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items">
               {% endif %}
                 <li id="note-{{ note.id }}">
@@ -215,7 +215,7 @@
           {% for note in new_features if not note.tag %}
             {% if loop.first %}
             <div class="section-wrapper">
-              <p id="{{ note.tag }}">{{ note.tag }}</p>
+              <h3 id="{{ note.tag }}">{{ note.tag }}</h3>
               <ul class="section-items untagged">
               {% endif %}
                 <li id="note-{{ note.id }}">
