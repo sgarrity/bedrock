@@ -232,13 +232,11 @@ ul.submenu:after {
             border: none;
         }
 
-        > h3 {
+        > h4 {
             float: left;
             margin: 10px 0px;
             width: 25%;
             text-transform: lowercase;
-            font-size: @baseFontSize;
-            font-weight: normal;
         }
     }
 }
@@ -328,33 +326,41 @@ ul.section-items {
 }
 
 
-#new h3:before {
+#new h4:before {
     content: '\00A0\f005\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
 }
-#fixed h3:before {
+#fixed h4:before {
     content: '\00A0\f00c\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
+
 }
-#changed h3:before {
+#changed h4:before {
     content: '\00A0\f021\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
 }
-#developer h3:before {
+#developer h4:before {
     content: '\00A0\f0ad\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
 }
-#html5 h3:before {
+#html5 h4:before {
     content: '\00A0\f121\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
 }
-#resolved h3:before {
+#resolved h4:before {
     content: '\00A0\f164\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
 }
-#known h3:before {
+#known h4:before {
     content: '\00A0\f05e\00A0';
     font-family: 'Font Awesome';
+    margin-right: .2em;
 }
 
 @media only screen and (max-width: @breakDesktop) {
@@ -429,7 +435,7 @@ ul.section-items {
     .notes-section {
         .section-wrapper {
             padding: 20px 0;
-            > h3, ul {
+            > h4, ul {
                 float: none;
                 width: 100%;
             }
