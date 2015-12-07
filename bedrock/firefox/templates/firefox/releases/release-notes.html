@@ -65,7 +65,7 @@
       </div>
 
     {% block platform_switch %}
-      <div id="nav" class="navigator">
+      <nav id="nav" class="navigator">
         <div class="container">
           <ul class="menu">
           {% if release.product == 'Firefox' %}
@@ -94,7 +94,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     {% endblock %}
 
     {% if release.version %}
