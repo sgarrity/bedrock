@@ -17,7 +17,7 @@
 
 .mdn-icon {
     float: right;
-    margin-top: 20px;
+    margin-top: @baseLine;
 }
 
 .mdn-icon:before {
@@ -96,7 +96,7 @@ ul.menu {
 
     li {
         display: inline-block;
-        padding: 20px 16px;
+        padding: @baseLine 16px;
         text-transform: uppercase;
         position: relative;
         cursor: pointer;
@@ -129,7 +129,7 @@ ul.submenu {
     background-color: #fff;
     box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.4);
     display: none;
-    margin-top: 20px;
+    margin-top: @baseLine;
     padding: 5px 10px 15px 10px;
     position: absolute;
     text-align: left;
@@ -228,7 +228,7 @@ ul.submenu:after {
         .border-box();
         border-bottom: solid 1px #eee;
         display: table;
-        margin: auto auto;
+        margin: auto;
         padding: 30px 65px;
         width: 100%;
 
@@ -456,7 +456,7 @@ ul.section-items {
             text-align: center;
         }
         .all-download {
-            margin-bottom: 20px;
+            margin-bottom: @baseLine;
             p {
                 margin-bottom: 0;
             }
