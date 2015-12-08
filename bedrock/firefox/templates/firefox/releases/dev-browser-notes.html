@@ -6,8 +6,8 @@
 
 {% block notes_heading_secondary %}
   <div class="version">
-    <h3>{{ _('{version}')|f(version=release.version) }}</h3>
-    <h4>{{ _('Firefox Developer Edition') }}</h4>
+    <h2>{{ _('{version}')|f(version=release.version) }}</h2>
+    <h3>{{ _('Firefox Developer Edition') }}</h3>
     <p>{{ _('{date}')|f(date=release.release_date|l10n_format_date) }}</p>
   </div>
   <div class="description">
