@@ -127,7 +127,7 @@ ul.menu {
 
 ul.submenu {
     background-color: #fff;
-    box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.4);
+    box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.4);
     display: none;
     margin-top: @baseLine;
     padding: 5px 10px 15px 10px;
@@ -238,7 +238,7 @@ ul.submenu:after {
 
         > h4 {
             float: left;
-            margin: 10px 0px;
+            margin: 10px 0;
             width: 25%;
             text-transform: lowercase;
         }
@@ -253,7 +253,7 @@ ul.section-items {
     li {
         display: list-item;
         padding: 15px;
-        margin-left: 5px 0px 0px 30px;
+        margin-left: 5px 0 0 30px;
 
         p {
             margin: 0;
@@ -286,7 +286,7 @@ ul.section-items {
         padding: 40px;
     }
     .version-message {
-        margin-bottom: 0px;
+        margin-bottom: 0;
         &:before {
             .inline-block;
             margin: 0 4px 0 0;
@@ -438,7 +438,7 @@ ul.section-items {
     }
     .notes-section {
         .section-wrapper {
-            padding: 20px 0;
+            padding: @baseLine 0;
             > h4, ul {
                 float: none;
                 width: 100%;
