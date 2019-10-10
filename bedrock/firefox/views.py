@@ -537,7 +537,10 @@ class FirstrunView(l10n_utils.LangFilesMixin, TemplateView):
 
 
 class WhatsNewRedirectorView(GeoRedirectView):
-    geo_urls = {}
+    geo_urls = {
+        'IN': 'firefox.whatsnew.india',
+        'CA': 'firefox.whatsnew.india',
+    }
     default_url = 'firefox.whatsnew.all'
 
     def get_redirect_url(self, *args, **kwargs):
