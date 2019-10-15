@@ -73,7 +73,7 @@ urlpatterns = (
         name='firefox.installer-help'),
     url(firstrun_re, views.FirstrunView.as_view(), name='firefox.firstrun'),
     url(whatsnew_re, views.WhatsNewRedirectorView.as_view(), name='firefox.whatsnew'),
-    url(whatsnew_re_india, views.WhatsNewRedirectorView.as_view(), name='firefox.whatsnew.india'),
+    url(whatsnew_re_india, views.WhatsNewIndiaView.as_view(), name='firefox.whatsnew.india'),
     url(whatsnew_re_all, views.WhatsnewView.as_view(), name='firefox.whatsnew.all'),
     url(tracking_protection_re, views.TrackingProtectionTourView.as_view(),
         name='firefox.tracking-protection-tour.start'),
