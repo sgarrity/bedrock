@@ -16,7 +16,7 @@
  {% block site_header %}{% endblock %}
  
  {% block page_css %}
-   {{ css_bundle('firefox-whatsnew-lite-in') }}
+   {{ css_bundle('firefox-whatsnew-lite') }}
  {% endblock %}
  
  {% block content %}
@@ -31,18 +31,18 @@
    </header>
    <div class="lite-body">
      <div class="lite-content mzp-l-content">
-       <div class="lite-KV">
+       <div class="lite-kv">
          <img src="{{ static('img/firefox/whatsnew/lite/phone.png') }}" alt="">
        </div>
        <div class="lite-copy">
          <div class="lite-container">
-           <img src="{{ static('img/logos/firefox/logo-lite-2019.png') }}"  alt="" height="146" width="155">
-           <h1><img src="{{ static('img/logos/firefox/logo-lite-wordmark-dark.png') }}"  alt="The New Firefox Lite"></h1>
+           <img src="{{ static('img/logos/firefox/logo-lite-in.png') }}"  alt="" height="146" width="155">
+           <h1><img src="{{ static('img/logos/firefox/logo-lite-wordmark-dark-in.png') }}"  alt="The New Firefox Lite"></h1>
          </div>
-         <div>
+         <div class="lite-text-container">
           <p class="lite-text">Fast, Lightweight Android Browser With Free Games, Shopping Deals, And More!</p>
          </div>
-         <div>
+         <div class="lite-qrcode-container">
            <img src="{{ static('img/firefox/whatsnew/lite/qrcode-in.png') }}" alt="QR code">
            <p>Scan the QR code to get started.</p>
          </div>
