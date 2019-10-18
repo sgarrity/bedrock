@@ -93,7 +93,7 @@
     overflow: hidden;
     position: relative;
     @media #{$mq-lg} {
-        background-image: url('/media/img/firefox/whatsnew/lite/background.jpg');
+        // background-image: url('/media/img/firefox/whatsnew/lite/background-in.jpg');
         background-size: 2000px auto;
     }
     @media #{$mq-xl} {
