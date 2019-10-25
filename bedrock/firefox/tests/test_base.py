@@ -607,6 +607,18 @@ class TestWhatsNew(TestCase):
 
     # end 70.0 whatsnew tests
 
+    # begin India whatsnew tests
+
+    def test_fx_india(self, render_mock):
+        """Should use whatsnew-india template for india for en-* locales"""
+        req = self.rf.get('/firefox/whatsnew/india/')
+        req.locale = 'en-GB'
+        self.view(req, version='70.0')
+        template = render_mock.call_args[0][1]
+        assert template == ['firefox/whatsnew/index-lite.html']
+
+    # end India whatsnew tests
+
 
 @patch('bedrock.firefox.views.l10n_utils.render', return_value=HttpResponse())
 class TestFirstRun(TestCase):
