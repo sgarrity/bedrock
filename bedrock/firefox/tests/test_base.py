@@ -606,6 +606,8 @@ class TestWhatsNew(TestCase):
         assert template == ['firefox/whatsnew/whatsnew-fx70.html']
 
     # end 70.0 whatsnew tests
+
+
 @patch('bedrock.firefox.views.l10n_utils.render', return_value=HttpResponse())
 class TestWhatsNewIndia(TestCase):
     def setUp(self):
@@ -619,6 +621,7 @@ class TestWhatsNewIndia(TestCase):
         self.view(req, version='70.0')
         template = render_mock.call_args[0][1]
         assert template == ['firefox/whatsnew/index-lite.html']
+
 
 @patch('bedrock.firefox.views.l10n_utils.render', return_value=HttpResponse())
 class TestFirstRun(TestCase):
