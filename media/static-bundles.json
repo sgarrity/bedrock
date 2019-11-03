@@ -864,6 +864,12 @@
     },
     {
       "files": [
+        "css/firefox/compare.scss"
+      ],
+      "name": "compare"
+    },
+    {
+      "files": [
         "css/firefox/welcome.scss"
       ],
       "name": "firefox_welcome"
